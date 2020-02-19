@@ -86,7 +86,6 @@ public class SimulationManager : MonoBehaviour
         {
             // Raycast mouse click to find screen to choose (stored in hitinfo)
             Physics.Raycast(mainCamera.ScreenPointToRay(Input.mousePosition), out RaycastHit hitinfo, 100);
-            
         }
 
         updateFramesPassed++;
@@ -98,6 +97,11 @@ public class SimulationManager : MonoBehaviour
             }
             updateFramesPassed = 0;
         }
+    }
+
+    public void ChangeUpdatePeriod(int newUpdatePeriod)
+    {
+        updatePeriodInFrames = newFrames;
     }
 
     private uint updateFramesPassed = 0;
