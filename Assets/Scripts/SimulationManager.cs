@@ -10,14 +10,14 @@ public class SimulationManager : MonoBehaviour
     [SerializeField]
     private Material cellularAutomationMaterial = null;
     [SerializeField]
-    private MeshRenderer screen = null;
+    private List<MeshRenderer> screens = new List<MeshRenderer>();
     [SerializeField]
     private Material screenMaterialPrefab = null;
 
     [SerializeField]
     private uint updatePeriodInFrames = 3;
 
-    private CustomRenderTexture customRenderTexture = null;
+    private List<CustomRenderTexture> customRenderTextures = new List<CustomRenderTexture>();
 
     [SerializeField]
     private float[] rules;
@@ -32,9 +32,9 @@ public class SimulationManager : MonoBehaviour
         return rules;
     }
 
-    void Awake()
+    public void AddScreenToSimulation(MeshRenderer screen)
     {
-
+        screens.Add(screen);
     }
 
     void Start()
@@ -45,7 +45,15 @@ public class SimulationManager : MonoBehaviour
             return;
         }
 
-        customRenderTexture = new CustomRenderTexture(256, 256);
+        foreach (var screen in screens)
+        {
+            InitializeScreen(screen);
+        }
+    }
+
+    private void InitializeScreen(MeshRenderer screen)
+    {
+        var customRenderTexture = new CustomRenderTexture(64, 64);
         customRenderTexture.initializationTexture = TextureProcessor.CreateRandomTexture(screenTexture.width, screenTexture.height);
         customRenderTexture.initializationMode = CustomRenderTextureUpdateMode.OnDemand;
         customRenderTexture.dimension = UnityEngine.Rendering.TextureDimension.Tex2D;
@@ -61,6 +69,7 @@ public class SimulationManager : MonoBehaviour
         var material = new Material(screenMaterialPrefab);
         material.SetTexture("_MainTex", customRenderTexture);
         screen.material = material;
+        customRenderTextures.Add(customRenderTexture);
     }
 
     void Update()
@@ -73,7 +82,10 @@ public class SimulationManager : MonoBehaviour
         updateFramesPassed++;
         if (updateFramesPassed == updatePeriodInFrames)
         {
-            customRenderTexture.Update();
+            foreach(var texture in customRenderTextures)
+            {
+                texture.Update();
+            }
             updateFramesPassed = 0;
         }
     }

@@ -16,7 +16,6 @@ public static class TextureProcessor
                 t2d.SetPixel(x, y, new Color(1, 1, 1, Random.Range(0, 2))); // alpha = {0, 1}
             }
         }
-        Debug.Log("memes");
         t2d.Apply();
 
         return t2d as Texture;

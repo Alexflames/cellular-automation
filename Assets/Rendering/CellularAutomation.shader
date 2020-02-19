@@ -31,7 +31,7 @@
                 {
                     for (int j = -1; j <= 1; j++) 
                     {
-                        //accumulator += get(IN, i, j).a; // sometimes provides results similar to game of life
+                        //accumulator += get(IN, i, j).a; // sometimes provides results similar to game of life. No?
                         int roundedAlpha = round(get(IN, i, j).a);
                         accumulator += roundedAlpha << (3 - 2*i - j);
                     }
