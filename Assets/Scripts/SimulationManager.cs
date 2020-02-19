@@ -20,14 +20,14 @@ public class SimulationManager : MonoBehaviour
     private List<CustomRenderTexture> customRenderTextures = new List<CustomRenderTexture>();
 
     [SerializeField]
-    private float[] rules;
+    private List<List<float>> allRules = new List<List<float>>();
 
-    private float[] InitializeRandomRules(int size)
+    private List<float> InitializeRandomRules(int size)
     {
-        float[] rules = new float[size];
+        List<float> rules = new List<float>();
         for (int i = 0; i < size; i++)
         {
-            rules[i] = Random.Range(0, 2); // {0, 1}
+            rules.Add(Random.Range(0, 2)); // {0, 1}
         }
         return rules;
     }
@@ -49,11 +49,13 @@ public class SimulationManager : MonoBehaviour
         {
             InitializeScreen(screen);
         }
+
+        mainCamera = Camera.main;
     }
 
     private void InitializeScreen(MeshRenderer screen)
     {
-        var customRenderTexture = new CustomRenderTexture(64, 64);
+        var customRenderTexture = new CustomRenderTexture(48, 48);
         customRenderTexture.initializationTexture = TextureProcessor.CreateRandomTexture(screenTexture.width, screenTexture.height);
         customRenderTexture.initializationMode = CustomRenderTextureUpdateMode.OnDemand;
         customRenderTexture.dimension = UnityEngine.Rendering.TextureDimension.Tex2D;
@@ -62,8 +64,9 @@ public class SimulationManager : MonoBehaviour
         customRenderTexture.wrapMode = TextureWrapMode.Repeat;
         customRenderTexture.material = new Material(cellularAutomationMaterial);
 
-        rules = InitializeRandomRules(512);
-        customRenderTexture.material.SetFloatArray("_rule", rules);
+        var rule = InitializeRandomRules(512);
+        customRenderTexture.material.SetFloatArray("_rule", rule);
+        allRules.Add(rule);
         customRenderTexture.Initialize();
 
         var material = new Material(screenMaterialPrefab);
@@ -79,6 +82,13 @@ public class SimulationManager : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
+        if (Input.GetMouseButtonDown(0))
+        {
+            // Raycast mouse click to find screen to choose (stored in hitinfo)
+            Physics.Raycast(mainCamera.ScreenPointToRay(Input.mousePosition), out RaycastHit hitinfo, 100);
+            
+        }
+
         updateFramesPassed++;
         if (updateFramesPassed == updatePeriodInFrames)
         {
@@ -91,4 +101,5 @@ public class SimulationManager : MonoBehaviour
     }
 
     private uint updateFramesPassed = 0;
+    private Camera mainCamera = null;
 }
