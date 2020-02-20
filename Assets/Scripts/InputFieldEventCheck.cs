@@ -37,7 +37,7 @@ public class InputFieldEventCheck : MonoBehaviour {
 
         //InputFieldComponent.onValidateInput = OnValidateInput;
         simulationManager = GameObject.FindGameObjectWithTag("GameController")
-            .GetComponent<simulationManager>();
+            .GetComponent<SimulationManager>();
     }
 
 
@@ -77,7 +77,7 @@ public class InputFieldEventCheck : MonoBehaviour {
 
     void OnEndEdit(string text)
     {
-        //simulationManager.ChangeUpdatePeriod(text);
+        simulationManager.ChangeUpdatePeriod((float)Convert.ToDouble(text));
         //Debug.Log("OnEndEdit event received. text = [" + text + "].");
         //Debug.Log(InputFieldComponent.selectionAnchorPosition + "  " + InputFieldComponent.selectionFocusPosition);
     }

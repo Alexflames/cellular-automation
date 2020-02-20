@@ -15,7 +15,12 @@ public class SimulationManager : MonoBehaviour
     private Material screenMaterialPrefab = null;
 
     [SerializeField]
-    private uint updatePeriodInFrames = 3;
+    private GameObject screenSettingsPrefab = null;
+    [SerializeField]
+    private GameObject simulationSettingsPrefab = null;
+
+    [SerializeField]
+    private float updatePeriod = 0.05f;
 
     private List<CustomRenderTexture> customRenderTextures = new List<CustomRenderTexture>();
 
@@ -86,10 +91,14 @@ public class SimulationManager : MonoBehaviour
         {
             // Raycast mouse click to find screen to choose (stored in hitinfo)
             Physics.Raycast(mainCamera.ScreenPointToRay(Input.mousePosition), out RaycastHit hitinfo, 100);
+            if (hitinfo.collider != null)
+            {
+                OpenScreenSettings(hitinfo.collider.gameObject);
+            }
         }
 
-        updateFramesPassed++;
-        if (updateFramesPassed == updatePeriodInFrames)
+        updateFramesPassed += Time.deltaTime;
+        if (updateFramesPassed >= updatePeriod)
         {
             foreach(var texture in customRenderTextures)
             {
@@ -99,11 +108,57 @@ public class SimulationManager : MonoBehaviour
         }
     }
 
-    public void ChangeUpdatePeriod(int newUpdatePeriod)
+    private int IndexOfScreen(GameObject screen)
     {
-        updatePeriodInFrames = newFrames;
+        return screens.IndexOf(screen.GetComponent<MeshRenderer>());
     }
 
-    private uint updateFramesPassed = 0;
+    private void OpenScreenSettings(GameObject screen)
+    {
+        if (!simulationPaused) PauseResumeSimulation();
+        simulationSettingsPrefab.SetActive(false);
+        screenSettingsPrefab.SetActive(true);
+        IndexOfScreen(screen);
+    }
+
+    public void CloseScreenSettings()
+    {
+        PauseResumeSimulation();
+        simulationSettingsPrefab.SetActive(true);
+        screenSettingsPrefab.SetActive(false);
+    }
+
+    public void ChangeUpdatePeriod(float newUpdatePeriod)
+    {
+        if (simulationPaused)
+        {
+            updatePeriodSaved = newUpdatePeriod;
+        }
+        else
+        {
+            updatePeriod = newUpdatePeriod;
+        }
+        
+    }
+
+    public void PauseResumeSimulation()
+    {
+        simulationPaused = !simulationPaused;
+        if (simulationPaused)
+        {
+            updatePeriodSaved = updatePeriod;
+            updatePeriod = 5000000000;
+        }
+        else
+        {
+            updatePeriod = updatePeriodSaved;
+        }
+    }
+
+    private float updatePeriodSaved = 0;
+    private bool simulationPaused = false;
+
+    private float updateFramesPassed = 0;
+    
     private Camera mainCamera = null;
 }
