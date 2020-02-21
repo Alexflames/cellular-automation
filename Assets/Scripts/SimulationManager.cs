@@ -27,6 +27,9 @@ public class SimulationManager : MonoBehaviour
     [SerializeField]
     private List<List<float>> allRules = new List<List<float>>();
 
+    [SerializeField]
+    private GameObject blackBoard = null;
+
     private List<float> InitializeRandomRules(int size)
     {
         List<float> rules = new List<float>();
@@ -113,30 +116,55 @@ public class SimulationManager : MonoBehaviour
         return screens.IndexOf(screen.GetComponent<MeshRenderer>());
     }
 
+    private int focusedScreenIndex = -1;
+
     private void OpenScreenSettings(GameObject screen)
     {
-        if (!simulationPaused) PauseResumeSimulation();
-        simulationSettingsPrefab.SetActive(false);
+        //if (!simulationPaused) PauseResumeSimulation();
+        //simulationSettingsPrefab.SetActive(false);
         screenSettingsPrefab.SetActive(true);
-        IndexOfScreen(screen);
+        focusedScreenIndex = IndexOfScreen(screen);
+        FocusMiddleScreen(focusedScreenIndex);
+        blackBoard.SetActive(true);
     }
 
     public void CloseScreenSettings()
     {
-        PauseResumeSimulation();
-        simulationSettingsPrefab.SetActive(true);
+        //PauseResumeSimulation();
+        //simulationSettingsPrefab.SetActive(true);
         screenSettingsPrefab.SetActive(false);
+        UnFocusMiddleScreen(focusedScreenIndex);
+        blackBoard.SetActive(false);
+        focusedScreenIndex = -1;
+    }
+
+    private Vector3 screenSavedPosition;
+    private Vector3 screenSavedScale;
+    private void FocusMiddleScreen(int index)
+    {
+        var screen = screens[index];
+        screenSavedPosition = screen.transform.position;
+        screenSavedScale = screen.transform.localScale;
+        screen.transform.localScale = new Vector3(0.33f, 0.33f, 0.33f);
+        screen.transform.position = screen.transform.parent.position;
+    }
+
+    private void UnFocusMiddleScreen(int index)
+    {
+        var screen = screens[index];
+        screen.transform.localScale = screenSavedScale;
+        screen.transform.position = screenSavedPosition;
     }
 
     public void ChangeUpdatePeriod(float newUpdatePeriod)
     {
         if (simulationPaused)
         {
-            updatePeriodSaved = newUpdatePeriod;
+            updatePeriodSaved = newUpdatePeriod == 0 ? 999999999 : 1 / newUpdatePeriod;
         }
         else
         {
-            updatePeriod = newUpdatePeriod;
+            updatePeriod = newUpdatePeriod == 0 ? 999999999 : 1 / newUpdatePeriod;
         }
         
     }
