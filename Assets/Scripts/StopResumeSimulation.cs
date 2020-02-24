@@ -12,7 +12,6 @@ public class StopResumeSimulation : MonoBehaviour
             .GetComponent<SimulationManager>();
     }
 
-
     public void PauseResumeButton()
     {
         simulationManager.PauseResumeSimulation();

@@ -138,7 +138,7 @@ public class SimulationManager : MonoBehaviour
 
     private void RefreshScreen(int index)
     {
-        var renderTexture = screens[index].GetComponent<MeshRenderer>().material.GetTexture("_MainTex") as CustomRenderTexture;
+        var renderTexture = TextureProcessor.GetTextureFromObject(screens[index]);
         renderTexture.initializationTexture = TextureProcessor.CreateRandomTexture(screenTexture.width, screenTexture.height);
         renderTexture.Initialize();
     }

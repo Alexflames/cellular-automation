@@ -20,4 +20,34 @@ public static class TextureProcessor
 
         return t2d as Texture;
     }
+
+    public static CustomRenderTexture GetTextureFromObject(MeshRenderer meshRenderer)
+    {
+        return meshRenderer.material.GetTexture("_MainTex") as CustomRenderTexture;
+    }
+
+    /// <summary>
+    /// If it is used often, call MeshRenderer version
+    /// </summary>
+    /// <param name="obj"></param>
+    /// <returns></returns>
+    public static CustomRenderTexture GetTextureFromObject(GameObject obj)
+    {
+        return GetTextureFromObject(obj.GetComponent<MeshRenderer>());
+    }
+
+    public static Texture2D GetTexture2DFromObject(MeshRenderer meshRenderer)
+    {
+        return meshRenderer.material.GetTexture("_MainTex") as Texture2D;
+    }
+
+    /// <summary>
+    /// If it is used often, call MeshRenderer version
+    /// </summary>
+    /// <param name="obj"></param>
+    /// <returns></returns>
+    public static Texture2D GetTexture2DFromObject(GameObject obj)
+    {
+        return GetTexture2DFromObject(obj.GetComponent<MeshRenderer>());
+    }
 }
