@@ -15,12 +15,16 @@ public class SimulationManager : MonoBehaviour
     private Material screenMaterialPrefab = null;
 
     [SerializeField]
-    private GameObject screenSettingsPrefab = null;
+    private GameObject screenSettingsObject = null;
     [SerializeField]
     private GameObject simulationSettingsPrefab = null;
 
     [SerializeField]
     private float updatePeriod = 0.05f;
+    [SerializeField]
+    private int screenSizeInPixels = 128;
+    [SerializeField]
+    private int screensInSimulation = 128;
 
     private List<CustomRenderTexture> customRenderTextures = new List<CustomRenderTexture>();
 
@@ -43,6 +47,7 @@ public class SimulationManager : MonoBehaviour
     public void AddScreenToSimulation(MeshRenderer screen)
     {
         screens.Add(screen);
+        InitializeScreen(screen);
     }
 
     void Start()
@@ -53,9 +58,9 @@ public class SimulationManager : MonoBehaviour
             return;
         }
 
-        foreach (var screen in screens)
+        for (int i = 0; i < Mathf.Min(transform.childCount, screensInSimulation); i++)
         {
-            InitializeScreen(screen);
+            AddScreenToSimulation(transform.GetChild(i).GetComponent<MeshRenderer>());
         }
 
         mainCamera = Camera.main;
@@ -63,7 +68,7 @@ public class SimulationManager : MonoBehaviour
 
     private void InitializeScreen(MeshRenderer screen)
     {
-        var customRenderTexture = new CustomRenderTexture(48, 48);
+        var customRenderTexture = new CustomRenderTexture(screenSizeInPixels, screenSizeInPixels);
         customRenderTexture.initializationTexture = TextureProcessor.CreateRandomTexture(screenTexture.width, screenTexture.height);
         customRenderTexture.initializationMode = CustomRenderTextureUpdateMode.OnDemand;
         customRenderTexture.dimension = UnityEngine.Rendering.TextureDimension.Tex2D;
@@ -90,7 +95,7 @@ public class SimulationManager : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && screenSettingsObject.activeSelf == false)
         {
             // Raycast mouse click to find screen to choose (stored in hitinfo)
             Physics.Raycast(mainCamera.ScreenPointToRay(Input.mousePosition), out RaycastHit hitinfo, 100);
@@ -99,6 +104,8 @@ public class SimulationManager : MonoBehaviour
                 OpenScreenSettings(hitinfo.collider.gameObject);
             }
         }
+        // Camera movement
+        mainCamera.transform.Translate(new Vector3(Input.GetAxis("Horizontal") * 6, Input.GetAxis("Vertical") * 6, Input.GetAxis("Mouse ScrollWheel") * 375) * Time.deltaTime);
 
         updateFramesPassed += Time.deltaTime;
         if (updateFramesPassed >= updatePeriod)
@@ -122,7 +129,7 @@ public class SimulationManager : MonoBehaviour
     {
         //if (!simulationPaused) PauseResumeSimulation();
         //simulationSettingsPrefab.SetActive(false);
-        screenSettingsPrefab.SetActive(true);
+        screenSettingsObject.SetActive(true);
         focusedScreenIndex = IndexOfScreen(screen);
         FocusMiddleScreen(focusedScreenIndex);
         blackBoard.SetActive(true);
@@ -132,7 +139,7 @@ public class SimulationManager : MonoBehaviour
     {
         //PauseResumeSimulation();
         //simulationSettingsPrefab.SetActive(true);
-        screenSettingsPrefab.SetActive(false);
+        screenSettingsObject.SetActive(false);
         UnFocusMiddleScreen(focusedScreenIndex);
         blackBoard.SetActive(false);
         focusedScreenIndex = -1;
@@ -146,7 +153,8 @@ public class SimulationManager : MonoBehaviour
         screenSavedPosition = screen.transform.position;
         screenSavedScale = screen.transform.localScale;
         screen.transform.localScale = new Vector3(0.33f, 0.33f, 0.33f);
-        screen.transform.position = screen.transform.parent.position;
+        mainCamera.transform.Translate(100, 0, 0);
+        screen.transform.position = mainCamera.transform.position + new Vector3(0, 0, 5);
     }
 
     private void UnFocusMiddleScreen(int index)
@@ -154,6 +162,7 @@ public class SimulationManager : MonoBehaviour
         var screen = screens[index];
         screen.transform.localScale = screenSavedScale;
         screen.transform.position = screenSavedPosition;
+        mainCamera.transform.Translate(-100, 0, 0);
     }
 
     public void ChangeUpdatePeriod(float newUpdatePeriod)
