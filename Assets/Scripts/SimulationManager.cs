@@ -90,11 +90,10 @@ public class SimulationManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && Input.GetKey(KeyCode.LeftShift))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
-
         if (Input.GetMouseButtonDown(0) && screenSettingsObject.activeSelf == false)
         {
             // Raycast mouse click to find screen to choose (stored in hitinfo)
@@ -102,6 +101,17 @@ public class SimulationManager : MonoBehaviour
             if (hitinfo.collider != null)
             {
                 OpenScreenSettings(hitinfo.collider.gameObject);
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            if (focusedScreenIndex != -1)
+            {
+                RefreshScreen(focusedScreenIndex);
+            }
+            else
+            {
+                RefreshAllScreens();
             }
         }
         // Camera movement
@@ -116,6 +126,21 @@ public class SimulationManager : MonoBehaviour
             }
             updateFramesPassed = 0;
         }
+    }
+
+    private void RefreshAllScreens()
+    {
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            RefreshScreen(i);
+        }
+    }
+
+    private void RefreshScreen(int index)
+    {
+        var renderTexture = screens[index].GetComponent<MeshRenderer>().material.GetTexture("_MainTex") as CustomRenderTexture;
+        renderTexture.initializationTexture = TextureProcessor.CreateRandomTexture(screenTexture.width, screenTexture.height);
+        renderTexture.Initialize();
     }
 
     private int IndexOfScreen(GameObject screen)
