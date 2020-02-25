@@ -4,9 +4,25 @@ using UnityEngine;
 
 public static class TextureProcessor
 {
-    public static Texture CreateRandomTexture(int sizeX, int sizeY)
+    public static Texture CreateRandomTexture(int sizex, int sizey)
     {
-        Texture2D t2d = new Texture2D(sizeX, sizeY);
+        Texture2D t2d = new Texture2D(sizex, sizey);
+
+        int t2dsize = t2d.width * t2d.height;
+        Color[] colors = new Color[t2dsize];
+        for (int i = 0; i < t2dsize; i++)
+        {
+            colors[i] = new Color(1, 1, 1, Random.Range(0, 2)); // {0, 1}
+        }
+        t2d.SetPixels(colors);
+        t2d.Apply();
+
+        return t2d as Texture;
+    }
+
+    public static Texture PaintRandomTexture(Texture tx)
+    {
+        Texture2D t2d = tx as Texture2D;
 
         int t2dsize = t2d.width * t2d.height;
         Color[] colors = new Color[t2dsize];

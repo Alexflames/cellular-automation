@@ -50,6 +50,9 @@ public class SimulationManager : MonoBehaviour
     [SerializeField]
     private float mutationPercent = 7;
 
+    [SerializeField]
+    private MeshRenderer genofondScreen = null;
+
     private const int RULE_SIZE = 512;
 
     void Start()
@@ -120,6 +123,10 @@ public class SimulationManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             PauseResumeSimulation();
+        }
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            ShowHideGenofond();
         }
     }
 
@@ -202,7 +209,13 @@ public class SimulationManager : MonoBehaviour
         List<KeyValuePair<int, float>> indexFitness = new List<KeyValuePair<int, float>>();
         for (int i = 0; i < ScreensCount(); i++)
         {
-            var fitness = CalculateFitness(TextureProcessor.GetTexture2DFromObject(screens[i]), new short[] { 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0 }, 4, 4, 1);
+            var fitness = CalculateFitness(TextureProcessor.GetTexture2DFromObject(screens[i]), 
+                new short[] {
+                    0, 0, 0, 0, 0, 0,
+                    0, 1, 1, 1, 1, 0,
+                    0, 1, 1, 1, 1, 0,
+                    0, 0, 0, 0, 0, 0,
+                }, 6, 4, 3);
             indexFitness.Add(new KeyValuePair<int, float>(i, fitness));
 
             if (i % 2 == 0)
@@ -260,8 +273,57 @@ public class SimulationManager : MonoBehaviour
             allRules[i] = newRules[i];
             TextureProcessor.GetTextureFromObject(screens[i]).material.SetFloatArray("_rule", newRules[i]);
         }
+
         StartCoroutine(RefreshAllScreens());
+        UpdateGenofond();
         yield return null;
+    }
+    
+    private Color32[] genofond = null;
+    private Texture2D genofondScreenTex = null;
+    private void UpdateGenofond()
+    {
+        if (genofondScreenTex == null || genofond == null)
+        {
+            genofondScreenTex = new Texture2D(RULE_SIZE, ScreensCount());
+        }
+
+        genofond = new Color32[ScreensCount() * RULE_SIZE];
+
+        for (int i = 0; i < allRules.Count; i++)
+        {
+            for (int j = 0; j < RULE_SIZE; j++)
+            {
+                byte ruleByte = 0;
+                if (allRules[i][j] == 1) ruleByte = 255;
+                else ruleByte = 0;
+                genofond[j + i * RULE_SIZE] = new Color32(255, 255, 255, ruleByte);
+            }
+        }
+
+        genofondScreen.material.mainTexture = genofondScreenTex;
+        genofondScreenTex.SetPixels32(genofond);
+        genofondScreenTex.Apply();
+    }
+
+    private Vector3 cameraSavedPosition = Vector3.zero;
+
+    private void ShowHideGenofond()
+    {
+        if (cameraSavedPosition == Vector3.zero) ShowGenofond();
+        else HideGenofond();
+    }
+
+    private void ShowGenofond()
+    {
+        cameraSavedPosition = mainCamera.transform.position;
+        mainCamera.transform.position = genofondScreen.transform.position - new Vector3(0, 0, 10);
+    }
+
+    private void HideGenofond()
+    {
+        mainCamera.transform.position = cameraSavedPosition;
+        cameraSavedPosition = Vector3.zero;
     }
 
     #endregion
@@ -293,8 +355,7 @@ public class SimulationManager : MonoBehaviour
 
     private void RefreshScreen(CustomRenderTexture renderTexture)
     {
-        Destroy(renderTexture.initializationTexture);
-        renderTexture.initializationTexture = TextureProcessor.CreateRandomTexture(screenTexture.width, screenTexture.height);
+        renderTexture.initializationTexture = TextureProcessor.PaintRandomTexture(renderTexture.initializationTexture);
         renderTexture.Initialize();
     }
 
