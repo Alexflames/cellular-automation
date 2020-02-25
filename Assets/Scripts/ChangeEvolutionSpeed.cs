@@ -6,7 +6,7 @@ using System.Collections;
 using TMPro;
 using System;
 
-public class ChangeSimulationSpeed : MonoBehaviour
+public class ChangeEvolutionSpeed : MonoBehaviour
 {
     public TMP_InputField InputFieldComponent;
 
@@ -43,7 +43,7 @@ public class ChangeSimulationSpeed : MonoBehaviour
         var textNormalized = ChangeCommaToDotInString(text);
         if (textNormalized != "" && float.TryParse(textNormalized, out float res))
         {
-            simulationManager.ChangeUpdatePeriod((float)Convert.ToDouble(textNormalized));
+            simulationManager.ChangeEvolutionPeriod((float)Convert.ToDouble(textNormalized));
         }
     }
 }

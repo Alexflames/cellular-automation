@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SimulationManager : MonoBehaviour
 {
-    [SerializeField]
+    [SerializeField, Header("Scene settings")]
     private CustomRenderTexture screenTexture = null;
     [SerializeField]
     private Material cellularAutomationMaterial = null;
@@ -17,7 +17,7 @@ public class SimulationManager : MonoBehaviour
     [SerializeField]
     private GameObject screenSettingsObject = null;
 
-    [SerializeField]
+    [SerializeField, Header("Simulation settings")]
     private float updatePeriod = 0.05f;
     [SerializeField]
     private int screenSizeInPixels = 128;
@@ -25,12 +25,8 @@ public class SimulationManager : MonoBehaviour
     private int screensInSimulation = 128;
 
     private List<CustomRenderTexture> customRenderTextures = new List<CustomRenderTexture>();
-
-    [SerializeField]
+    
     private List<List<float>> allRules = new List<List<float>>();
-
-    [SerializeField]
-    private GameObject blackBoard = null;
 
     private List<float> InitializeRandomRules(int size)
     {
@@ -48,6 +44,14 @@ public class SimulationManager : MonoBehaviour
         InitializeScreen(screen);
     }
 
+    private float timeToEvolutionPassed = 0f;
+    [SerializeField, Header("Evolution")]
+    private float timeToEvolution = 3f;
+    [SerializeField]
+    private float mutationPercent = 7;
+
+    private const int RULE_SIZE = 512;
+
     void Start()
     {
         if (screenTexture == null)
@@ -56,7 +60,7 @@ public class SimulationManager : MonoBehaviour
             return;
         }
 
-        for (int i = 0; i < Mathf.Min(transform.childCount, screensInSimulation); i++)
+        for (int i = 0; i < ScreensCount(); i++)
         {
             AddScreenToSimulation(transform.GetChild(i).GetComponent<MeshRenderer>());
         }
@@ -75,7 +79,7 @@ public class SimulationManager : MonoBehaviour
         customRenderTexture.wrapMode = TextureWrapMode.Repeat;
         customRenderTexture.material = new Material(cellularAutomationMaterial);
 
-        var rule = InitializeRandomRules(512);
+        var rule = InitializeRandomRules(RULE_SIZE);
         customRenderTexture.material.SetFloatArray("_rule", rule);
         allRules.Add(rule);
         customRenderTexture.Initialize();
@@ -96,7 +100,8 @@ public class SimulationManager : MonoBehaviour
         {
             // Raycast mouse click to find screen to choose (stored in hitinfo)
             Physics.Raycast(mainCamera.ScreenPointToRay(Input.mousePosition), out RaycastHit hitinfo, 100);
-            if (hitinfo.collider != null)
+            // Клик попал в экран + костыль для того чтобы при нажатии на интерфейс не задевало
+            if (hitinfo.collider != null && (Input.mousePosition.y > 66f || Input.mousePosition.x > 600 || Input.mousePosition.x < 350))
             {
                 OpenScreenSettings(hitinfo.collider.gameObject);
             }
@@ -109,11 +114,19 @@ public class SimulationManager : MonoBehaviour
             }
             else
             {
-                RefreshAllScreens();
+                StartCoroutine(RefreshAllScreens());
             }
         }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            PauseResumeSimulation();
+        }
+    }
+
+    void FixedUpdate()
+    {
         // Camera movement
-        mainCamera.transform.Translate(new Vector3(Input.GetAxis("Horizontal") * 6, Input.GetAxis("Vertical") * 6, Input.GetAxis("Mouse ScrollWheel") * 750) * Time.deltaTime);
+        mainCamera.transform.Translate(new Vector3(Input.GetAxis("Horizontal") * 6, Input.GetAxis("Vertical") * 6, Input.GetAxis("Mouse ScrollWheel") * 750) * Time.fixedDeltaTime);
 
         updateFramesPassed += Time.deltaTime;
         if (updateFramesPassed >= updatePeriod)
@@ -123,6 +136,16 @@ public class SimulationManager : MonoBehaviour
                 texture.Update();
             }
             updateFramesPassed = 0;
+        }
+
+        if (!simulationPaused && timeToEvolution > 0.5f)
+        {
+            timeToEvolutionPassed += Time.fixedDeltaTime;
+            if (timeToEvolutionPassed >= timeToEvolution)
+            {
+                timeToEvolutionPassed = 0;
+                StartCoroutine(Evolve());
+            }
         }
     }
 
@@ -140,11 +163,12 @@ public class SimulationManager : MonoBehaviour
     /// <returns></returns>
     private float CalculateFitness(Texture2D texture2D, short[] blockFitnessRule, int fitnessBlockWidth, int fitnessBlockHeight, int errors = 0)
     {
-        var texturePixels = texture2D.GetPixels32();
+        var texturePixels = texture2D.GetRawTextureData<Color32>();
 
         var fitness = 0;
 
         int textureWidth = texture2D.width; int textureHeight = texture2D.height;
+
         for (int i = 0; i < textureHeight; i++)
         {
             for (int j = 0; j < textureWidth; j++)
@@ -167,22 +191,109 @@ public class SimulationManager : MonoBehaviour
                 fitness += currentErrors <= errors ? 1 : 0;
             }
         }
-        return fitness * 1f / (texture2D.width * texture2D.height) ;
+        
+        return fitness * 1f / (textureWidth * textureHeight) ;
+    }
+
+    private IEnumerator Evolve()
+    {
+        // >>>Fitness calculation<<<
+
+        List<KeyValuePair<int, float>> indexFitness = new List<KeyValuePair<int, float>>();
+        for (int i = 0; i < ScreensCount(); i++)
+        {
+            var fitness = CalculateFitness(TextureProcessor.GetTexture2DFromObject(screens[i]), new short[] { 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0 }, 4, 4, 1);
+            indexFitness.Add(new KeyValuePair<int, float>(i, fitness));
+
+            if (i % 2 == 0)
+            {
+                yield return new WaitForEndOfFrame();
+            }
+        }
+
+        indexFitness.Sort((x, y) => x.Value.CompareTo(y.Value));
+        indexFitness.Reverse();
+        // Требуется чётность
+        indexFitness.RemoveRange(indexFitness.Count / 2, indexFitness.Count / 2);
+
+        List<List<float>> newRules = new List<List<float>>();
+        
+        // >>>Crossbreeding<<<
+
+        // Требуется кратность четырём
+        for (int i = 0; i < screensInSimulation / 4; i++)
+        {
+            var parent1i = Random.Range(0, indexFitness.Count);
+            var parent1Rule = allRules[indexFitness[parent1i].Key];
+            newRules.Add(parent1Rule);
+            indexFitness.RemoveAt(parent1i);
+
+            var parent2i = Random.Range(0, indexFitness.Count);
+            var parent2Rule = allRules[indexFitness[parent2i].Key];
+            newRules.Add(parent2Rule);
+            indexFitness.RemoveAt(parent2i);
+
+            var crossSeparator = Random.Range(0, RULE_SIZE);
+            var sonRule = new List<float>();
+            var daughterRule = new List<float>();
+            for (int j = 0; j < RULE_SIZE; j++)
+            {
+                sonRule.Add(j < crossSeparator ? parent1Rule[j] : parent2Rule[j]);
+                daughterRule.Add(j < crossSeparator ? parent2Rule[j] : parent1Rule[j]);
+            }
+            newRules.Add(sonRule);
+            newRules.Add(daughterRule);
+        }
+
+        // >>>Mutations<<<
+        foreach (var rule in newRules)
+        {
+            if (Random.Range(0, 1f) <= mutationPercent / 100f)
+            {
+                var gene = Random.Range(0, RULE_SIZE);
+                rule[gene] = Mathf.Abs(1 - rule[gene]);
+            }
+        }
+
+        for (int i = 0; i < ScreensCount(); i++)
+        {
+            allRules[i] = newRules[i];
+            TextureProcessor.GetTextureFromObject(screens[i]).material.SetFloatArray("_rule", newRules[i]);
+        }
+        StartCoroutine(RefreshAllScreens());
+        yield return null;
     }
 
     #endregion
 
-    private void RefreshAllScreens()
+    private int ScreensCount()
     {
-        for (int i = 0; i < transform.childCount; i++)
+        return Mathf.Min(transform.childCount, screensInSimulation);
+    }
+
+    private IEnumerator RefreshAllScreens()
+    {
+        for (int i = 0; i < ScreensCount(); i++)
         {
             RefreshScreen(i);
+            if (i % 8 == 0)
+            {
+                yield return new WaitForEndOfFrame();
+            }
         }
+
+        yield return null;
     }
 
     private void RefreshScreen(int index)
     {
         var renderTexture = TextureProcessor.GetTextureFromObject(screens[index]);
+        RefreshScreen(renderTexture);
+    }
+
+    private void RefreshScreen(CustomRenderTexture renderTexture)
+    {
+        Destroy(renderTexture.initializationTexture);
         renderTexture.initializationTexture = TextureProcessor.CreateRandomTexture(screenTexture.width, screenTexture.height);
         renderTexture.Initialize();
     }
@@ -201,7 +312,6 @@ public class SimulationManager : MonoBehaviour
         screenSettingsObject.SetActive(true);
         focusedScreenIndex = IndexOfScreen(screen);
         FocusMiddleScreen(focusedScreenIndex);
-        blackBoard.SetActive(true);
     }
 
     public void CloseScreenSettings()
@@ -210,7 +320,6 @@ public class SimulationManager : MonoBehaviour
         //simulationSettingsPrefab.SetActive(true);
         screenSettingsObject.SetActive(false);
         UnFocusMiddleScreen(focusedScreenIndex);
-        blackBoard.SetActive(false);
         focusedScreenIndex = -1;
     }
 
@@ -225,7 +334,7 @@ public class SimulationManager : MonoBehaviour
         mainCamera.transform.Translate(100, 0, 0);
         screen.transform.position = mainCamera.transform.position + new Vector3(0, 0, 5);
 
-        Debug.Log(CalculateFitness(TextureProcessor.GetTexture2DFromObject(screen), new short[]{ 0 }, 1, 1, 0));
+        Debug.Log($"White-fitness: {CalculateFitness(TextureProcessor.GetTexture2DFromObject(screen), new short[]{ 0 }, 1, 1, 0)}");
     }
 
     private void UnFocusMiddleScreen(int index)
@@ -247,6 +356,11 @@ public class SimulationManager : MonoBehaviour
             updatePeriod = newUpdatePeriod == 0 ? 999999999 : 1 / newUpdatePeriod;
         }
         
+    }
+
+    public void ChangeEvolutionPeriod(float newEvolutionPeriod)
+    {
+        timeToEvolution = newEvolutionPeriod;
     }
 
     public void PauseResumeSimulation()

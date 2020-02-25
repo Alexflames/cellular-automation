@@ -8,14 +8,13 @@ public static class TextureProcessor
     {
         Texture2D t2d = new Texture2D(sizeX, sizeY);
 
-        for (int x = 0; x < t2d.width; x++)
+        int t2dsize = t2d.width * t2d.height;
+        Color[] colors = new Color[t2dsize];
+        for (int i = 0; i < t2dsize; i++)
         {
-            for (int y = 0; y < t2d.height; y++)
-            {
-                //t2d.SetPixel(x, y, new Color(Random.Range(0, 1f), Random.Range(0, 1f), Random.Range(0, 1f), Random.Range(0, 2)));
-                t2d.SetPixel(x, y, new Color(1, 1, 1, Random.Range(0, 2))); // alpha = {0, 1}
-            }
+            colors[i] = new Color(1, 1, 1, Random.Range(0, 2)); // {0, 1}
         }
+        t2d.SetPixels(colors);
         t2d.Apply();
 
         return t2d as Texture;
