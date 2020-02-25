@@ -23,7 +23,7 @@ public static class TextureProcessor
 
     public static CustomRenderTexture GetTextureFromObject(MeshRenderer meshRenderer)
     {
-        return meshRenderer.material.GetTexture("_MainTex") as CustomRenderTexture;
+        return meshRenderer.material.mainTexture as CustomRenderTexture;
     }
 
     /// <summary>
@@ -38,7 +38,12 @@ public static class TextureProcessor
 
     public static Texture2D GetTexture2DFromObject(MeshRenderer meshRenderer)
     {
-        return meshRenderer.material.GetTexture("_MainTex") as Texture2D;
+        RenderTexture tex = meshRenderer.material.mainTexture as RenderTexture;
+        RenderTexture.active = tex;
+        Texture2D tex2D = new Texture2D(tex.width, tex.height);
+        tex2D.ReadPixels(new Rect(0, 0, tex.width, tex.height), 0, 0);
+        tex2D.Apply();
+        return tex2D;
     }
 
     /// <summary>

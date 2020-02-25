@@ -16,8 +16,6 @@ public class SimulationManager : MonoBehaviour
 
     [SerializeField]
     private GameObject screenSettingsObject = null;
-    [SerializeField]
-    private GameObject simulationSettingsPrefab = null;
 
     [SerializeField]
     private float updatePeriod = 0.05f;
@@ -115,7 +113,7 @@ public class SimulationManager : MonoBehaviour
             }
         }
         // Camera movement
-        mainCamera.transform.Translate(new Vector3(Input.GetAxis("Horizontal") * 6, Input.GetAxis("Vertical") * 6, Input.GetAxis("Mouse ScrollWheel") * 375) * Time.deltaTime);
+        mainCamera.transform.Translate(new Vector3(Input.GetAxis("Horizontal") * 6, Input.GetAxis("Vertical") * 6, Input.GetAxis("Mouse ScrollWheel") * 750) * Time.deltaTime);
 
         updateFramesPassed += Time.deltaTime;
         if (updateFramesPassed >= updatePeriod)
@@ -127,6 +125,52 @@ public class SimulationManager : MonoBehaviour
             updateFramesPassed = 0;
         }
     }
+
+    #region evolution-algorithm
+    
+    /// <summary>
+    /// Calculates fitness of current cellular state machine.
+    /// More fitness -> more likely that it stays and evolves in future generations
+    /// </summary>
+    /// <param name="texture2D">Texture with pixels to process</param>
+    /// <param name="blockFitnessRule">Pattern to match</param>
+    /// <param name="fitnessBlockWidth">Pattern width</param>
+    /// <param name="fitnessBlockHeight">Pattern height</param>
+    /// <param name="errors">The maximum allowed errors in pattern</param>
+    /// <returns></returns>
+    private float CalculateFitness(Texture2D texture2D, short[] blockFitnessRule, int fitnessBlockWidth, int fitnessBlockHeight, int errors = 0)
+    {
+        var texturePixels = texture2D.GetPixels32();
+
+        var fitness = 0;
+
+        int textureWidth = texture2D.width; int textureHeight = texture2D.height;
+        for (int i = 0; i < textureHeight; i++)
+        {
+            for (int j = 0; j < textureWidth; j++)
+            {
+                int cornerPixel = j + i * textureWidth;
+                int currentErrors = 0;
+                for (int ir = 0; ir < fitnessBlockHeight; ir++)
+                {
+                    for (int jr = 0; jr < fitnessBlockWidth; jr++)
+                    {
+                        // Color32 = (255, 255, 255, 255/0)
+                        // I convert it to (1, 1, 1, 1/0)
+                        // And compare with corresponding cell in fitness rule
+                        int pixelIndex = (cornerPixel + jr + ir * textureWidth) % (textureWidth * textureHeight);
+                        currentErrors += (texturePixels[pixelIndex].a == 255 ? 1 : 0) 
+                            == blockFitnessRule[jr + ir * fitnessBlockWidth] ? 1 : 0;
+                    }
+                }
+
+                fitness += currentErrors <= errors ? 1 : 0;
+            }
+        }
+        return fitness * 1f / (texture2D.width * texture2D.height) ;
+    }
+
+    #endregion
 
     private void RefreshAllScreens()
     {
@@ -180,6 +224,8 @@ public class SimulationManager : MonoBehaviour
         screen.transform.localScale = new Vector3(0.33f, 0.33f, 0.33f);
         mainCamera.transform.Translate(100, 0, 0);
         screen.transform.position = mainCamera.transform.position + new Vector3(0, 0, 5);
+
+        Debug.Log(CalculateFitness(TextureProcessor.GetTexture2DFromObject(screen), new short[]{ 0 }, 1, 1, 0));
     }
 
     private void UnFocusMiddleScreen(int index)
