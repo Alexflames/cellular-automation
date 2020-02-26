@@ -52,6 +52,29 @@ public class SimulationManager : MonoBehaviour
 
     [SerializeField]
     private MeshRenderer genofondScreen = null;
+    [SerializeField]
+    private Transform patternDrawer = null;
+    private Material[] patternCellsMat = new Material[400];
+
+
+    [System.Serializable]
+    public struct Pattern
+    {
+        public short[] pattern;
+        public int patternSizeX;
+        public int patternSizeY;
+        public int patternErrors;
+
+        public Pattern(int patternSizeX, int patternSizeY, int patternErrors, short[] pattern = null)
+        {
+            this.patternSizeX = patternSizeX;
+            this.patternSizeY = patternSizeY;
+            this.patternErrors = patternErrors;
+            this.pattern = pattern;
+        }
+    };
+
+    public Pattern pattern;
 
     private const int RULE_SIZE = 512;
 
@@ -67,6 +90,17 @@ public class SimulationManager : MonoBehaviour
         {
             AddScreenToSimulation(transform.GetChild(i).GetComponent<MeshRenderer>());
         }
+
+        var patternDrawerTransform = patternDrawer.transform;
+        var patternDrawerCellsCount = patternDrawerTransform.childCount;
+        for (int i = 0; i < patternDrawerCellsCount; i++)
+        {
+            var meshRenderer = patternDrawerTransform.GetChild(i).GetComponent<MeshRenderer>();
+            meshRenderer.material = new Material(meshRenderer.material);
+            patternCellsMat[i] = meshRenderer.material;
+        }
+
+        pattern = new Pattern(3, 3, 2, new short[9] { 0, 0, 0, 0, 1, 0, 0, 0, 0 }); // Save/Load patterns?
 
         mainCamera = Camera.main;
     }
@@ -101,12 +135,29 @@ public class SimulationManager : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(0) && screenSettingsObject.activeSelf == false)
         {
-            // Raycast mouse click to find screen to choose (stored in hitinfo)
-            Physics.Raycast(mainCamera.ScreenPointToRay(Input.mousePosition), out RaycastHit hitinfo, 100);
-            // Клик попал в экран + костыль для того чтобы при нажатии на интерфейс не задевало
-            if (hitinfo.collider != null && (Input.mousePosition.y > 66f || Input.mousePosition.x > 600 || Input.mousePosition.x < 350))
+            if (cameraSavedPositionP != Vector3.zero)
             {
-                OpenScreenSettings(hitinfo.collider.gameObject);
+                Physics.Raycast(mainCamera.ScreenPointToRay(Input.mousePosition), out RaycastHit hitinfo, 100);
+                if (hitinfo.collider != null)
+                {
+                    var material = hitinfo.collider.GetComponent<MeshRenderer>().material;
+                    if (material.color == Color.white) material.color = Color.black;
+                    else material.color = Color.white;
+                }
+            }
+            else
+            {
+                // Raycast mouse click to find screen to choose (stored in hitinfo)
+                Physics.Raycast(mainCamera.ScreenPointToRay(Input.mousePosition), out RaycastHit hitinfo, 100);
+                // Клик попал в экран + костыль для того чтобы при нажатии на интерфейс не задевало
+                if (hitinfo.collider != null)
+                {
+                    var screenNumber = IndexOfScreen(hitinfo.collider.gameObject);
+                    if (screenNumber != -1 && (Input.mousePosition.y > 66f || Input.mousePosition.x > 600 || Input.mousePosition.x < 350))
+                    {
+                        OpenScreenSettings(hitinfo.collider.gameObject);
+                    }
+                }
             }
         }
         if (Input.GetKeyDown(KeyCode.R))
@@ -127,6 +178,10 @@ public class SimulationManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.G))
         {
             ShowHideGenofond();
+        }
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            ShowHidePatternDrawer();
         }
     }
 
@@ -168,66 +223,85 @@ public class SimulationManager : MonoBehaviour
     /// <param name="fitnessBlockHeight">Pattern height</param>
     /// <param name="errors">The maximum allowed errors in pattern</param>
     /// <returns></returns>
-    private float CalculateFitness(Texture2D texture2D, short[] blockFitnessRule, int fitnessBlockWidth, int fitnessBlockHeight, int errors = 0)
+    private float CalculateFitness(Texture2D texture2D, Pattern pattern)
     {
         var texturePixels = texture2D.GetRawTextureData<Color32>();
 
-        var fitness = 0;
+        int fitness = 0;
 
         int textureWidth = texture2D.width; int textureHeight = texture2D.height;
 
+        var patternHeight = pattern.patternSizeY;
+        var patternWidth = pattern.patternSizeX;
+        var patternErrors = pattern.patternErrors;
+        var patternRule = pattern.pattern;
+        int currentErrors = 0;
         for (int i = 0; i < textureHeight; i++)
         {
             for (int j = 0; j < textureWidth; j++)
             {
                 int cornerPixel = j + i * textureWidth;
-                int currentErrors = 0;
-                for (int ir = 0; ir < fitnessBlockHeight; ir++)
+                for (int ir = 0; ir < patternHeight; ir++)
                 {
-                    for (int jr = 0; jr < fitnessBlockWidth; jr++)
+                    for (int jr = 0; jr < patternWidth; jr++)
                     {
                         // Color32 = (255, 255, 255, 255/0)
                         // I convert it to (1, 1, 1, 1/0)
                         // And compare with corresponding cell in fitness rule
-                        int pixelIndex = (cornerPixel + jr + ir * textureWidth) % (textureWidth * textureHeight);
+                        int pixelIndex = (cornerPixel + ir + jr * textureHeight) % (textureWidth * textureHeight);
                         currentErrors += (texturePixels[pixelIndex].a == 255 ? 1 : 0) 
-                            == blockFitnessRule[jr + ir * fitnessBlockWidth] ? 1 : 0;
+                            == patternRule[jr + ir * patternWidth] ? 1 : 0;
                     }
                 }
 
-                fitness += currentErrors <= errors ? 1 : 0;
+                fitness += currentErrors <= patternErrors ? 1 : 0;
             }
         }
-        
-        return fitness * 1f / (textureWidth * textureHeight) ;
+
+        return fitness * 1f / (textureWidth * textureHeight);
+        //return 1f - (currentErrors / (patternHeight * patternWidth)) * 1f / (textureWidth * textureHeight) ;
     }
 
     private IEnumerator Evolve()
     {
         // >>>Fitness calculation<<<
 
+
         List<KeyValuePair<int, float>> indexFitness = new List<KeyValuePair<int, float>>();
         for (int i = 0; i < ScreensCount(); i++)
         {
-            var fitness = CalculateFitness(TextureProcessor.GetTexture2DFromObject(screens[i]), 
-                new short[] {
-                    0, 0, 0, 0, 0, 0,
-                    0, 1, 1, 1, 1, 0,
-                    0, 1, 1, 1, 1, 0,
-                    0, 0, 0, 0, 0, 0,
-                }, 6, 4, 3);
+            var fitness = CalculateFitness(TextureProcessor.GetTexture2DFromObject(screens[i]), pattern);
             indexFitness.Add(new KeyValuePair<int, float>(i, fitness));
 
-            if (i % 2 == 0)
-            {
-                yield return new WaitForEndOfFrame();
-            }
+            //if (i % 8 == 0)
+            //{
+            //    yield return new WaitForEndOfFrame();
+            //}
         }
+
 
         indexFitness.Sort((x, y) => x.Value.CompareTo(y.Value));
         indexFitness.Reverse();
-        // Требуется чётность
+
+        // Fitness metrics
+        float averageFitness = 0;
+        foreach (var fitness in indexFitness)
+        {
+            averageFitness += fitness.Value;
+        }
+        averageFitness /= indexFitness.Count;
+
+        // Leave only good genes. Требуется чётность
         indexFitness.RemoveRange(indexFitness.Count / 2, indexFitness.Count / 2);
+
+        float averageGoodFitness = 0;
+        foreach (var fitness in indexFitness)
+        {
+            averageGoodFitness += fitness.Value;
+        }
+        averageGoodFitness /= indexFitness.Count;
+        
+        Debug.Log($"Maximum fitness: {indexFitness[0].Value.ToString("0.00000")}. Average fitness: {averageFitness.ToString("0.00000")}. Average good fitness: {averageGoodFitness.ToString("0.00000")}");
 
         List<List<float>> newRules = new List<List<float>>();
         
@@ -278,6 +352,31 @@ public class SimulationManager : MonoBehaviour
         UpdateGenofond();
         yield return null;
     }
+
+    // Pattern Settings
+    private void UpdatePattern(int sizeX, int sizeY, int errors)
+    {
+        pattern = new Pattern(sizeX, sizeY, errors);
+    }
+
+    // Pattern itself
+    private void UpdatePattern()
+    {
+        short[] newPattern = new short[pattern.patternSizeX * pattern.patternSizeY];
+
+        int MAGIC_CONSTANT = 20; // 20 screens maximum in row. Used in transform hierarchy
+        for (int i = 0; i < pattern.patternSizeY; i++)
+        {
+            for (int j = 0; j < pattern.patternSizeX; j++)
+            {
+                short color = 1;
+                if (patternCellsMat[j + i * MAGIC_CONSTANT].color == Color.white) color = 0;
+                newPattern[j + i * pattern.patternSizeX] = color;
+            }
+        }
+
+        pattern.pattern = newPattern;
+    }
     
     private Color32[] genofond = null;
     private Texture2D genofondScreenTex = null;
@@ -306,24 +405,47 @@ public class SimulationManager : MonoBehaviour
         genofondScreenTex.Apply();
     }
 
-    private Vector3 cameraSavedPosition = Vector3.zero;
+    private Vector3 cameraSavedPositionG = Vector3.zero;
 
     private void ShowHideGenofond()
     {
-        if (cameraSavedPosition == Vector3.zero) ShowGenofond();
+        if (cameraSavedPositionG == Vector3.zero) ShowGenofond();
         else HideGenofond();
     }
 
     private void ShowGenofond()
     {
-        cameraSavedPosition = mainCamera.transform.position;
+        cameraSavedPositionG = mainCamera.transform.position;
         mainCamera.transform.position = genofondScreen.transform.position - new Vector3(0, 0, 10);
     }
 
     private void HideGenofond()
     {
-        mainCamera.transform.position = cameraSavedPosition;
-        cameraSavedPosition = Vector3.zero;
+        mainCamera.transform.position = cameraSavedPositionG;
+        cameraSavedPositionG = Vector3.zero;
+    }
+
+    private Vector3 cameraSavedPositionP = Vector3.zero;
+
+    private void ShowHidePatternDrawer()
+    {
+        if (cameraSavedPositionP == Vector3.zero) ShowPatternDrawer();
+        else HidePatternDrawer();
+    }
+
+    private void ShowPatternDrawer()
+    {
+        if (!simulationPaused) PauseResumeSimulation();
+        cameraSavedPositionP = mainCamera.transform.position;
+        mainCamera.transform.position = patternDrawer.position - new Vector3(0, 0, 20);
+    }
+
+    private void HidePatternDrawer()
+    {
+        if (simulationPaused) PauseResumeSimulation();
+        UpdatePattern();
+        mainCamera.transform.position = cameraSavedPositionP;
+        cameraSavedPositionP = Vector3.zero;
     }
 
     #endregion
@@ -361,7 +483,26 @@ public class SimulationManager : MonoBehaviour
 
     private int IndexOfScreen(GameObject screen)
     {
-        return screens.IndexOf(screen.GetComponent<MeshRenderer>());
+        try
+        {
+            return screens.IndexOf(screen.GetComponent<MeshRenderer>());
+        }
+        catch (System.IndexOutOfRangeException)
+        {
+            return -1;
+        }
+    }
+
+    private int IndexOfPatternCell(GameObject screen)
+    {
+        try
+        {
+            return screens.IndexOf(screen.GetComponent<MeshRenderer>());
+        }
+        catch (System.IndexOutOfRangeException)
+        {
+            return -1;
+        }
     }
 
     private int focusedScreenIndex = -1;
@@ -394,8 +535,6 @@ public class SimulationManager : MonoBehaviour
         screen.transform.localScale = new Vector3(0.33f, 0.33f, 0.33f);
         mainCamera.transform.Translate(100, 0, 0);
         screen.transform.position = mainCamera.transform.position + new Vector3(0, 0, 5);
-
-        Debug.Log($"White-fitness: {CalculateFitness(TextureProcessor.GetTexture2DFromObject(screen), new short[]{ 0 }, 1, 1, 0)}");
     }
 
     private void UnFocusMiddleScreen(int index)
