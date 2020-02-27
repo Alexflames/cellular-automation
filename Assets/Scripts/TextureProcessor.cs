@@ -24,16 +24,23 @@ public static class TextureProcessor
     {
         Texture2D t2d = tx as Texture2D;
 
-        int t2dsize = t2d.width * t2d.height;
-        Color[] colors = new Color[t2dsize];
-        for (int i = 0; i < t2dsize; i++)
+        int t2dwidth = t2d.width;
+        int t2dheight = t2d.height;
+        Color[] colors = new Color[t2dwidth]; // 128 ?
+        for (int i = 0; i < t2dheight; i++)
         {
-            colors[i] = new Color(1, 1, 1, Random.Range(0, 2)); // {0, 1}
+            //var randomSequence = Random.Range(0, 2 * t2dwidth);
+            for (int j = 0; j < t2dwidth; j++)
+            {
+                colors[j] = new Color(1, 1, 1, Random.Range(0, 2)); // {0, 1}
+            }
+            t2d.SetPixels(0, i, t2dwidth, 1, colors);
         }
-        t2d.SetPixels(colors);
+        
         t2d.Apply();
 
-        return t2d as Texture;
+        colors = null;
+        return t2d;
     }
 
     public static CustomRenderTexture GetTextureFromObject(MeshRenderer meshRenderer)

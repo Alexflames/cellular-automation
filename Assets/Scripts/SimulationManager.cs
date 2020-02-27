@@ -5,8 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SimulationManager : MonoBehaviour
 {
-    [SerializeField, Header("Scene settings")]
-    private CustomRenderTexture screenTexture = null;
+    [Header("Scene settings")]
     [SerializeField]
     private Material cellularAutomationMaterial = null;
     [SerializeField]
@@ -80,11 +79,11 @@ public class SimulationManager : MonoBehaviour
 
     void Start()
     {
-        if (screenTexture == null)
-        {
-            Debug.LogError(new UnassignedReferenceException("No link to custom render texture prefab"));
-            return;
-        }
+        //if (screenTexture == null)
+        //{
+        //    Debug.LogError(new UnassignedReferenceException("No link to custom render texture prefab"));
+        //    return;
+        //}
 
         for (int i = 0; i < ScreensCount(); i++)
         {
@@ -108,7 +107,7 @@ public class SimulationManager : MonoBehaviour
     private void InitializeScreen(MeshRenderer screen)
     {
         var customRenderTexture = new CustomRenderTexture(screenSizeInPixels, screenSizeInPixels);
-        customRenderTexture.initializationTexture = TextureProcessor.CreateRandomTexture(screenTexture.width, screenTexture.height);
+        customRenderTexture.initializationTexture = TextureProcessor.CreateRandomTexture(screenSizeInPixels, screenSizeInPixels);
         customRenderTexture.initializationMode = CustomRenderTextureUpdateMode.OnDemand;
         customRenderTexture.dimension = UnityEngine.Rendering.TextureDimension.Tex2D;
         customRenderTexture.updateMode = CustomRenderTextureUpdateMode.OnDemand;
@@ -225,7 +224,8 @@ public class SimulationManager : MonoBehaviour
     /// <returns></returns>
     private float CalculateFitness(Texture2D texture2D, Pattern pattern)
     {
-        var texturePixels = texture2D.GetRawTextureData<Color32>();
+        var texturePixels = texture2D.GetPixels32();
+        //var texturePixels = texture2D.GetRawTextureData<Color32>();
 
         int fitness = 0;
 
@@ -460,10 +460,10 @@ public class SimulationManager : MonoBehaviour
         for (int i = 0; i < ScreensCount(); i++)
         {
             RefreshScreen(i);
-            if (i % 8 == 0)
-            {
-                yield return new WaitForEndOfFrame();
-            }
+            //if (i % 32 == 0)
+            //{
+            //    yield return new WaitForEndOfFrame();
+            //}
         }
 
         yield return null;
