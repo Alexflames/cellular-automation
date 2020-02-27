@@ -1500,6 +1500,8 @@ MonoBehaviour:
     patternSizeX: 0
     patternSizeY: 0
     patternErrors: 0
+  fitnessCalculationsNeeded: 20
+  fitnessCalcScreensPerFrame: 16
 --- !u!1 &49127294
 GameObject:
   m_ObjectHideFlags: 0

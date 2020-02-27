@@ -55,6 +55,17 @@ public class SimulationManager : MonoBehaviour
     private Transform patternDrawer = null;
     private Material[] patternCellsMat = new Material[400];
 
+    public Pattern pattern;
+
+    private int fitnessCalculations = 0;
+    private float[] maxScreenFitness;
+
+    [SerializeField, Header("Performance-based fields")]
+    private int fitnessCalculationsNeeded = 5;
+    [SerializeField]
+    private int fitnessCalcScreensPerFrame = 32;
+    
+
 
     [System.Serializable]
     public struct Pattern
@@ -73,7 +84,7 @@ public class SimulationManager : MonoBehaviour
         }
     };
 
-    public Pattern pattern;
+    
 
     private const int RULE_SIZE = 512;
 
@@ -99,7 +110,15 @@ public class SimulationManager : MonoBehaviour
             patternCellsMat[i] = meshRenderer.material;
         }
 
-        pattern = new Pattern(3, 3, 2, new short[9] { 0, 0, 0, 0, 1, 0, 0, 0, 0 }); // Save/Load patterns?
+        screenTex2D = new Texture2D[ScreensCount()];
+        for (int i = 0; i < ScreensCount(); i++)
+        {
+            screenTex2D[i] = TextureProcessor.CreateTexture2DFromObject(screens[i]);
+        }
+
+        maxScreenFitness = new float[ScreensCount()];
+
+        pattern = new Pattern(3, 3, 1, new short[9] { 1, 1, 1, 0, 0, 0, 1, 1, 1 }); // Save/Load patterns?
 
         mainCamera = Camera.main;
     }
@@ -202,29 +221,31 @@ public class SimulationManager : MonoBehaviour
         if (!simulationPaused && timeToEvolution > 0.5f)
         {
             timeToEvolutionPassed += Time.fixedDeltaTime;
-            if (timeToEvolutionPassed >= timeToEvolution)
+            if (timeToEvolutionPassed >= timeToEvolution && fitnessRecalculated)
             {
-                timeToEvolutionPassed = 0;
-                StartCoroutine(Evolve());
+                if (fitnessCalculations < fitnessCalculationsNeeded)
+                {
+                    fitnessCalculations++;
+                    StartCoroutine(FullRecalculateFitness());
+                }
+                else if (fitnessCalculations == fitnessCalculationsNeeded)
+                {
+                    StartCoroutine(Evolve());
+                    timeToEvolutionPassed = 0;
+                    fitnessCalculations = 0;
+                }
             }
         }
     }
 
     #region evolution-algorithm
-    
-    /// <summary>
-    /// Calculates fitness of current cellular state machine.
-    /// More fitness -> more likely that it stays and evolves in future generations
-    /// </summary>
-    /// <param name="texture2D">Texture with pixels to process</param>
-    /// <param name="blockFitnessRule">Pattern to match</param>
-    /// <param name="fitnessBlockWidth">Pattern width</param>
-    /// <param name="fitnessBlockHeight">Pattern height</param>
-    /// <param name="errors">The maximum allowed errors in pattern</param>
-    /// <returns></returns>
+
+    private Color32[] texturePixels;
+    private Texture2D[] screenTex2D = null;
+
     private float CalculateFitness(Texture2D texture2D, Pattern pattern, int frames = 1)
     {
-        var texturePixels = texture2D.GetPixels32();
+        texturePixels = texture2D.GetPixels32();
         //var texturePixels = texture2D.GetRawTextureData<Color32>();
 
         int fitness = 0;
@@ -236,54 +257,59 @@ public class SimulationManager : MonoBehaviour
         var patternErrors = pattern.patternErrors;
         var patternRule = pattern.pattern;
         int currentErrors = 0;
-        for (int f = 0; f < frames; f++)
+        for (int i = 0; i < textureHeight; i++)
         {
-            //yield return new WaitForEndOfFrame();
-            for (int i = 0; i < textureHeight; i++)
+            for (int j = 0; j < textureWidth; j++)
             {
-                for (int j = 0; j < textureWidth; j++)
+                int cornerPixel = j + i * textureWidth;
+                currentErrors = 0;
+                for (int ir = 0; ir < patternHeight; ir++)
                 {
-                    int cornerPixel = j + i * textureWidth;
-                    currentErrors = 0;
-                    for (int ir = 0; ir < patternHeight; ir++)
+                    for (int jr = 0; jr < patternWidth; jr++)
                     {
-                        for (int jr = 0; jr < patternWidth; jr++)
-                        {
-                            // Color32 = (255, 255, 255, 255/0)
-                            // I convert it to (1, 1, 1, 1/0)
-                            // And compare with corresponding cell in fitness rule
-                            int pixelIndex = (cornerPixel + ir + jr * textureHeight) % (textureWidth * textureHeight);
-                            currentErrors += (texturePixels[pixelIndex].a == 255 ? 1 : 0)
-                                == patternRule[jr + ir * patternWidth] ? 1 : 0;
-                        }
+                        // Color32 = (255, 255, 255, 255/0)
+                        // I convert it to (1, 1, 1, 1/0)
+                        // And compare with corresponding cell in fitness rule
+                        int pixelIndex = (cornerPixel + ir + jr * textureHeight) % (textureWidth * textureHeight);
+                        currentErrors += (texturePixels[pixelIndex].a == 255 ? 1 : 0)
+                            == patternRule[jr + ir * patternWidth] ? 1 : 0;
                     }
-
-                    fitness += currentErrors <= patternErrors ? 1 : 0;
                 }
+
+                fitness += currentErrors <= patternErrors ? 1 : 0;
             }
         }
-
-
-        //yield 
+        
         return fitness * 1f / (textureWidth * textureHeight);
         //return 1f - (currentErrors / (patternHeight * patternWidth)) * 1f / (textureWidth * textureHeight) ;
     }
 
+    bool fitnessRecalculated = true;
+    private IEnumerator FullRecalculateFitness()
+    {
+        fitnessRecalculated = false;
+
+        for (int i = 0; i < ScreensCount(); i++)
+        {
+            TextureProcessor.GetTexture2DFromObject(screens[i], ref screenTex2D[i]);
+            var fitness = CalculateFitness(screenTex2D[i], pattern);
+            maxScreenFitness[i] = Mathf.Max(maxScreenFitness[i], fitness);
+            if ((i + 1) % fitnessCalcScreensPerFrame == 0)
+            {
+                yield return new WaitForEndOfFrame();
+            }
+        }
+
+        fitnessRecalculated = true;
+        yield return null;
+    }
+
     private IEnumerator Evolve()
     {
-        // >>>Fitness calculation<<<
-
-
         List<KeyValuePair<int, float>> indexFitness = new List<KeyValuePair<int, float>>();
         for (int i = 0; i < ScreensCount(); i++)
         {
-            var fitness = CalculateFitness(TextureProcessor.GetTexture2DFromObject(screens[i]), pattern);
-            indexFitness.Add(new KeyValuePair<int, float>(i, fitness));
-
-            //if (i % 8 == 0)
-            //{
-            //    yield return new WaitForEndOfFrame();
-            //}
+            indexFitness.Add(new KeyValuePair<int, float>(i, maxScreenFitness[i]));
         }
 
 
@@ -357,6 +383,7 @@ public class SimulationManager : MonoBehaviour
 
         StartCoroutine(RefreshAllScreens());
         UpdateGenofond();
+        maxScreenFitness = new float[ScreensCount()];
         yield return null;
     }
 

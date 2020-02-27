@@ -58,14 +58,25 @@ public static class TextureProcessor
         return GetTextureFromObject(obj.GetComponent<MeshRenderer>());
     }
 
-    public static Texture2D GetTexture2DFromObject(MeshRenderer meshRenderer)
+    public static Texture2D CreateTexture2DFromObject(MeshRenderer meshRenderer)
     {
         RenderTexture tex = meshRenderer.material.mainTexture as RenderTexture;
         RenderTexture.active = tex;
-        Texture2D tex2D = new Texture2D(tex.width, tex.height);
+
+        Texture2D tex2D = new Texture2D(tex.width, tex.height, TextureFormat.ARGB32, false);
         tex2D.ReadPixels(new Rect(0, 0, tex.width, tex.height), 0, 0);
         tex2D.Apply();
         return tex2D;
+    }
+
+    public static void GetTexture2DFromObject(MeshRenderer meshRenderer, ref Texture2D tex2D)
+    {
+        RenderTexture tex = meshRenderer.material.mainTexture as RenderTexture;
+        RenderTexture.active = tex;
+
+        tex2D.ReadPixels(new Rect(0, 0, tex.width, tex.height), 0, 0);
+        tex2D.Apply();
+        //return tex2D;
     }
 
     /// <summary>
@@ -73,8 +84,8 @@ public static class TextureProcessor
     /// </summary>
     /// <param name="obj"></param>
     /// <returns></returns>
-    public static Texture2D GetTexture2DFromObject(GameObject obj)
-    {
-        return GetTexture2DFromObject(obj.GetComponent<MeshRenderer>());
-    }
+    //public static Texture2D GetTexture2DFromObject(GameObject obj)
+    //{
+    //    return GetTexture2DFromObject(obj.GetComponent<MeshRenderer>());
+    //}
 }
