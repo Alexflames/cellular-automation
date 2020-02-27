@@ -1490,8 +1490,8 @@ MonoBehaviour:
     type: 2}
   screenSettingsObject: {fileID: 503539456}
   updatePeriod: 0.03
-  screenSizeInPixels: 64
-  screensInSimulation: 256
+  screenSizeInPixels: 32
+  screensInSimulation: 128
   timeToEvolution: 4
   mutationPercent: 7
   genofondScreen: {fileID: 2004998649}

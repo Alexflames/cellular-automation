@@ -223,7 +223,7 @@ public class SimulationManager : MonoBehaviour
     /// <param name="fitnessBlockHeight">Pattern height</param>
     /// <param name="errors">The maximum allowed errors in pattern</param>
     /// <returns></returns>
-    private float CalculateFitness(Texture2D texture2D, Pattern pattern)
+    private float CalculateFitness(Texture2D texture2D, Pattern pattern, int frames = 1)
     {
         var texturePixels = texture2D.GetRawTextureData<Color32>();
 
@@ -236,28 +236,35 @@ public class SimulationManager : MonoBehaviour
         var patternErrors = pattern.patternErrors;
         var patternRule = pattern.pattern;
         int currentErrors = 0;
-        for (int i = 0; i < textureHeight; i++)
+        for (int f = 0; f < frames; f++)
         {
-            for (int j = 0; j < textureWidth; j++)
+            //yield return new WaitForEndOfFrame();
+            for (int i = 0; i < textureHeight; i++)
             {
-                int cornerPixel = j + i * textureWidth;
-                for (int ir = 0; ir < patternHeight; ir++)
+                for (int j = 0; j < textureWidth; j++)
                 {
-                    for (int jr = 0; jr < patternWidth; jr++)
+                    int cornerPixel = j + i * textureWidth;
+                    currentErrors = 0;
+                    for (int ir = 0; ir < patternHeight; ir++)
                     {
-                        // Color32 = (255, 255, 255, 255/0)
-                        // I convert it to (1, 1, 1, 1/0)
-                        // And compare with corresponding cell in fitness rule
-                        int pixelIndex = (cornerPixel + ir + jr * textureHeight) % (textureWidth * textureHeight);
-                        currentErrors += (texturePixels[pixelIndex].a == 255 ? 1 : 0) 
-                            == patternRule[jr + ir * patternWidth] ? 1 : 0;
+                        for (int jr = 0; jr < patternWidth; jr++)
+                        {
+                            // Color32 = (255, 255, 255, 255/0)
+                            // I convert it to (1, 1, 1, 1/0)
+                            // And compare with corresponding cell in fitness rule
+                            int pixelIndex = (cornerPixel + ir + jr * textureHeight) % (textureWidth * textureHeight);
+                            currentErrors += (texturePixels[pixelIndex].a == 255 ? 1 : 0)
+                                == patternRule[jr + ir * patternWidth] ? 1 : 0;
+                        }
                     }
-                }
 
-                fitness += currentErrors <= patternErrors ? 1 : 0;
+                    fitness += currentErrors <= patternErrors ? 1 : 0;
+                }
             }
         }
 
+
+        //yield 
         return fitness * 1f / (textureWidth * textureHeight);
         //return 1f - (currentErrors / (patternHeight * patternWidth)) * 1f / (textureWidth * textureHeight) ;
     }
