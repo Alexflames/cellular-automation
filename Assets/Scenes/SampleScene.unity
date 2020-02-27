@@ -1482,17 +1482,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7159640e9560c941b1a697ca7de152a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screenTexture: {fileID: 8600000, guid: b4d12fcec5dd94f4584d542ea3220025, type: 2}
   cellularAutomationMaterial: {fileID: 2100000, guid: b36bf2c5d9c228342b49f52cc410a286,
     type: 2}
   screens: []
   screenMaterialPrefab: {fileID: 2100000, guid: 3cac400f2bf1bd54d93772c80c642798,
     type: 2}
   screenSettingsObject: {fileID: 503539456}
-  updatePeriod: 0.03
+  updatePeriod: 0.01
   screenSizeInPixels: 64
   screensInSimulation: 256
-  timeToEvolution: 4
+  timeToEvolution: 1.5
   mutationPercent: 7
   genofondScreen: {fileID: 2004998649}
   patternDrawer: {fileID: 1810214746}
