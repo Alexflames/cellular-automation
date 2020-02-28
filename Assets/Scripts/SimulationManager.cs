@@ -48,6 +48,7 @@ public class SimulationManager : MonoBehaviour
     private float timeToEvolution = 3f;
     [SerializeField]
     private float mutationPercent = 7;
+    private int evolutionStep = 0;
 
     [SerializeField]
     private MeshRenderer genofondScreen = null;
@@ -230,6 +231,7 @@ public class SimulationManager : MonoBehaviour
                 }
                 else if (fitnessCalculations == fitnessCalculationsNeeded)
                 {
+                    evolutionStep++;
                     StartCoroutine(Evolve());
                     timeToEvolutionPassed = 0;
                     fitnessCalculations = 0;
@@ -280,7 +282,7 @@ public class SimulationManager : MonoBehaviour
             }
         }
         
-        return fitness * 1f / (textureWidth * textureHeight);
+        return fitness * 100f / (textureWidth * textureHeight);
         //return 1f - (currentErrors / (patternHeight * patternWidth)) * 1f / (textureWidth * textureHeight) ;
     }
 
@@ -334,7 +336,8 @@ public class SimulationManager : MonoBehaviour
         }
         averageGoodFitness /= indexFitness.Count;
         
-        Debug.Log($"Maximum fitness: {indexFitness[0].Value.ToString("0.00000")}. Average fitness: {averageFitness.ToString("0.00000")}. Average good fitness: {averageGoodFitness.ToString("0.00000")}");
+        Debug.Log($"<Evolution #{evolutionStep}> Maximum fitness: {indexFitness[0].Value.ToString("0.0000")}%.\n" +
+            $"Average good fitness: {averageGoodFitness.ToString("0.0000")}%. Average fitness: {averageFitness.ToString("0.0000")}%");
 
         List<List<float>> newRules = new List<List<float>>();
         
