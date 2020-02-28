@@ -250,7 +250,7 @@ public class SimulationManager : MonoBehaviour
         texturePixels = texture2D.GetPixels32();
         //var texturePixels = texture2D.GetRawTextureData<Color32>();
 
-        int fitness = 0;
+        float fitness = 0;
 
         int textureWidth = texture2D.width; int textureHeight = texture2D.height;
 
@@ -259,6 +259,16 @@ public class SimulationManager : MonoBehaviour
         var patternErrors = pattern.patternErrors;
         var patternRule = pattern.pattern;
         int currentErrors = 0;
+
+        //int[] patternSequenceWidth
+        for (int i = 0; i < patternHeight; i++)
+        {
+            for (int j = 0; j < patternWidth; j++)
+            {
+
+            }
+        }
+
         for (int i = 0; i < textureHeight; i++)
         {
             for (int j = 0; j < textureWidth; j++)
@@ -276,13 +286,14 @@ public class SimulationManager : MonoBehaviour
                         currentErrors += (texturePixels[pixelIndex].a == 255 ? 1 : 0)
                             == patternRule[jr + ir * patternWidth] ? 1 : 0;
                     }
+                    if (currentErrors > patternErrors) break;
                 }
 
-                fitness += currentErrors <= patternErrors ? 1 : 0;
+                fitness += currentErrors <= patternErrors ? (patternErrors - currentErrors) * 1f / patternErrors : 0;
             }
         }
         
-        return fitness * 100f / (textureWidth * textureHeight);
+        return fitness * 100 / (textureWidth * textureHeight);
         //return 1f - (currentErrors / (patternHeight * patternWidth)) * 1f / (textureWidth * textureHeight) ;
     }
 
