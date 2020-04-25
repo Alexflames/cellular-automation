@@ -1,72 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class SimulationManager : MonoBehaviour
 {
     [Header("Scene settings")]
-    [SerializeField]
-    private Material cellularAutomationMaterial = null;
-    [SerializeField]
-    private List<MeshRenderer> screens = new List<MeshRenderer>();
-    [SerializeField]
-    private Material screenMaterialPrefab = null;
+    [SerializeField] private Material cellularAutomationMaterial = null;
+    [SerializeField] private Material screenMaterialPrefab = null;
 
-    [SerializeField]
-    private GameObject screenSettingsObject = null;
-
-    [SerializeField, Header("Simulation settings")]
-    private float updatePeriod = 0.05f;
-    [SerializeField]
-    private int screenSizeInPixels = 128;
-    [SerializeField]
-    private int screensInSimulation = 128;
-
-    private List<CustomRenderTexture> customRenderTextures = new List<CustomRenderTexture>();
-    
-    private List<List<float>> allRules = new List<List<float>>();
-
-    private List<float> InitializeRandomRules(int size)
-    {
-        List<float> rules = new List<float>();
-        for (int i = 0; i < size; i++)
-        {
-            rules.Add(Random.Range(0, 2)); // {0, 1}
-        }
-        return rules;
-    }
-
-    public void AddScreenToSimulation(MeshRenderer screen)
-    {
-        screens.Add(screen);
-        InitializeScreen(screen);
-    }
+    [Header("Simulation settings"),
+     SerializeField] private float updatePeriod = 0.05f;
+    [SerializeField] private int screenSizeInPixels = 128;
+    [SerializeField] private int virtualScreensInSimulation = 128;
+    [SerializeField] private int screensInSimulation = 32;
 
     private float timeToEvolutionPassed = 0f;
-    [SerializeField, Header("Evolution")]
-    private float timeToEvolution = 3f;
-    [SerializeField]
-    private float mutationPercent = 7;
+    [Header("Evolution"),
+     SerializeField] private float timeToEvolution = 3f;
+    [SerializeField] private float mutationPercent = 7;
     private int evolutionStep = 0;
 
-    [SerializeField]
-    private MeshRenderer genofondScreen = null;
-    [SerializeField]
-    private Transform patternDrawer = null;
-    private Material[] patternCellsMat = new Material[400];
-
+    public MeshRenderer genofondScreen = null;
     public Pattern pattern;
 
-    private int fitnessCalculations = 0;
-    private float[] maxScreenFitness;
+    [Header("Performance-based fields"),
+     SerializeField] private int fitnessCalculationsNeeded = 5;
+    [SerializeField] private int fitnessCalcScreensPerFrame = 32;
 
-    [SerializeField, Header("Performance-based fields")]
-    private int fitnessCalculationsNeeded = 5;
-    [SerializeField]
-    private int fitnessCalcScreensPerFrame = 32;
-    
-
+    [HideInInspector] public bool simulationPaused = false;
 
     [System.Serializable]
     public struct Pattern
@@ -85,30 +46,20 @@ public class SimulationManager : MonoBehaviour
         }
     };
 
-    
-
-    private const int RULE_SIZE = 512;
+    private const short RULE_SIZE = 512;
 
     void Start()
     {
-        //if (screenTexture == null)
-        //{
-        //    Debug.LogError(new UnassignedReferenceException("No link to custom render texture prefab"));
-        //    return;
-        //}
-
-        for (int i = 0; i < ScreensCount(); i++)
+        // Virtual screens
+        for (int i = 0; i < virtualScreensInSimulation; i++)
         {
-            AddScreenToSimulation(transform.GetChild(i).GetComponent<MeshRenderer>());
+            allRules.Add(InititalizeRandomRule());
         }
 
-        var patternDrawerTransform = patternDrawer.transform;
-        var patternDrawerCellsCount = patternDrawerTransform.childCount;
-        for (int i = 0; i < patternDrawerCellsCount; i++)
+        // Visual screens
+        for (int i = 0; i < ScreensCount(); i++)
         {
-            var meshRenderer = patternDrawerTransform.GetChild(i).GetComponent<MeshRenderer>();
-            meshRenderer.material = new Material(meshRenderer.material);
-            patternCellsMat[i] = meshRenderer.material;
+            AddScreenToSimulation(transform.GetChild(i).GetComponent<MeshRenderer>(), i);
         }
 
         screenTex2D = new Texture2D[ScreensCount()];
@@ -117,14 +68,54 @@ public class SimulationManager : MonoBehaviour
             screenTex2D[i] = TextureProcessor.CreateTexture2DFromObject(screens[i]);
         }
 
+        // Pattern & evolution
         maxScreenFitness = new float[ScreensCount()];
 
         pattern = new Pattern(3, 3, 1, new short[9] { 1, 1, 1, 0, 0, 0, 1, 1, 1 }); // Save/Load patterns?
-
-        mainCamera = Camera.main;
     }
 
-    private void InitializeScreen(MeshRenderer screen)
+    private const byte ruleInitBitOptimizationBy = 16;
+    private float[] InititalizeRandomRule()
+    {
+        var rule = new float[RULE_SIZE];
+        var cycleLength = RULE_SIZE / ruleInitBitOptimizationBy;
+        for (short i = 0; i < cycleLength; i++)
+        {
+            var generatedRandom = Random.Range(0, 1 << ruleInitBitOptimizationBy);
+            for (byte j = 0; j < ruleInitBitOptimizationBy; j++)
+            {
+                rule[i * ruleInitBitOptimizationBy + j] = generatedRandom % 2;
+                generatedRandom = generatedRandom >>= 1;
+            }
+        }
+        return rule;
+    }
+
+    byte screenInitBitOptimisation = 16;
+    public Color32[] InitializeVirtualScreen()
+    {
+        var screenSize = screenSizeInPixels * screenSizeInPixels;
+        var screen = new Color32[screenSize];
+        var cycleLength = screenSize / ruleInitBitOptimizationBy;
+        for (short i = 0; i < cycleLength; i++)
+        {
+            var generatedRandom = Random.Range(0, 1 << ruleInitBitOptimizationBy);
+            for (byte j = 0; j < ruleInitBitOptimizationBy; j++)
+            {
+                screen[i * ruleInitBitOptimizationBy + j] = new Color32(255, 255, 255, (byte)(255 * (generatedRandom % 2)));
+                generatedRandom = generatedRandom >>= 1;
+            }
+        }
+        return screen;
+    }
+
+    public void AddScreenToSimulation(MeshRenderer screen, int screenInd)
+    {
+        screens.Add(screen);
+        InitializeScreen(screen, screenInd);
+    }
+
+    private void InitializeScreen(MeshRenderer screen, int screenInd)
     {
         var customRenderTexture = new CustomRenderTexture(screenSizeInPixels, screenSizeInPixels);
         customRenderTexture.initializationTexture = TextureProcessor.CreateRandomTexture(screenSizeInPixels, screenSizeInPixels);
@@ -134,10 +125,8 @@ public class SimulationManager : MonoBehaviour
         customRenderTexture.doubleBuffered = true;
         customRenderTexture.wrapMode = TextureWrapMode.Repeat;
         customRenderTexture.material = new Material(cellularAutomationMaterial);
-
-        var rule = InitializeRandomRules(RULE_SIZE);
-        customRenderTexture.material.SetFloatArray("_rule", rule);
-        allRules.Add(rule);
+        
+        customRenderTexture.material.SetFloatArray("_rule", allRules[screenInd]);
         customRenderTexture.Initialize();
 
         var material = new Material(screenMaterialPrefab);
@@ -146,68 +135,9 @@ public class SimulationManager : MonoBehaviour
         customRenderTextures.Add(customRenderTexture);
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R) && Input.GetKey(KeyCode.LeftShift))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
-        if (Input.GetMouseButtonDown(0) && screenSettingsObject.activeSelf == false)
-        {
-            if (cameraSavedPositionP != Vector3.zero)
-            {
-                Physics.Raycast(mainCamera.ScreenPointToRay(Input.mousePosition), out RaycastHit hitinfo, 100);
-                if (hitinfo.collider != null)
-                {
-                    var material = hitinfo.collider.GetComponent<MeshRenderer>().material;
-                    if (material.color == Color.white) material.color = Color.black;
-                    else material.color = Color.white;
-                }
-            }
-            else
-            {
-                // Raycast mouse click to find screen to choose (stored in hitinfo)
-                Physics.Raycast(mainCamera.ScreenPointToRay(Input.mousePosition), out RaycastHit hitinfo, 100);
-                // Клик попал в экран + костыль для того чтобы при нажатии на интерфейс не задевало
-                if (hitinfo.collider != null)
-                {
-                    var screenNumber = IndexOfScreen(hitinfo.collider.gameObject);
-                    if (screenNumber != -1 && (Input.mousePosition.y > 66f || Input.mousePosition.x > 600 || Input.mousePosition.x < 350))
-                    {
-                        OpenScreenSettings(hitinfo.collider.gameObject);
-                    }
-                }
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            if (focusedScreenIndex != -1)
-            {
-                RefreshScreen(focusedScreenIndex);
-            }
-            else
-            {
-                RefreshAllScreens();
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            PauseResumeSimulation();
-        }
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            ShowHideGenofond();
-        }
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            ShowHidePatternDrawer();
-        }
-    }
-
     void FixedUpdate()
     {
         // Camera movement
-        mainCamera.transform.Translate(new Vector3(Input.GetAxis("Horizontal") * 6, Input.GetAxis("Vertical") * 6, Input.GetAxis("Mouse ScrollWheel") * 750) * Time.fixedDeltaTime);
 
         updateFramesPassed += Time.deltaTime;
         if (updateFramesPassed >= updatePeriod)
@@ -240,6 +170,11 @@ public class SimulationManager : MonoBehaviour
         }
     }
 
+    private void UpdateCA()
+    {
+
+    }
+
     #region evolution-algorithm
 
     private Color32[] texturePixels;
@@ -252,14 +187,17 @@ public class SimulationManager : MonoBehaviour
         horizontal
     }
 
-    private float CalculateFitness(Texture2D texture2D, Pattern pattern, int frames = 1)
+    private float CalculateFitness(Texture2D texture2D, Pattern pattern)
     {
         texturePixels = texture2D.GetPixels32();
-        //var texturePixels = texture2D.GetRawTextureData<Color32>();
+        return CalculateFitness(texturePixels, texture2D.width, texture2D.height, pattern);
+    }
 
+    private float CalculateFitness(Color32[] texturePixels, int texW, int texH, Pattern pattern)
+    {
         float fitness = 0;
 
-        int textureWidth = texture2D.width; int textureHeight = texture2D.height;
+        int textureWidth = texW; int textureHeight = texH;
 
         var patternHeight = pattern.patternSizeY;
         var patternWidth = pattern.patternSizeX;
@@ -441,7 +379,7 @@ public class SimulationManager : MonoBehaviour
         Debug.Log($"<Evolution #{evolutionStep}> Maximum fitness: {indexFitness[0].Value.ToString("0.0000")}%.\n" +
             $"Average good fitness: {averageGoodFitness.ToString("0.0000")}%. Average fitness: {averageFitness.ToString("0.0000")}%");
 
-        List<List<float>> newRules = new List<List<float>>();
+        List<float[]> newRules = new List<float[]>();
         
         // >>>Crossbreeding<<<
 
@@ -459,12 +397,12 @@ public class SimulationManager : MonoBehaviour
             indexFitness.RemoveAt(parent2i);
 
             var crossSeparator = Random.Range(0, RULE_SIZE);
-            var sonRule = new List<float>();
-            var daughterRule = new List<float>();
+            var sonRule = new float[RULE_SIZE];
+            var daughterRule = new float[RULE_SIZE];
             for (int j = 0; j < RULE_SIZE; j++)
             {
-                sonRule.Add(j < crossSeparator ? parent1Rule[j] : parent2Rule[j]);
-                daughterRule.Add(j < crossSeparator ? parent2Rule[j] : parent1Rule[j]);
+                sonRule[j] = j < crossSeparator ? parent1Rule[j] : parent2Rule[j];
+                daughterRule[j] = j < crossSeparator ? parent2Rule[j] : parent1Rule[j];
             }
             newRules.Add(sonRule);
             newRules.Add(daughterRule);
@@ -489,31 +427,6 @@ public class SimulationManager : MonoBehaviour
         RefreshAllScreens();
         UpdateGenofond();
         maxScreenFitness = new float[ScreensCount()];
-    }
-
-    // Pattern Settings
-    private void UpdatePattern(int sizeX, int sizeY, int errors)
-    {
-        pattern = new Pattern(sizeX, sizeY, errors);
-    }
-
-    // Pattern itself
-    private void UpdatePattern()
-    {
-        short[] newPattern = new short[pattern.patternSizeX * pattern.patternSizeY];
-
-        int MAGIC_CONSTANT = 20; // 20 screens maximum in row. Used in transform hierarchy
-        for (int i = 0; i < pattern.patternSizeY; i++)
-        {
-            for (int j = 0; j < pattern.patternSizeX; j++)
-            {
-                short color = 1;
-                if (patternCellsMat[j + i * MAGIC_CONSTANT].color == Color.white) color = 0;
-                newPattern[j + i * pattern.patternSizeX] = color;
-            }
-        }
-
-        pattern.pattern = newPattern;
     }
     
     private Color32[] genofond = null;
@@ -543,48 +456,9 @@ public class SimulationManager : MonoBehaviour
         genofondScreenTex.Apply();
     }
 
-    private Vector3 cameraSavedPositionG = Vector3.zero;
+    
 
-    private void ShowHideGenofond()
-    {
-        if (cameraSavedPositionG == Vector3.zero) ShowGenofond();
-        else HideGenofond();
-    }
-
-    private void ShowGenofond()
-    {
-        cameraSavedPositionG = mainCamera.transform.position;
-        mainCamera.transform.position = genofondScreen.transform.position - new Vector3(0, 0, 10);
-    }
-
-    private void HideGenofond()
-    {
-        mainCamera.transform.position = cameraSavedPositionG;
-        cameraSavedPositionG = Vector3.zero;
-    }
-
-    private Vector3 cameraSavedPositionP = Vector3.zero;
-
-    private void ShowHidePatternDrawer()
-    {
-        if (cameraSavedPositionP == Vector3.zero) ShowPatternDrawer();
-        else HidePatternDrawer();
-    }
-
-    private void ShowPatternDrawer()
-    {
-        if (!simulationPaused) PauseResumeSimulation();
-        cameraSavedPositionP = mainCamera.transform.position;
-        mainCamera.transform.position = patternDrawer.position - new Vector3(0, 0, 20);
-    }
-
-    private void HidePatternDrawer()
-    {
-        if (simulationPaused) PauseResumeSimulation();
-        UpdatePattern();
-        mainCamera.transform.position = cameraSavedPositionP;
-        cameraSavedPositionP = Vector3.zero;
-    }
+    
 
     #endregion
 
@@ -593,7 +467,7 @@ public class SimulationManager : MonoBehaviour
         return Mathf.Min(transform.childCount, screensInSimulation);
     }
 
-    private void RefreshAllScreens()
+    public void RefreshAllScreens()
     {
         for (int i = 0; i < ScreensCount(); i++)
         {
@@ -601,7 +475,7 @@ public class SimulationManager : MonoBehaviour
         }
     }
 
-    private void RefreshScreen(int index)
+    public void RefreshScreen(int index)
     {
         var renderTexture = TextureProcessor.GetTextureFromObject(screens[index]);
         RefreshScreen(renderTexture);
@@ -613,7 +487,12 @@ public class SimulationManager : MonoBehaviour
         renderTexture.Initialize();
     }
 
-    private int IndexOfScreen(GameObject screen)
+    public MeshRenderer GetScreen(int index)
+    {
+        return screens[index];
+    } 
+
+    public int IndexOfScreen(GameObject screen)
     {
         try
         {
@@ -635,46 +514,6 @@ public class SimulationManager : MonoBehaviour
         {
             return -1;
         }
-    }
-
-    private int focusedScreenIndex = -1;
-
-    private void OpenScreenSettings(GameObject screen)
-    {
-        //if (!simulationPaused) PauseResumeSimulation();
-        //simulationSettingsPrefab.SetActive(false);
-        screenSettingsObject.SetActive(true);
-        focusedScreenIndex = IndexOfScreen(screen);
-        FocusMiddleScreen(focusedScreenIndex);
-    }
-
-    public void CloseScreenSettings()
-    {
-        //PauseResumeSimulation();
-        //simulationSettingsPrefab.SetActive(true);
-        screenSettingsObject.SetActive(false);
-        UnFocusMiddleScreen(focusedScreenIndex);
-        focusedScreenIndex = -1;
-    }
-
-    private Vector3 screenSavedPosition;
-    private Vector3 screenSavedScale;
-    private void FocusMiddleScreen(int index)
-    {
-        var screen = screens[index];
-        screenSavedPosition = screen.transform.position;
-        screenSavedScale = screen.transform.localScale;
-        screen.transform.localScale = new Vector3(0.33f, 0.33f, 0.33f);
-        mainCamera.transform.Translate(100, 0, 0);
-        screen.transform.position = mainCamera.transform.position + new Vector3(0, 0, 5);
-    }
-
-    private void UnFocusMiddleScreen(int index)
-    {
-        var screen = screens[index];
-        screen.transform.localScale = screenSavedScale;
-        screen.transform.position = screenSavedPosition;
-        mainCamera.transform.Translate(-100, 0, 0);
     }
 
     public void ChangeUpdatePeriod(float newUpdatePeriod)
@@ -709,10 +548,14 @@ public class SimulationManager : MonoBehaviour
         }
     }
 
-    private float updatePeriodSaved = 0;
-    private bool simulationPaused = false;
+    private List<float[]> allRules = new List<float[]>();
+    private List<Color32[]> virtualScreens = new List<Color32[]>();
+    private List<MeshRenderer> screens = new List<MeshRenderer>();
+    private List<CustomRenderTexture> customRenderTextures = new List<CustomRenderTexture>();
 
+    private float updatePeriodSaved = 0;
     private float updateFramesPassed = 0;
     
-    private Camera mainCamera = null;
+    private int fitnessCalculations = 0;
+    private float[] maxScreenFitness;
 }

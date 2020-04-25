@@ -1488,8 +1488,9 @@ MonoBehaviour:
   screenMaterialPrefab: {fileID: 2100000, guid: 3cac400f2bf1bd54d93772c80c642798,
     type: 2}
   screenSettingsObject: {fileID: 503539456}
-  updatePeriod: 0.01
+  updatePeriod: 0.05
   screenSizeInPixels: 64
+  virtualScreensInSimulation: 256
   screensInSimulation: 256
   timeToEvolution: 1.5
   mutationPercent: 7
@@ -1501,7 +1502,7 @@ MonoBehaviour:
     patternSizeY: 0
     patternErrors: 0
   fitnessCalculationsNeeded: 20
-  fitnessCalcScreensPerFrame: 16
+  fitnessCalcScreensPerFrame: 64
 --- !u!1 &49127294
 GameObject:
   m_ObjectHideFlags: 0

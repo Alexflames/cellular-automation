@@ -7,16 +7,7 @@ public static class TextureProcessor
     public static Texture CreateRandomTexture(int sizex, int sizey)
     {
         Texture2D t2d = new Texture2D(sizex, sizey);
-
-        int t2dsize = t2d.width * t2d.height;
-        Color[] colors = new Color[t2dsize];
-        for (int i = 0; i < t2dsize; i++)
-        {
-            colors[i] = new Color(1, 1, 1, Random.Range(0, 2)); // {0, 1}
-        }
-        t2d.SetPixels(colors);
-        t2d.Apply();
-
+        PaintRandomTexture(t2d);
         return t2d as Texture;
     }
 
@@ -24,22 +15,24 @@ public static class TextureProcessor
     {
         Texture2D t2d = tx as Texture2D;
 
-        int t2dwidth = t2d.width;
-        int t2dheight = t2d.height;
-        Color[] colors = new Color[t2dwidth]; // 128 ?
-        for (int i = 0; i < t2dheight; i++)
+        int t2dsize = t2d.width * t2d.height;
+        Color32[] colors = new Color32[t2dsize];
+        for (int i = 0; i < t2dsize; i++)
         {
-            //var randomSequence = Random.Range(0, 2 * t2dwidth);
-            for (int j = 0; j < t2dwidth; j++)
-            {
-                colors[j] = new Color(1, 1, 1, Random.Range(0, 2)); // {0, 1}
-            }
-            t2d.SetPixels(0, i, t2dwidth, 1, colors);
+            colors[i] = new Color32(255, 255, 255, (byte)(Random.Range(0, 2) * 255)); // {0, 1}
         }
-        
+        t2d.SetPixels32(colors);
         t2d.Apply();
 
         colors = null;
+        return t2d;
+    }
+
+    public static Texture PaintTexture(Texture tx, Color32[] pixels)
+    {
+        Texture2D t2d = tx as Texture2D;
+        t2d.SetPixels32(pixels);
+        t2d.Apply();
         return t2d;
     }
 
