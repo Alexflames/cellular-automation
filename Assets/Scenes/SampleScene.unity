@@ -1193,6 +1193,7 @@ GameObject:
   m_Component:
   - component: {fileID: 46086331}
   - component: {fileID: 46086332}
+  - component: {fileID: 46086333}
   m_Layer: 0
   m_Name: SimulationManager
   m_TagString: GameController
@@ -1484,25 +1485,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cellularAutomationMaterial: {fileID: 2100000, guid: b36bf2c5d9c228342b49f52cc410a286,
     type: 2}
-  screens: []
   screenMaterialPrefab: {fileID: 2100000, guid: 3cac400f2bf1bd54d93772c80c642798,
     type: 2}
-  screenSettingsObject: {fileID: 503539456}
   updatePeriod: 0.05
   screenSizeInPixels: 64
   virtualScreensInSimulation: 256
-  screensInSimulation: 256
+  screensInSimulation: 64
   timeToEvolution: 1.5
   mutationPercent: 7
   genofondScreen: {fileID: 2004998649}
-  patternDrawer: {fileID: 1810214746}
   pattern:
     pattern: 
     patternSizeX: 0
     patternSizeY: 0
     patternErrors: 0
   fitnessCalculationsNeeded: 20
-  fitnessCalcScreensPerFrame: 64
+  fitnessCalcScreensPerFrame: 128
+  simulationPaused: 0
+--- !u!114 &46086333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46086330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5503d355c179df84bb8b391851f2e015, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenSettingsObject: {fileID: 503539456}
+  patternDrawer: {fileID: 1810214746}
 --- !u!1 &49127294
 GameObject:
   m_ObjectHideFlags: 0

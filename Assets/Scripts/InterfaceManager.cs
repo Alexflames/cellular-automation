@@ -88,7 +88,7 @@ public class InterfaceManager : MonoBehaviour
     }
 
     // Pattern Settings
-    public void UpdatePattern(int sizeX, int sizeY, int errors)
+    public void UpdatePattern(byte sizeX, byte sizeY, byte errors)
     {
         simulationManager.pattern = new SimulationManager.Pattern(sizeX, sizeY, errors);
     }
@@ -97,20 +97,20 @@ public class InterfaceManager : MonoBehaviour
     public void UpdatePattern()
     {
         var pattern = simulationManager.pattern;
-        short[] newPattern = new short[pattern.patternSizeX * pattern.patternSizeY];
+        byte[] newPattern = new byte[pattern.patternSizeX * pattern.patternSizeY];
 
         int MAGIC_CONSTANT = 20; // 20 screens maximum in row. Used in transform hierarchy
         for (int i = 0; i < pattern.patternSizeY; i++)
         {
             for (int j = 0; j < pattern.patternSizeX; j++)
             {
-                short color = 1;
+                byte color = 1;
                 if (patternCellsMat[j + i * MAGIC_CONSTANT].color == Color.white) color = 0;
                 newPattern[j + i * pattern.patternSizeX] = color;
             }
         }
 
-        pattern.pattern = newPattern;
+        simulationManager.pattern.pattern = newPattern;
     }
 
     private void ShowHideGenofond()

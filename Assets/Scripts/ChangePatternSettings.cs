@@ -68,7 +68,7 @@ public class ChangePatternSettings : MonoBehaviour
     {
         if (text != "" && int.TryParse(text, out int res))
         {
-            simulationManager.pattern.patternSizeX = Mathf.Min(res, 20);
+            simulationManager.pattern.patternSizeX = (byte)Mathf.Min(res, 20);
             UpdatePatternEditor();
         }
     }
@@ -77,14 +77,14 @@ public class ChangePatternSettings : MonoBehaviour
     {
         if (text != "" && int.TryParse(text, out int res))
         {
-            simulationManager.pattern.patternSizeY = Mathf.Min(res, 20);
+            simulationManager.pattern.patternSizeY = (byte)Mathf.Min(res, 20);
             UpdatePatternEditor();
         }
     }
 
     void OnEndEditError(string text)
     {
-        if (text != "" && int.TryParse(text, out int res))
+        if (text != "" && byte.TryParse(text, out byte res))
         {
             simulationManager.pattern.patternErrors = res;
         }

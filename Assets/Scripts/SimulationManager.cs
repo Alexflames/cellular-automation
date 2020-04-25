@@ -32,12 +32,12 @@ public class SimulationManager : MonoBehaviour
     [System.Serializable]
     public struct Pattern
     {
-        public short[] pattern;
-        public int patternSizeX;
-        public int patternSizeY;
-        public int patternErrors;
+        public byte[] pattern;
+        public byte patternSizeX;
+        public byte patternSizeY;
+        public byte patternErrors;
 
-        public Pattern(int patternSizeX, int patternSizeY, int patternErrors, short[] pattern = null)
+        public Pattern(byte patternSizeX, byte patternSizeY, byte patternErrors, byte[] pattern = null)
         {
             this.patternSizeX = patternSizeX;
             this.patternSizeY = patternSizeY;
@@ -54,7 +54,10 @@ public class SimulationManager : MonoBehaviour
         for (int i = 0; i < virtualScreensInSimulation; i++)
         {
             allRules.Add(InititalizeRandomRule());
+            virtualScreens.Add(InitializeVirtualScreen());
+            nextVirtualScreens.Add(new byte[screenSizeInPixels * screenSizeInPixels]);
         }
+        texturePix = new byte[screenSizeInPixels * screenSizeInPixels];
 
         // Visual screens
         for (int i = 0; i < ScreensCount(); i++)
@@ -69,9 +72,9 @@ public class SimulationManager : MonoBehaviour
         }
 
         // Pattern & evolution
-        maxScreenFitness = new float[ScreensCount()];
+        maxScreenFitness = new float[virtualScreensInSimulation];
 
-        pattern = new Pattern(3, 3, 1, new short[9] { 1, 1, 1, 0, 0, 0, 1, 1, 1 }); // Save/Load patterns?
+        pattern = new Pattern(3, 3, 1, new byte[9] { 1, 1, 1, 0, 0, 0, 1, 1, 1 }); // Save/Load patterns?
     }
 
     private const byte ruleInitBitOptimizationBy = 16;
@@ -92,7 +95,7 @@ public class SimulationManager : MonoBehaviour
     }
 
     byte screenInitBitOptimisation = 16;
-    public Color32[] InitializeVirtualScreen()
+    public Color32[] InitializeNonVirtualScreen()
     {
         var screenSize = screenSizeInPixels * screenSizeInPixels;
         var screen = new Color32[screenSize];
@@ -103,6 +106,23 @@ public class SimulationManager : MonoBehaviour
             for (byte j = 0; j < ruleInitBitOptimizationBy; j++)
             {
                 screen[i * ruleInitBitOptimizationBy + j] = new Color32(255, 255, 255, (byte)(255 * (generatedRandom % 2)));
+                generatedRandom = generatedRandom >>= 1;
+            }
+        }
+        return screen;
+    }
+
+    public byte[] InitializeVirtualScreen()
+    {
+        var screenSize = screenSizeInPixels * screenSizeInPixels;
+        var screen = new byte[screenSize];
+        var cycleLength = screenSize / ruleInitBitOptimizationBy;
+        for (short i = 0; i < cycleLength; i++)
+        {
+            var generatedRandom = Random.Range(0, 1 << ruleInitBitOptimizationBy);
+            for (byte j = 0; j < ruleInitBitOptimizationBy; j++)
+            {
+                screen[i * ruleInitBitOptimizationBy + j] = (byte)(generatedRandom % 2);
                 generatedRandom = generatedRandom >>= 1;
             }
         }
@@ -135,7 +155,7 @@ public class SimulationManager : MonoBehaviour
         customRenderTextures.Add(customRenderTexture);
     }
 
-    void FixedUpdate()
+    void Update()
     {
         // Camera movement
 
@@ -145,6 +165,10 @@ public class SimulationManager : MonoBehaviour
             foreach(var texture in customRenderTextures)
             {
                 texture.Update();
+            }
+            for(int i = 0; i < virtualScreensInSimulation; i++)
+            {
+                UpdateCA(virtualScreens[i], nextVirtualScreens[i], i);
             }
             updateFramesPassed = 0;
         }
@@ -170,9 +194,33 @@ public class SimulationManager : MonoBehaviour
         }
     }
 
-    private void UpdateCA()
+    private byte[] UpdateCA(byte[] CAField, byte[] nextCAField, int ind)
     {
+        var screen2DSize = screenSizeInPixels * screenSizeInPixels;
+        for (short i = 0; i < screenSizeInPixels; i++)
+        {
+            for (short j = 0; j < screenSizeInPixels; j++)
+            {
+                // Смотрим пиксели в окрестности Мура
+                int signal = 0;
+                for (short k = 0; k < 3; k++)
+                {
+                    for (short m = 0; m < 3; m++)
+                    {
+                        signal += CAField[
+                            (screen2DSize + screenSizeInPixels * i + j
+                            + screenSizeInPixels * (k - 1) + (m - 1)) % (screen2DSize)] << (k * 3 + m);
+                    }
+                }
+                nextCAField[i * screenSizeInPixels + j] = (byte)allRules[i][signal];
+            }
+        }
 
+        for (short i = 0; i < screen2DSize; i++)
+        {
+            CAField[i] = nextCAField[i];
+        }
+        return nextCAField;
     }
 
     #region evolution-algorithm
@@ -193,7 +241,19 @@ public class SimulationManager : MonoBehaviour
         return CalculateFitness(texturePixels, texture2D.width, texture2D.height, pattern);
     }
 
+    byte[] texturePix = null;
     private float CalculateFitness(Color32[] texturePixels, int texW, int texH, Pattern pattern)
+    {
+        var texSize = texW * texH;
+        texturePix = new byte[texSize];
+        for (int i = 0; i < texSize; i++)
+        {
+            texturePix[i] = texturePixels[i].a;
+        }
+        return CalculateFitness(texturePix, texW, texH, pattern);
+    }
+
+    private float CalculateFitness(byte[] texturePixels, int texW, int texH, Pattern pattern)
     {
         float fitness = 0;
 
@@ -288,8 +348,7 @@ public class SimulationManager : MonoBehaviour
                         // I convert it to (1, 1, 1, 1/0)
                         // And compare with corresponding cell in fitness rule
                         int pixelIndex = (cornerPixel + ir + jr * textureHeight) % (textureWidth * textureHeight);
-                        currentErrors += (texturePixels[pixelIndex].a == 255 ? 1 : 0)
-                            == patternRule[jr + ir * patternWidth] ? 1 : 0;
+                        currentErrors += texturePixels[pixelIndex] == patternRule[jr + ir * patternWidth] ? 0 : 1;
                     }
                     if (currentErrors > patternErrors) break;
                 }
@@ -331,10 +390,11 @@ public class SimulationManager : MonoBehaviour
     {
         fitnessRecalculated = false;
 
-        for (int i = 0; i < ScreensCount(); i++)
+        for (int i = 0; i < virtualScreensInSimulation; i++)
         {
-            TextureProcessor.GetTexture2DFromObject(screens[i], ref screenTex2D[i]);
-            var fitness = CalculateFitness(screenTex2D[i], pattern);
+            //TextureProcessor.GetTexture2DFromObject(screens[i], ref screenTex2D[i]);
+            //var fitness = CalculateFitness(screenTex2D[i], pattern);
+            var fitness = CalculateFitness(virtualScreens[i], screenSizeInPixels, screenSizeInPixels, pattern);
             maxScreenFitness[i] = Mathf.Max(maxScreenFitness[i], fitness);
             if ((i + 1) % fitnessCalcScreensPerFrame == 0)
             {
@@ -349,7 +409,7 @@ public class SimulationManager : MonoBehaviour
     private void Evolve()
     {
         List<KeyValuePair<int, float>> indexFitness = new List<KeyValuePair<int, float>>();
-        for (int i = 0; i < ScreensCount(); i++)
+        for (int i = 0; i < virtualScreensInSimulation; i++)
         {
             indexFitness.Add(new KeyValuePair<int, float>(i, maxScreenFitness[i]));
         }
@@ -384,7 +444,7 @@ public class SimulationManager : MonoBehaviour
         // >>>Crossbreeding<<<
 
         // Требуется кратность четырём
-        for (int i = 0; i < screensInSimulation / 4; i++)
+        for (int i = 0; i < virtualScreensInSimulation / 4; i++)
         {
             var parent1i = Random.Range(0, indexFitness.Count);
             var parent1Rule = allRules[indexFitness[parent1i].Key];
@@ -418,15 +478,19 @@ public class SimulationManager : MonoBehaviour
             }
         }
 
-        for (int i = 0; i < ScreensCount(); i++)
+        for (int i = 0; i < virtualScreensInSimulation; i++)
         {
             allRules[i] = newRules[i];
+        }
+
+        for (int i = 0; i < ScreensCount(); i++)
+        {
             TextureProcessor.GetTextureFromObject(screens[i]).material.SetFloatArray("_rule", newRules[i]);
         }
 
         RefreshAllScreens();
         UpdateGenofond();
-        maxScreenFitness = new float[ScreensCount()];
+        maxScreenFitness = new float[virtualScreensInSimulation];
     }
     
     private Color32[] genofond = null;
@@ -435,10 +499,10 @@ public class SimulationManager : MonoBehaviour
     {
         if (genofondScreenTex == null || genofond == null)
         {
-            genofondScreenTex = new Texture2D(RULE_SIZE, ScreensCount());
+            genofondScreenTex = new Texture2D(RULE_SIZE, virtualScreensInSimulation);
         }
 
-        genofond = new Color32[ScreensCount() * RULE_SIZE];
+        genofond = new Color32[virtualScreensInSimulation * RULE_SIZE];
 
         for (int i = 0; i < allRules.Count; i++)
         {
@@ -455,10 +519,6 @@ public class SimulationManager : MonoBehaviour
         genofondScreenTex.SetPixels32(genofond);
         genofondScreenTex.Apply();
     }
-
-    
-
-    
 
     #endregion
 
@@ -549,7 +609,8 @@ public class SimulationManager : MonoBehaviour
     }
 
     private List<float[]> allRules = new List<float[]>();
-    private List<Color32[]> virtualScreens = new List<Color32[]>();
+    private List<byte[]> virtualScreens = new List<byte[]>();
+    private List<byte[]> nextVirtualScreens = new List<byte[]>();
     private List<MeshRenderer> screens = new List<MeshRenderer>();
     private List<CustomRenderTexture> customRenderTextures = new List<CustomRenderTexture>();
 
