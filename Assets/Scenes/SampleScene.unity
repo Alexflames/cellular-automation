@@ -574,7 +574,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 46086332}
+      - m_Target: {fileID: 46086333}
         m_MethodName: CloseScreenSettings
         m_Mode: 1
         m_Arguments:

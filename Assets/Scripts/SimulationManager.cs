@@ -99,13 +99,13 @@ public class SimulationManager : MonoBehaviour
     {
         var screenSize = screenSizeInPixels * screenSizeInPixels;
         var screen = new Color32[screenSize];
-        var cycleLength = screenSize / ruleInitBitOptimizationBy;
+        var cycleLength = screenSize / screenInitBitOptimisation;
         for (short i = 0; i < cycleLength; i++)
         {
-            var generatedRandom = Random.Range(0, 1 << ruleInitBitOptimizationBy);
-            for (byte j = 0; j < ruleInitBitOptimizationBy; j++)
+            var generatedRandom = Random.Range(0, 1 << screenInitBitOptimisation);
+            for (byte j = 0; j < screenInitBitOptimisation; j++)
             {
-                screen[i * ruleInitBitOptimizationBy + j] = new Color32(255, 255, 255, (byte)(255 * (generatedRandom % 2)));
+                screen[i * screenInitBitOptimisation + j] = new Color32(255, 255, 255, (byte)(255 * (generatedRandom % 2)));
                 generatedRandom = generatedRandom >>= 1;
             }
         }
@@ -212,7 +212,7 @@ public class SimulationManager : MonoBehaviour
                             + screenSizeInPixels * (k - 1) + (m - 1)) % (screen2DSize)] << (k * 3 + m);
                     }
                 }
-                nextCAField[i * screenSizeInPixels + j] = (byte)allRules[i][signal];
+                nextCAField[i * screenSizeInPixels + j] = (byte)allRules[ind][signal];
             }
         }
 
@@ -347,8 +347,9 @@ public class SimulationManager : MonoBehaviour
                         // Color32 = (255, 255, 255, 255/0)
                         // I convert it to (1, 1, 1, 1/0)
                         // And compare with corresponding cell in fitness rule
-                        int pixelIndex = (cornerPixel + ir + jr * textureHeight) % (textureWidth * textureHeight);
-                        currentErrors += texturePixels[pixelIndex] == patternRule[jr + ir * patternWidth] ? 0 : 1;
+                        int pixelIndex = (cornerPixel + ir * textureWidth + jr) % (textureWidth * textureHeight);
+                        //jr or ir ?
+                        currentErrors += texturePixels[pixelIndex] == patternRule[ir * patternWidth + jr] ? 0 : 1;
                     }
                     if (currentErrors > patternErrors) break;
                 }
@@ -357,6 +358,7 @@ public class SimulationManager : MonoBehaviour
             }
         }
 
+        // Saved for texure, it has different indexing
         //for (int i = 0; i < textureHeight; i++)
         //{
         //    for (int j = 0; j < textureWidth; j++)
