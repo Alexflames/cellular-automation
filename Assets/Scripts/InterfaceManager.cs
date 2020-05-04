@@ -83,34 +83,34 @@ public class InterfaceManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.T))
         {
-            ShowHidePatternDrawer();
+            //ShowHidePatternDrawer();
         }
     }
 
     // Pattern Settings
     public void UpdatePattern(byte sizeX, byte sizeY, byte errors)
     {
-        simulationManager.pattern = new SimulationManager.Pattern(sizeX, sizeY, errors);
+        simulationManager.patterns[0] = new SimulationManager.Pattern(sizeX, sizeY, errors);
     }
 
     // Pattern itself
     public void UpdatePattern()
     {
-        var pattern = simulationManager.pattern;
-        byte[] newPattern = new byte[pattern.patternSizeX * pattern.patternSizeY];
+        var patterns = simulationManager.patterns;
+        byte[] newPattern = new byte[patterns[0].patternSizeX * patterns[0].patternSizeY];
 
         int MAGIC_CONSTANT = 20; // 20 screens maximum in row. Used in transform hierarchy
-        for (int i = 0; i < pattern.patternSizeY; i++)
+        for (int i = 0; i < patterns[0].patternSizeY; i++)
         {
-            for (int j = 0; j < pattern.patternSizeX; j++)
+            for (int j = 0; j < patterns[0].patternSizeX; j++)
             {
                 byte color = 1;
-                if (patternCellsMat[j + i * MAGIC_CONSTANT].color == Color.white) color = 0;
-                newPattern[j + i * pattern.patternSizeX] = color;
+                if (patternCellsMat[j + i * MAGIC_CONSTANT].color == Color.black) color = 0;
+                newPattern[j + i * patterns[0].patternSizeX] = color;
             }
         }
 
-        simulationManager.pattern.pattern = newPattern;
+        simulationManager.patterns[0].pattern = newPattern;
     }
 
     private void ShowHideGenofond()

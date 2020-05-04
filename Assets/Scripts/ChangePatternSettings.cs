@@ -29,8 +29,8 @@ public class ChangePatternSettings : MonoBehaviour
 
     void UpdatePatternEditor()
     {
-        int sizeX = simulationManager.pattern.patternSizeX;
-        int sizeY = simulationManager.pattern.patternSizeY;
+        int sizeX = simulationManager.patterns[0].patternSizeX;
+        int sizeY = simulationManager.patterns[0].patternSizeY;
 
         int MAGIC_CONSTANT = 20; // 20 screens maximum in row. Used in transform hierarchy
 
@@ -68,7 +68,7 @@ public class ChangePatternSettings : MonoBehaviour
     {
         if (text != "" && int.TryParse(text, out int res))
         {
-            simulationManager.pattern.patternSizeX = (byte)Mathf.Min(res, 20);
+            simulationManager.patterns[0].patternSizeX = (byte)Mathf.Min(res, 20);
             UpdatePatternEditor();
         }
     }
@@ -77,7 +77,7 @@ public class ChangePatternSettings : MonoBehaviour
     {
         if (text != "" && int.TryParse(text, out int res))
         {
-            simulationManager.pattern.patternSizeY = (byte)Mathf.Min(res, 20);
+            simulationManager.patterns[0].patternSizeY = (byte)Mathf.Min(res, 20);
             UpdatePatternEditor();
         }
     }
@@ -86,7 +86,7 @@ public class ChangePatternSettings : MonoBehaviour
     {
         if (text != "" && byte.TryParse(text, out byte res))
         {
-            simulationManager.pattern.patternErrors = res;
+            simulationManager.patterns[0].patternErrors = res;
         }
     }
 }

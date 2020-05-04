@@ -21,13 +21,17 @@ public class SimulationManager : MonoBehaviour
     private int evolutionStep = 0;
 
     public MeshRenderer genofondScreen = null;
-    public Pattern pattern;
+    public Pattern[] patterns;
+    public Transform fitnessScreen;
 
     [Header("Performance-based fields"),
      SerializeField] private int fitnessCalculationsNeeded = 5;
     [SerializeField] private int fitnessCalcScreensPerFrame = 32;
 
     [HideInInspector] public bool simulationPaused = false;
+
+    private const byte ruleInitBitOptimizationBy = 16;
+    byte screenInitBitOptimisation = 16;
 
     [System.Serializable]
     public struct Pattern
@@ -46,6 +50,28 @@ public class SimulationManager : MonoBehaviour
         }
     };
 
+    public struct FitnessRecord
+    {
+        public float recordID;
+        public float maxFitness;
+        public float averageGoodFitness;
+        public float averageFitness;
+
+        public FitnessRecord(int recordID, float maxFitness, float averageGoodFitness, float averageFitness)
+        {
+            this.maxFitness = maxFitness;
+            this.averageFitness = averageFitness;
+            this.averageGoodFitness = averageGoodFitness;
+            this.recordID = recordID;
+        }
+
+        public void PrintRecord()
+        {
+            Debug.Log($"<Evolution #{recordID}> Maximum fitness: {maxFitness.ToString("0.0000")}.\n" +
+            $"Average good fitness: {averageGoodFitness.ToString("0.0000")}. Average fitness: {averageFitness.ToString("0.0000")}");
+        }
+    }
+
     private const short RULE_SIZE = 512;
 
     void Start()
@@ -54,9 +80,11 @@ public class SimulationManager : MonoBehaviour
         for (int i = 0; i < virtualScreensInSimulation; i++)
         {
             allRules.Add(InititalizeRandomRule());
-            virtualScreens.Add(InitializeVirtualScreen());
+            var newScreen = new byte[screenSizeInPixels * screenSizeInPixels];
+            virtualScreens.Add(InitializeVirtualScreen(newScreen));
             nextVirtualScreens.Add(new byte[screenSizeInPixels * screenSizeInPixels]);
         }
+        screenSignals = new int[screenSizeInPixels * screenSizeInPixels];
         texturePix = new byte[screenSizeInPixels * screenSizeInPixels];
 
         // Visual screens
@@ -74,10 +102,21 @@ public class SimulationManager : MonoBehaviour
         // Pattern & evolution
         maxScreenFitness = new float[virtualScreensInSimulation];
 
-        pattern = new Pattern(3, 3, 1, new byte[9] { 1, 1, 1, 0, 0, 0, 1, 1, 1 }); // Save/Load patterns?
-    }
+        patterns = new Pattern[] { new Pattern(4, 4, 1, 
+            new byte[16] {
+                1, 1, 1, 1,
+                0, 0, 0, 0,
+                1, 1, 1, 1,
+                0, 0, 0, 0,
+            })}; // Save/Load patterns?
 
-    private const byte ruleInitBitOptimizationBy = 16;
+        for (int i = 0; i < 3; i++)
+        {
+            fitnessLineRenderers[i] = fitnessScreen.GetChild(i).GetComponent<LineRenderer>();
+        }
+        
+    }
+    
     private float[] InititalizeRandomRule()
     {
         var rule = new float[RULE_SIZE];
@@ -93,8 +132,7 @@ public class SimulationManager : MonoBehaviour
         }
         return rule;
     }
-
-    byte screenInitBitOptimisation = 16;
+    
     public Color32[] InitializeNonVirtualScreen()
     {
         var screenSize = screenSizeInPixels * screenSizeInPixels;
@@ -112,10 +150,9 @@ public class SimulationManager : MonoBehaviour
         return screen;
     }
 
-    public byte[] InitializeVirtualScreen()
+    public byte[] InitializeVirtualScreen(byte[] screen)
     {
         var screenSize = screenSizeInPixels * screenSizeInPixels;
-        var screen = new byte[screenSize];
         var cycleLength = screenSize / ruleInitBitOptimizationBy;
         for (short i = 0; i < cycleLength; i++)
         {
@@ -168,7 +205,8 @@ public class SimulationManager : MonoBehaviour
             }
             for(int i = 0; i < virtualScreensInSimulation; i++)
             {
-                UpdateCA(virtualScreens[i], nextVirtualScreens[i], i);
+                var nextScreen = nextVirtualScreens[i];
+                UpdateCA(virtualScreens[i], i);
             }
             updateFramesPassed = 0;
         }
@@ -194,33 +232,96 @@ public class SimulationManager : MonoBehaviour
         }
     }
 
-    private byte[] UpdateCA(byte[] CAField, byte[] nextCAField, int ind)
+    private const bool optimizedUpdateCA = true;
+    private void UpdateCA(byte[] CAField, int ind)
     {
-        var screen2DSize = screenSizeInPixels * screenSizeInPixels;
-        for (short i = 0; i < screenSizeInPixels; i++)
+        // Оптимизированная версия работает с тройками чисел и побитовыми операциями
+        // Предположительно работает только в случае 2 состояний автоматов
+        if (optimizedUpdateCA)
         {
-            for (short j = 0; j < screenSizeInPixels; j++)
+            var signal = CAField[screenSizeInPixels - 1] * 2 + CAField[0];
+            // пройдемся по строке № n-1
+            var size2D = screenSizeInPixels * screenSizeInPixels;
+            var lastRow_i = size2D - screenSizeInPixels;
+            for (short i = 1; i < screenSizeInPixels; i++)
             {
-                // Смотрим пиксели в окрестности Мура
-                int signal = 0;
-                for (short k = 0; k < 3; k++)
+                signal = (signal << 1) % 8 + CAField[i];
+                var im1 = i - 1;
+                screenSignals[lastRow_i + im1]          = signal;       // строка -1
+                screenSignals[im1]                      = signal << 3;  // строка 0
+                screenSignals[screenSizeInPixels + im1] = signal << 6;  // строка 1
+            }
+            signal = (signal << 1) % 8 + CAField[lastRow_i];
+            screenSignals[size2D - 1]                   = signal;       // строка -1, последний символ
+            screenSignals[screenSizeInPixels - 1]       = signal << 3;  // строка 0, последний символ
+            screenSignals[2 * screenSizeInPixels - 1]   = signal << 6;  // строка 1, последний символ
+
+            // пройдемся по строкам № 0:n-2
+            for (short i = 0; i < screenSizeInPixels - 2; i++)
+            {
+                var iPix = i * screenSizeInPixels;
+                signal = CAField[iPix + (screenSizeInPixels)] * 2 + CAField[iPix];
+                for (short j = 1; j < screenSizeInPixels; j++)
                 {
-                    for (short m = 0; m < 3; m++)
-                    {
-                        signal += CAField[
-                            (screen2DSize + screenSizeInPixels * i + j
-                            + screenSizeInPixels * (k - 1) + (m - 1)) % (screen2DSize)] << (k * 3 + m);
-                    }
+                    signal = (signal << 1) % 8 + CAField[iPix + j];
+                    var jm1 = j - 1;
+                    screenSignals[iPix + jm1]                          += signal;
+                    screenSignals[iPix + screenSizeInPixels + jm1]     += signal << 3;
+                    screenSignals[iPix + 2 * screenSizeInPixels + jm1]  = signal << 6; // да-да, именно присваивание
                 }
-                nextCAField[i * screenSizeInPixels + j] = (byte)allRules[ind][signal];
+                signal = (signal << 1) % 8 + CAField[iPix];
+                screenSignals[iPix + screenSizeInPixels - 1]           += signal;       // строка -1
+                screenSignals[iPix + 2 * screenSizeInPixels - 1]       += signal << 3;  // строка 0
+                screenSignals[iPix + 3 * screenSizeInPixels - 1]        = signal << 6;  // строка 1
+            }
+
+            // пройдемся по строке № n-2
+            for (short i = 1; i < screenSizeInPixels; i++)
+            {
+                signal = (signal << 1) % 8 + CAField[i];
+                var im1 = i - 1;
+                screenSignals[lastRow_i - screenSizeInPixels + im1] += signal;      // строка -2
+                screenSignals[lastRow_i + im1]                      += signal << 3; // строка -1
+                screenSignals[im1]                                  += signal << 6; // строка  0
+            }
+            signal = (signal << 1) % 8 + CAField[lastRow_i - screenSizeInPixels];
+            screenSignals[lastRow_i - 1]                            += signal;      // строка -2, последний символ
+            screenSignals[size2D - 1]                               += signal << 3; // строка -1, последний символ
+            screenSignals[screenSizeInPixels - 1]                   += signal << 6; // строка  0, последний символ
+
+            for (short i = 0; i < size2D; i++)
+            {
+                CAField[i] = (byte)allRules[ind][screenSignals[i]];
             }
         }
-
-        for (short i = 0; i < screen2DSize; i++)
+        else
         {
-            CAField[i] = nextCAField[i];
+            var nextCAField = nextVirtualScreens[ind];
+            var screen2DSize = screenSizeInPixels * screenSizeInPixels;
+            for (short i = 0; i < screenSizeInPixels; i++)
+            {
+                for (short j = 0; j < screenSizeInPixels; j++)
+                {
+                    // Смотрим пиксели в окрестности Мура
+                    int signal = 0;
+                    for (short k = 0; k < 3; k++)
+                    {
+                        for (short m = 0; m < 3; m++)
+                        {
+                            signal += CAField[
+                                (screen2DSize + screenSizeInPixels * i + j
+                                + screenSizeInPixels * (k - 1) + (m - 1)) % (screen2DSize)] << (k * 3 + m);
+                        }
+                    }
+                    nextCAField[i * screenSizeInPixels + j] = (byte)allRules[ind][signal];
+                }
+            }
+
+            for (short i = 0; i < screen2DSize; i++)
+            {
+                CAField[i] = nextCAField[i];
+            }
         }
-        return nextCAField;
     }
 
     #region evolution-algorithm
@@ -229,20 +330,16 @@ public class SimulationManager : MonoBehaviour
     private Texture2D[] screenTex2D = null;
 
     // Optimization for fitness function calculation. We apply XOR on pattern and texture lines-sum
-    enum LineDir
-    {
-        vertical,
-        horizontal
-    }
+    enum LineDir { vertical, horizontal }
 
-    private float CalculateFitness(Texture2D texture2D, Pattern pattern)
+    private float CalculateFitness(Texture2D texture2D, Pattern[] patterns)
     {
         texturePixels = texture2D.GetPixels32();
-        return CalculateFitness(texturePixels, texture2D.width, texture2D.height, pattern);
+        return CalculateFitness(texturePixels, texture2D.width, texture2D.height, patterns);
     }
 
     byte[] texturePix = null;
-    private float CalculateFitness(Color32[] texturePixels, int texW, int texH, Pattern pattern)
+    private float CalculateFitness(Color32[] texturePixels, int texW, int texH, Pattern[] patterns)
     {
         var texSize = texW * texH;
         texturePix = new byte[texSize];
@@ -250,19 +347,19 @@ public class SimulationManager : MonoBehaviour
         {
             texturePix[i] = texturePixels[i].a;
         }
-        return CalculateFitness(texturePix, texW, texH, pattern);
+        return CalculateFitness(texturePix, texW, texH, patterns);
     }
 
-    private float CalculateFitness(byte[] texturePixels, int texW, int texH, Pattern pattern)
+    private float CalculateFitness(byte[] texturePixels, int texW, int texH, Pattern[] patterns)
     {
         float fitness = 0;
 
         int textureWidth = texW; int textureHeight = texH;
 
-        var patternHeight = pattern.patternSizeY;
-        var patternWidth = pattern.patternSizeX;
-        var patternErrors = pattern.patternErrors;
-        var patternRule = pattern.pattern;
+        var patternHeight = patterns[0].patternSizeY;
+        var patternWidth = patterns[0].patternSizeX;
+        var patternErrors = patterns[0].patternErrors;
+        var patternRule = patterns[0].pattern;
         int currentErrors = 0;
 
         //LineDir lineDir;
@@ -334,15 +431,15 @@ public class SimulationManager : MonoBehaviour
 
         //}
 
-        for (int i = 0; i < textureHeight; i++)
+        for (short i = 0; i < textureHeight; i++)
         {
-            for (int j = 0; j < textureWidth; j++)
+            for (short j = 0; j < textureWidth; j++)
             {
                 int cornerPixel = j + i * textureWidth;
                 currentErrors = 0;
-                for (int ir = 0; ir < patternHeight; ir++)
+                for (byte ir = 0; ir < patternHeight; ir++)
                 {
-                    for (int jr = 0; jr < patternWidth; jr++)
+                    for (byte jr = 0; jr < patternWidth; jr++)
                     {
                         // Color32 = (255, 255, 255, 255/0)
                         // I convert it to (1, 1, 1, 1/0)
@@ -354,7 +451,7 @@ public class SimulationManager : MonoBehaviour
                     if (currentErrors > patternErrors) break;
                 }
 
-                fitness += currentErrors <= patternErrors ? (patternErrors - currentErrors) * 1f / patternErrors : 0;
+                fitness += currentErrors <= patternErrors ? (1 + patternErrors - currentErrors) * 1f / (patternErrors + 1) : 0;
             }
         }
 
@@ -396,7 +493,7 @@ public class SimulationManager : MonoBehaviour
         {
             //TextureProcessor.GetTexture2DFromObject(screens[i], ref screenTex2D[i]);
             //var fitness = CalculateFitness(screenTex2D[i], pattern);
-            var fitness = CalculateFitness(virtualScreens[i], screenSizeInPixels, screenSizeInPixels, pattern);
+            var fitness = CalculateFitness(virtualScreens[i], screenSizeInPixels, screenSizeInPixels, patterns);
             maxScreenFitness[i] = Mathf.Max(maxScreenFitness[i], fitness);
             if ((i + 1) % fitnessCalcScreensPerFrame == 0)
             {
@@ -437,9 +534,10 @@ public class SimulationManager : MonoBehaviour
             averageGoodFitness += fitness.Value;
         }
         averageGoodFitness /= indexFitness.Count;
-        
-        Debug.Log($"<Evolution #{evolutionStep}> Maximum fitness: {indexFitness[0].Value.ToString("0.0000")}%.\n" +
-            $"Average good fitness: {averageGoodFitness.ToString("0.0000")}%. Average fitness: {averageFitness.ToString("0.0000")}%");
+
+        var newFitnessRecord = new FitnessRecord(evolutionStep, indexFitness[0].Value, averageGoodFitness, averageFitness);
+        fitnessHistory.Add(newFitnessRecord);
+        newFitnessRecord.PrintRecord();
 
         List<float[]> newRules = new List<float[]>();
         
@@ -492,11 +590,10 @@ public class SimulationManager : MonoBehaviour
 
         RefreshAllScreens();
         UpdateGenofond();
+        UpdateFitnessFigure();
         maxScreenFitness = new float[virtualScreensInSimulation];
     }
     
-    private Color32[] genofond = null;
-    private Texture2D genofondScreenTex = null;
     private void UpdateGenofond()
     {
         if (genofondScreenTex == null || genofond == null)
@@ -521,19 +618,38 @@ public class SimulationManager : MonoBehaviour
         genofondScreenTex.SetPixels32(genofond);
         genofondScreenTex.Apply();
     }
+    
+    private void UpdateFitnessFigure()
+    {
+        float sizeMult = 1f / (1 + fitnessHistory.Count / 10);
+        foreach (var lineRend in fitnessLineRenderers) {
+            lineRend.positionCount = fitnessHistory.Count;
+            lineRend.transform.localScale = new Vector3(sizeMult, 1, 1);
+        }
+        
+        var history = fitnessHistory[fitnessHistory.Count - 1];
+        fitnessBestPoints.Add(new Vector3(history.recordID, 0, history.maxFitness));
+        fitnessAverageGoodPoints.Add(new Vector3(history.recordID, 0, history.averageGoodFitness));
+        fitnessAveragePoints.Add(new Vector3(history.recordID, 0, history.averageFitness));
+        
+        fitnessLineRenderers[0].SetPositions(fitnessBestPoints.ToArray());
+        fitnessLineRenderers[1].SetPositions(fitnessAverageGoodPoints.ToArray());
+        fitnessLineRenderers[2].SetPositions(fitnessAveragePoints.ToArray());
+    }
 
     #endregion
 
-    private int ScreensCount()
-    {
-        return Mathf.Min(transform.childCount, screensInSimulation);
-    }
+    private int ScreensCount() => Mathf.Min(transform.childCount, screensInSimulation);
 
     public void RefreshAllScreens()
     {
         for (int i = 0; i < ScreensCount(); i++)
         {
             RefreshScreen(i);
+        }
+        for (int i = 0; i < virtualScreensInSimulation; i++)
+        {
+            InitializeVirtualScreen(virtualScreens[i]);
         }
     }
 
@@ -549,52 +665,27 @@ public class SimulationManager : MonoBehaviour
         renderTexture.Initialize();
     }
 
-    public MeshRenderer GetScreen(int index)
-    {
-        return screens[index];
-    } 
+    public MeshRenderer GetScreen(int index) => screens[index];
 
     public int IndexOfScreen(GameObject screen)
     {
-        try
-        {
-            return screens.IndexOf(screen.GetComponent<MeshRenderer>());
-        }
-        catch (System.IndexOutOfRangeException)
-        {
-            return -1;
-        }
+        try { return screens.IndexOf(screen.GetComponent<MeshRenderer>()); }
+        catch (System.IndexOutOfRangeException) { return -1; }
     }
 
     private int IndexOfPatternCell(GameObject screen)
     {
-        try
-        {
-            return screens.IndexOf(screen.GetComponent<MeshRenderer>());
-        }
-        catch (System.IndexOutOfRangeException)
-        {
-            return -1;
-        }
+        try { return screens.IndexOf(screen.GetComponent<MeshRenderer>()); }
+        catch (System.IndexOutOfRangeException) { return -1; }
     }
 
     public void ChangeUpdatePeriod(float newUpdatePeriod)
     {
-        if (simulationPaused)
-        {
-            updatePeriodSaved = newUpdatePeriod == 0 ? 999999999 : 1 / newUpdatePeriod;
-        }
-        else
-        {
-            updatePeriod = newUpdatePeriod == 0 ? 999999999 : 1 / newUpdatePeriod;
-        }
-        
+        if (simulationPaused) updatePeriodSaved = newUpdatePeriod == 0 ? 999999999 : 1 / newUpdatePeriod;
+        else updatePeriod = newUpdatePeriod == 0 ? 999999999 : 1 / newUpdatePeriod;
     }
 
-    public void ChangeEvolutionPeriod(float newEvolutionPeriod)
-    {
-        timeToEvolution = newEvolutionPeriod;
-    }
+    public void ChangeEvolutionPeriod(float newEvolutionPeriod) => timeToEvolution = newEvolutionPeriod;
 
     public void PauseResumeSimulation()
     {
@@ -613,6 +704,7 @@ public class SimulationManager : MonoBehaviour
     private List<float[]> allRules = new List<float[]>();
     private List<byte[]> virtualScreens = new List<byte[]>();
     private List<byte[]> nextVirtualScreens = new List<byte[]>();
+    private int[] screenSignals;
     private List<MeshRenderer> screens = new List<MeshRenderer>();
     private List<CustomRenderTexture> customRenderTextures = new List<CustomRenderTexture>();
 
@@ -621,4 +713,12 @@ public class SimulationManager : MonoBehaviour
     
     private int fitnessCalculations = 0;
     private float[] maxScreenFitness;
+    private List<FitnessRecord> fitnessHistory = new List<FitnessRecord>();
+
+    List<Vector3> fitnessBestPoints = new List<Vector3>();
+    List<Vector3> fitnessAverageGoodPoints = new List<Vector3>();
+    List<Vector3> fitnessAveragePoints = new List<Vector3>();
+    private Color32[] genofond = null;
+    private Texture2D genofondScreenTex = null;
+    private LineRenderer[] fitnessLineRenderers = new LineRenderer[3];
 }

@@ -27,13 +27,13 @@
             float getRule9(v2f_customrendertexture IN) : float
             {
                 int accumulator = 0;
-                for (int i = 0; i <= 2; i++) 
+                for (int i = 2; i >= 0; i--) 
                 {
                     for (int j = 0; j <= 2; j++) 
                     {
                         //accumulator += get(IN, i, j).a; // sometimes provides results similar to game of life. No?
                         int roundedAlpha = round(get(IN, i-1, j-1).a);
-                        accumulator += roundedAlpha << (3*i + j);
+                        accumulator = (accumulator << 1) + roundedAlpha;
                     }
                 }
                 return _rule[accumulator];
