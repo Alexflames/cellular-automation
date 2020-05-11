@@ -17,9 +17,7 @@ public static class PatternReadWrite
         byte patternHeight = System.Convert.ToByte(patternParams[0]);
         byte patternWidth = System.Convert.ToByte(patternParams[1]);
         byte patternErrors = System.Convert.ToByte(patternParams[2]);
-        Debug.Log(patternParams);
         var tags = splittedText[1].Split(' ');
-        Debug.Log(tags);
         int patternsN = System.Convert.ToInt32(splittedText[2]);
         int patternsCount = 0;
         int stringInd = 3;
@@ -29,14 +27,13 @@ public static class PatternReadWrite
             new SimulationManager.Pattern(patternWidth, patternHeight, patternErrors, new byte[patternHeight * patternWidth]);
         var patternRow = 0;
         while (patternsCount < patternsN) {
-            if (stringInd == splittedText.Length) return patterns;
-            if (splittedText[stringInd] == "")
+            if (stringInd == splittedText.Length)
             {
                 patterns[patternsCount] = patternToAdd;
-                patternRow = 0;
-                patternsCount++;
+                return patterns;
             }
-            else
+            //Debug.LogWarning($"Pattern №{patternsCount} Row №{patternRow} String ind №{stringInd} String{splittedText[stringInd]}");
+            if (char.IsDigit(splittedText[stringInd][0]))
             {
                 var splitString = splittedText[stringInd].Split(' ');
                 for (int i = 0; i < splitString.Length; i++)
@@ -45,8 +42,15 @@ public static class PatternReadWrite
                 }
                 patternRow++;
             }
+            else
+            {
+                patterns[patternsCount] = patternToAdd;
+                patternRow = 0;
+                patternsCount++;
+            }
             stringInd++;
         }
+        Debug.LogError("Unexpected code execution");
         return patterns;
     }
 }

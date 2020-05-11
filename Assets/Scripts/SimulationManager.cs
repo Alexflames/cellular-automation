@@ -19,6 +19,7 @@ public class SimulationManager : MonoBehaviour
      SerializeField] private float timeToEvolution = 3f;
     [SerializeField] private float mutationPercent = 7;
     private int evolutionStep = 0;
+    [SerializeField] private TextAsset patternFile = null;
 
     public MeshRenderer genofondScreen = null;
     public Pattern[] patterns;
@@ -77,9 +78,10 @@ public class SimulationManager : MonoBehaviour
     void Start()
     {
         // Virtual screens
+        allRules = new float[virtualScreensInSimulation][];
         for (int i = 0; i < virtualScreensInSimulation; i++)
         {
-            allRules.Add(InititalizeRandomRule());
+            allRules[i] = InititalizeRandomRule();
             var newScreen = new byte[screenSizeInPixels * screenSizeInPixels];
             virtualScreens.Add(InitializeVirtualScreen(newScreen));
             nextVirtualScreens.Add(new byte[screenSizeInPixels * screenSizeInPixels]);
@@ -102,19 +104,20 @@ public class SimulationManager : MonoBehaviour
         // Pattern & evolution
         maxScreenFitness = new float[virtualScreensInSimulation];
 
-        patterns = new Pattern[] { new Pattern(4, 4, 1, 
-            new byte[16] {
-                1, 1, 1, 1,
-                0, 0, 0, 0,
-                1, 1, 1, 1,
-                0, 0, 0, 0,
-            })}; // Save/Load patterns?
+        patterns = PatternReadWrite.GetPatterns(patternFile);
+        //patterns = new Pattern[] { new Pattern(4, 4, 1, 
+        //    new byte[16] {
+        //        1, 1, 1, 1,
+        //        0, 0, 0, 0,
+        //        1, 1, 1, 1,
+        //        0, 0, 0, 0,
+        //    })}; // Save/Load patterns?
 
         for (int i = 0; i < 3; i++)
         {
             fitnessLineRenderers[i] = fitnessScreen.GetChild(i).GetComponent<LineRenderer>();
         }
-        
+        screenLines = new int[patterns[0].patternSizeY];
     }
     
     private float[] InititalizeRandomRule()
@@ -213,12 +216,12 @@ public class SimulationManager : MonoBehaviour
 
         if (!simulationPaused && timeToEvolution > 0.5f)
         {
-            timeToEvolutionPassed += Time.fixedDeltaTime;
+            timeToEvolutionPassed += Time.deltaTime;
             if (timeToEvolutionPassed >= timeToEvolution && fitnessRecalculated)
             {
                 if (fitnessCalculations < fitnessCalculationsNeeded)
                 {
-                    fitnessCalculations++;
+                    fitnessRecalculated = false;
                     StartCoroutine(FullRecalculateFitness());
                 }
                 else if (fitnessCalculations == fitnessCalculationsNeeded)
@@ -359,84 +362,21 @@ public class SimulationManager : MonoBehaviour
         var patternHeight = patterns[0].patternSizeY;
         var patternWidth = patterns[0].patternSizeX;
         var patternErrors = patterns[0].patternErrors;
-        var patternRule = patterns[0].pattern;
-        int currentErrors = 0;
-
-        //LineDir lineDir;
-        //lineDir = patternHeight > patternWidth ? LineDir.vertical : LineDir.horizontal;
-
-        //int[] patternLines = new int[patternHeight > patternWidth ? patternWidth : patternHeight];
-        //Queue<int> textureLines = new Queue<int>();
-        //if (lineDir == LineDir.horizontal)
-        //{
-        //    for (int i = 0; i < patternHeight; i++)
-        //    {
-        //        int textureLine = 0;
-        //        for (int j = 0; j < patternWidth; j++)
-        //        {
-        //            patternLines[i] += patternRule[i * patternWidth + j] << j;
-        //            textureLine += (texturePixels[i + patternWidth * j].a == 255 ? 1 : 0) << j;
-        //        }
-        //        textureLines.Enqueue(textureLine);
-        //    }
-        //}
-        //else
-        //{
-        //    for (int i = 0; i < patternWidth; i++)
-        //    {
-        //        int textureLine = 0;
-        //        for (int j = 0; j < patternHeight; j++)
-        //        {
-        //            patternLines[i] += patternRule[i * patternHeight + j] << j;
-        //            textureLine += (texturePixels[i + patternHeight * j].a == 255 ? 1 : 0) << j;
-        //        }
-        //        textureLines.Enqueue(textureLine);
-        //    }
-        //}
-
-        //if (lineDir == LineDir.vertical)
-        //{
-        //    for (int i = 0; i < textureHeight; i++)
-        //    {
-        //        currentErrors = 0;
-        //        for (int j = 0; j < textureWidth; j++)
-        //        {
-        //            var textureLine = textureLines.Dequeue();
-        //            var errorBits = patternLines[j] ^ textureLine;
-        //            while (errorBits != 0)
-        //            {
-        //                currentErrors += errorBits % 2 != 0 ? 1 : 0;
-        //                currentErrors <<= 1;
-        //            }
-
-        //            // если j больше-равно паттерна, начать этап поощрения
-        //            // хранить очередь ошибок, окно ошибок, чтобы можно было вычислять поощрения для каждого пикселя
-
-        //            // или сначала подсчитать первое окно?
-
-        //            var newLine = 0;
-        //            for (int pi = 0; pi < patternHeight; pi++)
-        //            {
-        //                // посчитать новую линию
-        //            }
-        //            textureLines.Enqueue(newLine);
-        //        }
-                
-
-                
-        //    }
-        //}
-        //else
-        //{
-
-        //}
+        //var patternRule = patterns[0].pattern;
+        var patternsCount = patterns.Length;
+        int[] currentErrors = new int[patternsCount];
 
         for (short i = 0; i < textureHeight; i++)
         {
             for (short j = 0; j < textureWidth; j++)
             {
                 int cornerPixel = j + i * textureWidth;
-                currentErrors = 0;
+                //currentErrors = 0;
+                for (int p = 0; p < patternsCount; p++)
+                {
+                    currentErrors[p] = 0;
+                }
+
                 for (byte ir = 0; ir < patternHeight; ir++)
                 {
                     for (byte jr = 0; jr < patternWidth; jr++)
@@ -446,54 +386,171 @@ public class SimulationManager : MonoBehaviour
                         // And compare with corresponding cell in fitness rule
                         int pixelIndex = (cornerPixel + ir * textureWidth + jr) % (textureWidth * textureHeight);
                         //jr or ir ?
-                        currentErrors += texturePixels[pixelIndex] == patternRule[ir * patternWidth + jr] ? 0 : 1;
+                        for (int p = 0; p < patternsCount; p++)
+                        {
+                            currentErrors[p] += texturePixels[pixelIndex] == patterns[p].pattern[ir * patternWidth + jr] ? 0 : 1;
+                        }
+                        //currentErrors += texturePixels[pixelIndex] == patternRule[ir * patternWidth + jr] ? 0 : 1;
                     }
-                    if (currentErrors > patternErrors) break;
+                    
+                    
+                    //if (minErrors > patternErrors) break;
+                }
+                int minErrors = patternErrors + 1;
+                for (int p = 0; p < patternsCount; p++)
+                {
+                    minErrors = currentErrors[p] < minErrors ? currentErrors[p] : minErrors;
                 }
 
-                fitness += currentErrors <= patternErrors ? (1 + patternErrors - currentErrors) * 1f / (patternErrors + 1) : 0;
+                //for (int p = 0; p < patternsCount; p++)
+                //{
+                //    if (currentErrors[p] < minErrors) minErrors = currentErrors[p];
+                //}
+
+                fitness += minErrors <= patternErrors ? (1 + patternErrors - minErrors) * 1f / (patternErrors + 1) : 0;
             }
         }
-
-        // Saved for texure, it has different indexing
-        //for (int i = 0; i < textureHeight; i++)
-        //{
-        //    for (int j = 0; j < textureWidth; j++)
-        //    {
-        //        int cornerPixel = j + i * textureWidth;
-        //        currentErrors = 0;
-        //        for (int ir = 0; ir < patternHeight; ir++)
-        //        {
-        //            for (int jr = 0; jr < patternWidth; jr++)
-        //            {
-        //                // Color32 = (255, 255, 255, 255/0)
-        //                // I convert it to (1, 1, 1, 1/0)
-        //                // And compare with corresponding cell in fitness rule
-        //                int pixelIndex = (cornerPixel + ir + jr * textureHeight) % (textureWidth * textureHeight);
-        //                currentErrors += (texturePixels[pixelIndex].a == 255 ? 1 : 0)
-        //                    == patternRule[jr + ir * patternWidth] ? 1 : 0;
-        //            }
-        //            if (currentErrors > patternErrors) break;
-        //        }
-
-        //        fitness += currentErrors <= patternErrors ? (patternErrors - currentErrors) * 1f / patternErrors : 0;
-        //    }
-        //}
         
         return fitness * 100 / (textureWidth * textureHeight);
-        //return 1f - (currentErrors / (patternHeight * patternWidth)) * 1f / (textureWidth * textureHeight) ;
+    }
+
+    /// <summary>
+    /// Функция оптимизированного подсчета приспособленности
+    /// <para>Оптимизация за счет поддержки битовых последовательностей, и побитового сравнения их друг с другом</para> 
+    /// <para>Количество операций снизилось</para>
+    /// <para>с : Длина текстуры * ширина текстуры * длина паттерна * ширина паттерна</para>
+    /// <para>до : Длина текстуры * ширина текстуры * min(длина паттерна, ширина паттерна)</para>
+    /// </summary>
+    /// <returns></returns>
+    private float CalculateFitnessOptimised(byte[] texturePixels, int texW, int texH, Pattern[] patterns)
+    {
+        float fitness = 0;
+
+        int textureWidth = texW; int textureHeight = texH;
+        var tex2D = texW * texH;
+        var patternHeight = patterns[0].patternSizeY;
+        var patternWidth = patterns[0].patternSizeX;
+        var patternErrors = patterns[0].patternErrors;
+        var patternRule = patterns[0].pattern;
+        int currentErrors = 0;
+        int patternCycle = (1 << patternHeight);
+
+        // Подсчет линий в паттерне OK
+        int[] patternLines = new int[patterns[0].patternSizeX];
+        int newPatternLine = 0;
+        for (int i = 0; i < patternHeight; i++)
+        {
+            newPatternLine = 0;
+            for (int j = 0; j < patternWidth; j++)
+            {
+                newPatternLine = (newPatternLine << 1) + patterns[0].pattern[i * patternWidth + j];
+            }
+            patternLines[i] = newPatternLine;
+        }
+
+        int qOffset = 0;
+
+        // Первичная инициализация очереди. Берем все кроме последней нужной строки! OK
+        int newScreenLine = 0;
+        for (qOffset = 0; qOffset < patternHeight - 1; qOffset++)
+        {
+            newScreenLine = 0;
+            for (int j = 0; j < patternWidth; j++)
+            {
+                newScreenLine = (newScreenLine << 1) + texturePixels[qOffset * patternWidth + j];
+            }
+            screenLines[qOffset] = newScreenLine;
+        }
+
+        int newLine = 0, iPix = 0, newPixInd = 0, cornerPixel = 0;
+        int screenLine = 0, newErrors = 0, nextPixInd = 0;
+        for (short i = 0; i < textureHeight; i++)
+        {
+            // добавляем новую подсчитанную строку-буфер. Отступ = размер паттерна OK
+            newLine = 0;
+            iPix = ((i + patternHeight - 1) % textureHeight) * textureWidth;
+            //print("iPix: " + iPix);
+            for (int j = 0; j < patternWidth; j++)
+            {
+                newPixInd = (iPix + j);
+                newLine = (newLine << 1) + texturePixels[newPixInd];
+            }
+            qOffset = (qOffset + 1) % patternHeight;
+            screenLines[qOffset] = (newLine);
+
+            for (short j = 0; j < textureWidth; j++)
+            {
+                // сравниваем строки паттерна и текстуры для текущей точки
+                // для сравнения используем XOR: a ^ b
+                cornerPixel = j + i * textureWidth;
+                //List<byte> currentErrorsList = new List<byte>();
+                currentErrors = 0;
+                
+                for (byte k = 0; k < patternHeight; k++)
+                {
+                    int ind = (qOffset + k) % patternHeight; // qOffset + 1 + k ????
+                    screenLine = screenLines[ind];
+                    newErrors = patternLines[k] ^ screenLine;
+                    ///print($"Screen:{screenLine}, Pattern:{patternLines[k]}, Diff:{newErrors}");
+                    // тут нужна оптимизация? таблица битов или другое?
+                    // https://stackoverflow.com/questions/109023/how-to-count-the-number-of-set-bits-in-a-32-bit-integer
+                    //////////////
+                    while (currentErrors <= patternErrors && newErrors != 0)
+                    {
+                        currentErrors += newErrors & 1;
+                        newErrors >>= 1;
+                    }
+
+                    // пересчитываем строку (сдвигаем окно вправо) для следующей точки
+                    screenLine <<= 1;
+                    if (screenLine >= patternCycle) screenLine -= patternCycle;
+                    nextPixInd = (((i + k) % textureHeight) * textureWidth) + (j + patternWidth) % textureWidth;
+                    screenLine += texturePixels[nextPixInd];
+                    
+                    screenLines[(qOffset + k) % patternHeight] = (screenLine);
+                }
+                #region старая версия
+                //for (byte kr = 0; kr < patternLines.Length; kr++)
+                //{
+
+
+                //    for (byte jr = 0; jr < patternWidth; jr++)
+                //    {
+                //        // Color32 = (255, 255, 255, 255/0)
+                //        // I convert it to (1, 1, 1, 1/0)
+                //        // And compare with corresponding cell in fitness rule
+                //        int pixelIndex = (cornerPixel + ir * textureWidth + jr) % (textureWidth * textureHeight);
+                //        //jr or ir ?
+                //        currentErrors += texturePixels[pixelIndex] == patternRule[ir * patternWidth + jr] ? 0 : 1;
+                //    }
+                //    // отсекаем неэффективные паттерны
+                //    if (currentErrors > patternErrors) break;
+                //}
+                #endregion
+                // выбираем минимум из ошибок и увеличиваем приспособленность если нужно
+                //print($"i:{i}, j:{j}, Err:{currentErrors}, ");
+                //print($"X|(j{j}):" + currentErrors);
+                //print($"{screenLines[0]}|||{patternLines[0]}");
+                fitness += currentErrors <= patternErrors ? (1 + patternErrors - currentErrors) * 1f / (patternErrors + 1) : 0;
+            }
+
+            // удаляем верхнюю буферизованную строку 
+            //screenLines.Dequeue();
+        }
+        //screenLines.Clear();
+
+        return fitness * 100 / (textureWidth * textureHeight);
     }
 
     bool fitnessRecalculated = true;
     private IEnumerator FullRecalculateFitness()
     {
-        fitnessRecalculated = false;
-
         for (int i = 0; i < virtualScreensInSimulation; i++)
         {
             //TextureProcessor.GetTexture2DFromObject(screens[i], ref screenTex2D[i]);
             //var fitness = CalculateFitness(screenTex2D[i], pattern);
-            var fitness = CalculateFitness(virtualScreens[i], screenSizeInPixels, screenSizeInPixels, patterns);
+            var fitness = CalculateFitnessOptimised(virtualScreens[i], screenSizeInPixels, screenSizeInPixels, patterns);
+            //print($"i: {i} | fitness: {fitness}");
             maxScreenFitness[i] = Mathf.Max(maxScreenFitness[i], fitness);
             if ((i + 1) % fitnessCalcScreensPerFrame == 0)
             {
@@ -501,6 +558,7 @@ public class SimulationManager : MonoBehaviour
             }
         }
 
+        fitnessCalculations++;
         fitnessRecalculated = true;
         yield return null;
     }
@@ -603,7 +661,7 @@ public class SimulationManager : MonoBehaviour
 
         genofond = new Color32[virtualScreensInSimulation * RULE_SIZE];
 
-        for (int i = 0; i < allRules.Count; i++)
+        for (int i = 0; i < allRules.Length; i++)
         {
             for (int j = 0; j < RULE_SIZE; j++)
             {
@@ -701,7 +759,7 @@ public class SimulationManager : MonoBehaviour
         }
     }
 
-    private List<float[]> allRules = new List<float[]>();
+    private float[][] allRules = null;
     private List<byte[]> virtualScreens = new List<byte[]>();
     private List<byte[]> nextVirtualScreens = new List<byte[]>();
     private int[] screenSignals;
@@ -713,6 +771,7 @@ public class SimulationManager : MonoBehaviour
     
     private int fitnessCalculations = 0;
     private float[] maxScreenFitness;
+    private int[] screenLines = null; // Для оптимизации
     private List<FitnessRecord> fitnessHistory = new List<FitnessRecord>();
 
     List<Vector3> fitnessBestPoints = new List<Vector3>();
