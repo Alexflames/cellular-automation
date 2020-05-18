@@ -1530,16 +1530,16 @@ MonoBehaviour:
   screenMaterialPrefab: {fileID: 2100000, guid: 3cac400f2bf1bd54d93772c80c642798,
     type: 2}
   updatePeriod: 0.05
-  screenSizeInPixels: 32
-  virtualScreensInSimulation: 1
-  screensInSimulation: 1
-  timeToEvolution: 1.5
-  mutationPercent: 7
-  patternFile: {fileID: 4900000, guid: 85c76120b9a0eaf488c94a46bebe1127, type: 3}
+  screenSizeInPixels: 64
+  virtualScreensInSimulation: 128
+  screensInSimulation: 32
+  timeToEvolution: 2.2
+  mutationPercent: 15
+  patternFile: {fileID: 4900000, guid: 25b05d9837f7cc74bb269f04de17539d, type: 3}
   genofondScreen: {fileID: 2004998649}
   patterns: []
   fitnessScreen: {fileID: 40919615}
-  fitnessCalculationsNeeded: 1
+  fitnessCalculationsNeeded: 50
   fitnessCalcScreensPerFrame: 128
   simulationPaused: 0
 --- !u!114 &46086333

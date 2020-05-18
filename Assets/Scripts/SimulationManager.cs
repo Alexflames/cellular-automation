@@ -7,12 +7,14 @@ public class SimulationManager : MonoBehaviour
     [Header("Scene settings")]
     [SerializeField] private Material cellularAutomationMaterial = null;
     [SerializeField] private Material screenMaterialPrefab = null;
+    [SerializeField] private MeshRenderer checkScreen = null;
 
     [Header("Simulation settings"),
      SerializeField] private float updatePeriod = 0.05f;
     [SerializeField] private int screenSizeInPixels = 128;
     [SerializeField] private int virtualScreensInSimulation = 128;
     [SerializeField] private int screensInSimulation = 32;
+    [SerializeField] private bool updateCheckScreen = false;
 
     private float timeToEvolutionPassed = 0f;
     [Header("Evolution"),
@@ -88,6 +90,10 @@ public class SimulationManager : MonoBehaviour
         }
         screenSignals = new int[screenSizeInPixels * screenSizeInPixels];
         texturePix = new byte[screenSizeInPixels * screenSizeInPixels];
+
+        InitializeScreen(checkScreen, 0, false);
+        checkTexture = TextureProcessor.CreateTexture2DFromObject(checkScreen);
+        checkPixels = new Color32[screenSizeInPixels * screenSizeInPixels];
 
         // Visual screens
         for (int i = 0; i < ScreensCount(); i++)
@@ -175,7 +181,7 @@ public class SimulationManager : MonoBehaviour
         InitializeScreen(screen, screenInd);
     }
 
-    private void InitializeScreen(MeshRenderer screen, int screenInd)
+    private void InitializeScreen(MeshRenderer screen, int screenInd, bool addInList = true)
     {
         var customRenderTexture = new CustomRenderTexture(screenSizeInPixels, screenSizeInPixels);
         customRenderTexture.initializationTexture = TextureProcessor.CreateRandomTexture(screenSizeInPixels, screenSizeInPixels);
@@ -192,7 +198,10 @@ public class SimulationManager : MonoBehaviour
         var material = new Material(screenMaterialPrefab);
         material.SetTexture("_MainTex", customRenderTexture);
         screen.material = material;
-        customRenderTextures.Add(customRenderTexture);
+        if (addInList)
+        {
+            customRenderTextures.Add(customRenderTexture);
+        }
     }
 
     void Update()
@@ -213,6 +222,7 @@ public class SimulationManager : MonoBehaviour
             }
             updateFramesPassed = 0;
         }
+        if (updateCheckScreen) UpdateCheckScreen();
 
         if (!simulationPaused && timeToEvolution > 0.5f)
         {
@@ -242,13 +252,13 @@ public class SimulationManager : MonoBehaviour
         // Предположительно работает только в случае 2 состояний автоматов
         if (optimizedUpdateCA)
         {
-            var signal = CAField[screenSizeInPixels - 1] * 2 + CAField[0];
             // пройдемся по строке № n-1
             var size2D = screenSizeInPixels * screenSizeInPixels;
+            var signal = CAField[size2D - 1] * 2 + CAField[size2D - screenSizeInPixels];
             var lastRow_i = size2D - screenSizeInPixels;
             for (short i = 1; i < screenSizeInPixels; i++)
             {
-                signal = (signal << 1) % 8 + CAField[i];
+                signal = (signal << 1) % 8 + CAField[size2D - screenSizeInPixels + i];
                 var im1 = i - 1;
                 screenSignals[lastRow_i + im1]          = signal;       // строка -1
                 screenSignals[im1]                      = signal << 3;  // строка 0
@@ -263,7 +273,7 @@ public class SimulationManager : MonoBehaviour
             for (short i = 0; i < screenSizeInPixels - 2; i++)
             {
                 var iPix = i * screenSizeInPixels;
-                signal = CAField[iPix + (screenSizeInPixels)] * 2 + CAField[iPix];
+                signal = CAField[iPix + (screenSizeInPixels) - 1] * 2 + CAField[iPix];
                 for (short j = 1; j < screenSizeInPixels; j++)
                 {
                     signal = (signal << 1) % 8 + CAField[iPix + j];
@@ -281,7 +291,7 @@ public class SimulationManager : MonoBehaviour
             // пройдемся по строке № n-2
             for (short i = 1; i < screenSizeInPixels; i++)
             {
-                signal = (signal << 1) % 8 + CAField[i];
+                signal = (signal << 1) % 8 + CAField[lastRow_i - screenSizeInPixels + i];
                 var im1 = i - 1;
                 screenSignals[lastRow_i - screenSizeInPixels + im1] += signal;      // строка -2
                 screenSignals[lastRow_i + im1]                      += signal << 3; // строка -1
@@ -432,7 +442,7 @@ public class SimulationManager : MonoBehaviour
         var patternWidth = patterns[0].patternSizeX;
         var patternErrors = patterns[0].patternErrors;
         var patternRule = patterns[0].pattern;
-        int currentErrors = 0;
+        int[] currentErrors = new int[patterns.Length];
         int patternCycle = (1 << patternHeight);
 
         // Подсчет линий в паттерне OK
@@ -484,7 +494,11 @@ public class SimulationManager : MonoBehaviour
                 // для сравнения используем XOR: a ^ b
                 cornerPixel = j + i * textureWidth;
                 //List<byte> currentErrorsList = new List<byte>();
-                currentErrors = 0;
+                for (byte p = 0; p < patterns.Length; p++)
+                {
+                    currentErrors[p] = 0;
+                }
+                int minErrors = patternErrors + 1;
                 
                 for (byte k = 0; k < patternHeight; k++)
                 {
@@ -492,14 +506,21 @@ public class SimulationManager : MonoBehaviour
                     screenLine = screenLines[ind];
                     newErrors = patternLines[k] ^ screenLine;
                     ///print($"Screen:{screenLine}, Pattern:{patternLines[k]}, Diff:{newErrors}");
-                    // тут нужна оптимизация? таблица битов или другое?
+                    // тут можно добавить и другие оптимизации? таблица битов?
                     // https://stackoverflow.com/questions/109023/how-to-count-the-number-of-set-bits-in-a-32-bit-integer
                     //////////////
-                    while (currentErrors <= patternErrors && newErrors != 0)
+                    for (byte p = 0; p < patterns.Length; p++)
                     {
-                        currentErrors += newErrors & 1;
-                        newErrors >>= 1;
+                        newErrors = newErrors - ((newErrors >> 1) & 0x55555555);
+                        newErrors = (newErrors & 0x33333333) + ((newErrors >> 2) & 0x33333333);
+                        currentErrors[p] += (((newErrors + (newErrors >> 4)) & 0x0F0F0F0F) * 0x01010101) >> 24;
                     }
+                    
+                    //while (currentErrors <= patternErrors && newErrors != 0)
+                    //{
+                    //    currentErrors += newErrors & 1;
+                    //    newErrors >>= 1;
+                    //}
 
                     // пересчитываем строку (сдвигаем окно вправо) для следующей точки
                     screenLine <<= 1;
@@ -531,7 +552,11 @@ public class SimulationManager : MonoBehaviour
                 //print($"i:{i}, j:{j}, Err:{currentErrors}, ");
                 //print($"X|(j{j}):" + currentErrors);
                 //print($"{screenLines[0]}|||{patternLines[0]}");
-                fitness += currentErrors <= patternErrors ? (1 + patternErrors - currentErrors) * 1f / (patternErrors + 1) : 0;
+                for (byte p = 0; p < patterns.Length; p++)
+                {
+                    if (currentErrors[p] < minErrors) minErrors = currentErrors[p];
+                }
+                fitness += minErrors <= patternErrors ? (1 + patternErrors - minErrors) * 1f / (patternErrors + 1) : 0;
             }
 
             // удаляем верхнюю буферизованную строку 
@@ -641,9 +666,10 @@ public class SimulationManager : MonoBehaviour
             allRules[i] = newRules[i];
         }
 
+        int add = virtualScreensInSimulation / ScreensCount();
         for (int i = 0; i < ScreensCount(); i++)
         {
-            TextureProcessor.GetTextureFromObject(screens[i]).material.SetFloatArray("_rule", newRules[i]);
+            TextureProcessor.GetTextureFromObject(screens[i]).material.SetFloatArray("_rule", newRules[i * add]);
         }
 
         RefreshAllScreens();
@@ -679,10 +705,12 @@ public class SimulationManager : MonoBehaviour
     
     private void UpdateFitnessFigure()
     {
-        float sizeMult = 1f / (1 + fitnessHistory.Count / 10);
+        float sizeMultX = 1f / (1 + fitnessHistory.Count / 10);
+        var lastRecord = fitnessHistory[fitnessHistory.Count - 1];
+        float sizeMultY = 4f / (1 + (lastRecord.averageGoodFitness + lastRecord.maxFitness) / 5f);
         foreach (var lineRend in fitnessLineRenderers) {
             lineRend.positionCount = fitnessHistory.Count;
-            lineRend.transform.localScale = new Vector3(sizeMult, 1, 1);
+            lineRend.transform.localScale = new Vector3(sizeMultX, 1, sizeMultY);
         }
         
         var history = fitnessHistory[fitnessHistory.Count - 1];
@@ -725,6 +753,18 @@ public class SimulationManager : MonoBehaviour
 
     public MeshRenderer GetScreen(int index) => screens[index];
 
+    public void PrintScreenRule(int index)
+    {
+        var arr = TextureProcessor.GetTextureFromObject(screens[index]).material.GetFloatArray("_rule");
+        if (arr == null || arr.Length == 0) return;
+        string output = "";
+        foreach (var sym in arr)
+        {
+            output += sym;
+        }
+        print(output);
+    }
+
     public int IndexOfScreen(GameObject screen)
     {
         try { return screens.IndexOf(screen.GetComponent<MeshRenderer>()); }
@@ -757,6 +797,18 @@ public class SimulationManager : MonoBehaviour
         {
             updatePeriod = updatePeriodSaved;
         }
+    }
+
+    Texture2D checkTexture = null;
+    Color32[] checkPixels = null;
+    private void UpdateCheckScreen()
+    {
+        for (int i = 0; i < virtualScreens[0].Length; i++)
+        {
+            checkPixels[i] = new Color32(255, 255, 255, (byte)(virtualScreens[0][i] * 255));
+        }
+
+        checkScreen.material.mainTexture = TextureProcessor.PaintTexture(checkTexture, checkPixels);
     }
 
     private float[][] allRules = null;

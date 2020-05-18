@@ -158,6 +158,7 @@ public class InterfaceManager : MonoBehaviour
         //simulationSettingsPrefab.SetActive(false);
         screenSettingsObject.SetActive(true);
         focusedScreenIndex = simulationManager.IndexOfScreen(screen);
+        simulationManager.PrintScreenRule(focusedScreenIndex);
         FocusMiddleScreen(focusedScreenIndex);
     }
 
