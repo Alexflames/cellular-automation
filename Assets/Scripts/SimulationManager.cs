@@ -162,14 +162,18 @@ public class SimulationManager : MonoBehaviour
     public byte[] InitializeVirtualScreen(byte[] screen)
     {
         var screenSize = screenSizeInPixels * screenSizeInPixels;
+        if (screenSize % ruleInitBitOptimizationBy != 0)
+        {
+            Debug.LogWarning("Optimisation impassible");
+        }
         var cycleLength = screenSize / ruleInitBitOptimizationBy;
         for (short i = 0; i < cycleLength; i++)
         {
             var generatedRandom = Random.Range(0, 1 << ruleInitBitOptimizationBy);
             for (byte j = 0; j < ruleInitBitOptimizationBy; j++)
             {
-                screen[i * ruleInitBitOptimizationBy + j] = (byte)(generatedRandom % 2);
-                generatedRandom = generatedRandom >>= 1;
+                screen[i * ruleInitBitOptimizationBy + j] = (byte)(generatedRandom & 1);
+                generatedRandom >>= 1;
             }
         }
         return screen;
@@ -232,7 +236,8 @@ public class SimulationManager : MonoBehaviour
                 if (fitnessCalculations < fitnessCalculationsNeeded)
                 {
                     fitnessRecalculated = false;
-                    StartCoroutine(FullRecalculateFitness());
+                    //StartCoroutine(FullRecalculateFitness());
+                    FullRecalculateFitness();
                 }
                 else if (fitnessCalculations == fitnessCalculationsNeeded)
                 {
@@ -245,16 +250,75 @@ public class SimulationManager : MonoBehaviour
         }
     }
 
-    private const bool optimizedUpdateCA = true;
+    private const bool optimizedUpdateCAV2 = true;
+    private const bool optimizedUpdateCA = false;
     private void UpdateCA(byte[] CAField, int ind)
     {
         // Оптимизированная версия работает с тройками чисел и побитовыми операциями
         // Предположительно работает только в случае 2 состояний автоматов
-        if (optimizedUpdateCA)
+        if (optimizedUpdateCAV2)
+        {
+            var size2D = screenSizeInPixels * screenSizeInPixels;
+            int signal = 0;
+            // первичная инициализация нулями
+            for (int i = screenSizeInPixels - 2; i < screenSizeInPixels; i++)
+            {
+                var iPix = i * screenSizeInPixels;
+                for (int j = 0; j < screenSizeInPixels; j++)
+                {
+                    screenSignals[iPix + j] = 0;
+                }
+            }
+            for (short i = 0; i < screenSizeInPixels - 2; i++)
+            {
+                var iPix = i * screenSizeInPixels;
+                var iPixm1 = (iPix + size2D - screenSizeInPixels) % size2D;
+                var iPixm2 = (iPix + size2D - screenSizeInPixels - screenSizeInPixels) % size2D;
+                signal = CAField[iPix + (screenSizeInPixels) - 1] * 2 + CAField[iPix]; // последний + первый символ строки i
+                for (short j = 1; j < screenSizeInPixels; j++)
+                {
+                    signal = (signal << 1) % 8 + CAField[iPix + j];
+                    var jm1 = j - 1;
+                    screenSignals[iPixm2 + jm1] += signal << 6;
+                    screenSignals[iPixm1 + jm1] += signal << 3;
+                    screenSignals[iPix   + jm1]  = signal;          // да-да, именно присваивание
+                }
+                signal = (signal << 1) % 8 + CAField[iPix];                     // + первый символ строки i
+                screenSignals[iPixm2 + screenSizeInPixels - 1] += signal << 6;  // строка i-2, последний символ
+                screenSignals[iPixm1 + screenSizeInPixels - 1] += signal << 3;  // строка i-1, последний символ
+                screenSignals[iPix   + screenSizeInPixels - 1]  = signal;       // строка i,   последний символ, именно присваивание
+            }
+
+            for (int i = screenSizeInPixels - 2; i < screenSizeInPixels; i++)
+            {
+                var iPix = i * screenSizeInPixels;
+                var iPixm1 = (iPix + size2D - screenSizeInPixels) % size2D;
+                var iPixm2 = (iPix + size2D - screenSizeInPixels - screenSizeInPixels) % size2D;
+                signal = CAField[iPix + (screenSizeInPixels) - 1] * 2 + CAField[iPix]; // последний + первый символ строки i
+                for (short j = 1; j < screenSizeInPixels; j++)
+                {
+                    signal = (signal << 1) % 8 + CAField[iPix + j];
+                    var jm1 = j - 1;
+                    screenSignals[iPixm2 + jm1] += signal << 6;
+                    screenSignals[iPixm1 + jm1] += signal << 3;
+                    screenSignals[iPix + jm1]   += signal;          // да-да, именно присваивание
+                }
+                signal = (signal << 1) % 8 + CAField[iPix];                     // + первый символ строки i
+                screenSignals[iPixm2 + screenSizeInPixels - 1] += signal << 6;  // строка i-2, последний символ
+                screenSignals[iPixm1 + screenSizeInPixels - 1] += signal << 3;  // строка i-1, последний символ
+                screenSignals[iPix + screenSizeInPixels - 1] = signal;       // строка i,   последний символ, именно присваивание
+            }
+
+            for (short i = 0; i < size2D; i++)
+            {
+                CAField[i] = (byte)allRules[ind][screenSignals[(i - screenSizeInPixels + size2D) % size2D]];
+            }
+        }
+        else if (optimizedUpdateCA)
         {
             // пройдемся по строке № n-1
             var size2D = screenSizeInPixels * screenSizeInPixels;
-            var signal = CAField[size2D - 1] * 2 + CAField[size2D - screenSizeInPixels];
+            var signal = CAField[size2D - 1] * 2 + CAField[size2D - screenSizeInPixels]; // последний + первый символ строки -1
             var lastRow_i = size2D - screenSizeInPixels;
             for (short i = 1; i < screenSizeInPixels; i++)
             {
@@ -264,7 +328,7 @@ public class SimulationManager : MonoBehaviour
                 screenSignals[im1]                      = signal << 3;  // строка 0
                 screenSignals[screenSizeInPixels + im1] = signal << 6;  // строка 1
             }
-            signal = (signal << 1) % 8 + CAField[lastRow_i];
+            signal = (signal << 1) % 8 + CAField[lastRow_i]; // + первый символ строки -1
             screenSignals[size2D - 1]                   = signal;       // строка -1, последний символ
             screenSignals[screenSizeInPixels - 1]       = signal << 3;  // строка 0, последний символ
             screenSignals[2 * screenSizeInPixels - 1]   = signal << 6;  // строка 1, последний символ
@@ -282,13 +346,14 @@ public class SimulationManager : MonoBehaviour
                     screenSignals[iPix + screenSizeInPixels + jm1]     += signal << 3;
                     screenSignals[iPix + 2 * screenSizeInPixels + jm1]  = signal << 6; // да-да, именно присваивание
                 }
-                signal = (signal << 1) % 8 + CAField[iPix];
-                screenSignals[iPix + screenSizeInPixels - 1]           += signal;       // строка -1
-                screenSignals[iPix + 2 * screenSizeInPixels - 1]       += signal << 3;  // строка 0
-                screenSignals[iPix + 3 * screenSizeInPixels - 1]        = signal << 6;  // строка 1
+                signal = (signal << 1) % 8 + CAField[iPix];             // + первый символ строки i
+                screenSignals[iPix + screenSizeInPixels - 1]           += signal;       // строка i,   последний символ
+                screenSignals[iPix + 2 * screenSizeInPixels - 1]       += signal << 3;  // строка i+1, последний символ
+                screenSignals[iPix + 3 * screenSizeInPixels - 1]        = signal << 6;  // строка 1+2, последний символ, именно присваивание
             }
 
             // пройдемся по строке № n-2
+            //signal = CAField[size2D - screenSizeInPixels - 1] * 2 + CAField[size2D - 2 * screenSizeInPixels]; // последний + первый символ строки -2
             for (short i = 1; i < screenSizeInPixels; i++)
             {
                 signal = (signal << 1) % 8 + CAField[lastRow_i - screenSizeInPixels + i];
@@ -297,14 +362,14 @@ public class SimulationManager : MonoBehaviour
                 screenSignals[lastRow_i + im1]                      += signal << 3; // строка -1
                 screenSignals[im1]                                  += signal << 6; // строка  0
             }
-            signal = (signal << 1) % 8 + CAField[lastRow_i - screenSizeInPixels];
+            signal = (signal << 1) % 8 + CAField[lastRow_i - screenSizeInPixels]; // + первый символ строки -2
             screenSignals[lastRow_i - 1]                            += signal;      // строка -2, последний символ
             screenSignals[size2D - 1]                               += signal << 3; // строка -1, последний символ
             screenSignals[screenSizeInPixels - 1]                   += signal << 6; // строка  0, последний символ
 
             for (short i = 0; i < size2D; i++)
             {
-                CAField[i] = (byte)allRules[ind][screenSignals[i]];
+                CAField[i] = (byte)allRules[ind][screenSignals[(i + screenSizeInPixels) % size2D]];
             }
         }
         else
@@ -568,7 +633,7 @@ public class SimulationManager : MonoBehaviour
     }
 
     bool fitnessRecalculated = true;
-    private IEnumerator FullRecalculateFitness()
+    private void FullRecalculateFitness()
     {
         for (int i = 0; i < virtualScreensInSimulation; i++)
         {
@@ -577,17 +642,18 @@ public class SimulationManager : MonoBehaviour
             var fitness = CalculateFitnessOptimised(virtualScreens[i], screenSizeInPixels, screenSizeInPixels, patterns);
             //print($"i: {i} | fitness: {fitness}");
             maxScreenFitness[i] = Mathf.Max(maxScreenFitness[i], fitness);
-            if ((i + 1) % fitnessCalcScreensPerFrame == 0)
-            {
-                yield return new WaitForEndOfFrame();
-            }
+            //if ((i + 1) % fitnessCalcScreensPerFrame == 0)
+            //{
+            //    yield return new WaitForEndOfFrame();
+            //}
         }
 
         fitnessCalculations++;
         fitnessRecalculated = true;
-        yield return null;
+        //yield return null;
     }
 
+    public bool crossSeparation = false;
     private void Evolve()
     {
         List<KeyValuePair<int, float>> indexFitness = new List<KeyValuePair<int, float>>();
@@ -639,13 +705,33 @@ public class SimulationManager : MonoBehaviour
             newRules.Add(parent2Rule);
             indexFitness.RemoveAt(parent2i);
 
-            var crossSeparator = Random.Range(0, RULE_SIZE);
+            
             var sonRule = new float[RULE_SIZE];
             var daughterRule = new float[RULE_SIZE];
-            for (int j = 0; j < RULE_SIZE; j++)
+            if (crossSeparation)
             {
-                sonRule[j] = j < crossSeparator ? parent1Rule[j] : parent2Rule[j];
-                daughterRule[j] = j < crossSeparator ? parent2Rule[j] : parent1Rule[j];
+                var crossSeparator = Random.Range(0, RULE_SIZE);
+                for (int j = 0; j < RULE_SIZE; j++)
+                {
+                    sonRule[j] = j < crossSeparator ? parent1Rule[j] : parent2Rule[j];
+                    daughterRule[j] = j < crossSeparator ? parent2Rule[j] : parent1Rule[j];
+                }
+            }
+            else
+            {
+                for (int j = 0; j < RULE_SIZE; j++)
+                {
+                    if (Random.Range(0, 2) == 0)
+                    {
+                        sonRule[j] = parent1Rule[j];
+                        daughterRule[j] = parent2Rule[j];
+                    }
+                    else
+                    {
+                        sonRule[j] = parent2Rule[j];
+                        daughterRule[j] = parent1Rule[j];
+                    }
+                }
             }
             newRules.Add(sonRule);
             newRules.Add(daughterRule);
