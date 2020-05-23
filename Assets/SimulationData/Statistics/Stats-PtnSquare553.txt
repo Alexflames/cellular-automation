@@ -1,0 +1,20 @@
+Simulation [8732,753] -- 22.05.2020 14:19:01
+OK|Simulation finished successfully for PtnSquare553 after 88 evolutions.
+Time spent: 537,479. Average good fitness: 39,69431.
+Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 15. Additional steps after threshold: 50.
+Simple cross separation: False
+Mutation percent: 15
+
+
+Simulation [1078,575] -- 22.05.2020 14:25:59
+ABORT|Simulation aborted for PtnSquare553 after 68 evolutions.
+Time spent: -537,479. Average good fitness: 80,10149.
+Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 15. Additional steps after threshold: 50.
+Simple cross separation: False
+Mutation percent: 15
+
+

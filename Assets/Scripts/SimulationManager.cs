@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
+using System;
 
 public class SimulationManager : MonoBehaviour
 {
@@ -15,6 +17,7 @@ public class SimulationManager : MonoBehaviour
     [SerializeField] private int virtualScreensInSimulation = 128;
     [SerializeField] private int screensInSimulation = 32;
     [SerializeField] private bool updateCheckScreen = false;
+    [SerializeField] private string datapath = @"C:\Users\Public\Documents\Unity Projects\CellularAutomations\Assets";
 
     private float timeToEvolutionPassed = 0f;
     [Header("Evolution"),
@@ -22,6 +25,8 @@ public class SimulationManager : MonoBehaviour
     [SerializeField] private float mutationPercent = 7;
     private int evolutionStep = 0;
     [SerializeField] private TextAsset patternFile = null;
+    [SerializeField] private float pivotBitFitnessThreshold = 25;
+    [SerializeField] private bool writeToGlobalPivotBits = true;
 
     public MeshRenderer genofondScreen = null;
     public Pattern[] patterns;
@@ -35,6 +40,11 @@ public class SimulationManager : MonoBehaviour
 
     private const byte ruleInitBitOptimizationBy = 16;
     byte screenInitBitOptimisation = 16;
+
+    [Header("Multisimulation settings")]
+    [SerializeField] private float msFitnessThreshold = 15;
+    [SerializeField] private int msCalculationsAfterThreshold = 50;
+    [SerializeField] private int evolutionStepLimit = 2000;
 
     [System.Serializable]
     public struct Pattern
@@ -111,19 +121,16 @@ public class SimulationManager : MonoBehaviour
         maxScreenFitness = new float[virtualScreensInSimulation];
 
         patterns = PatternReadWrite.GetPatterns(patternFile);
-        //patterns = new Pattern[] { new Pattern(4, 4, 1, 
-        //    new byte[16] {
-        //        1, 1, 1, 1,
-        //        0, 0, 0, 0,
-        //        1, 1, 1, 1,
-        //        0, 0, 0, 0,
-        //    })}; // Save/Load patterns?
 
         for (int i = 0; i < 3; i++)
         {
             fitnessLineRenderers[i] = fitnessScreen.GetChild(i).GetComponent<LineRenderer>();
         }
         screenLines = new int[patterns[0].patternSizeY];
+
+        simulationStartTime = Time.time;
+
+        GenerateSimulationID();
     }
     
     private float[] InititalizeRandomRule()
@@ -132,7 +139,7 @@ public class SimulationManager : MonoBehaviour
         var cycleLength = RULE_SIZE / ruleInitBitOptimizationBy;
         for (short i = 0; i < cycleLength; i++)
         {
-            var generatedRandom = Random.Range(0, 1 << ruleInitBitOptimizationBy);
+            var generatedRandom = UnityEngine.Random.Range(0, 1 << ruleInitBitOptimizationBy);
             for (byte j = 0; j < ruleInitBitOptimizationBy; j++)
             {
                 rule[i * ruleInitBitOptimizationBy + j] = generatedRandom % 2;
@@ -149,7 +156,7 @@ public class SimulationManager : MonoBehaviour
         var cycleLength = screenSize / screenInitBitOptimisation;
         for (short i = 0; i < cycleLength; i++)
         {
-            var generatedRandom = Random.Range(0, 1 << screenInitBitOptimisation);
+            var generatedRandom = UnityEngine.Random.Range(0, 1 << screenInitBitOptimisation);
             for (byte j = 0; j < screenInitBitOptimisation; j++)
             {
                 screen[i * screenInitBitOptimisation + j] = new Color32(255, 255, 255, (byte)(255 * (generatedRandom % 2)));
@@ -169,7 +176,7 @@ public class SimulationManager : MonoBehaviour
         var cycleLength = screenSize / ruleInitBitOptimizationBy;
         for (short i = 0; i < cycleLength; i++)
         {
-            var generatedRandom = Random.Range(0, 1 << ruleInitBitOptimizationBy);
+            var generatedRandom = UnityEngine.Random.Range(0, 1 << ruleInitBitOptimizationBy);
             for (byte j = 0; j < ruleInitBitOptimizationBy; j++)
             {
                 screen[i * ruleInitBitOptimizationBy + j] = (byte)(generatedRandom & 1);
@@ -181,6 +188,7 @@ public class SimulationManager : MonoBehaviour
 
     public void AddScreenToSimulation(MeshRenderer screen, int screenInd)
     {
+        screen.gameObject.SetActive(true);
         screens.Add(screen);
         InitializeScreen(screen, screenInd);
     }
@@ -629,7 +637,7 @@ public class SimulationManager : MonoBehaviour
         }
         //screenLines.Clear();
 
-        return fitness * 100 / (textureWidth * textureHeight);
+        return fitness * patternWidth * patternHeight * 100 / (textureWidth * textureHeight);
     }
 
     bool fitnessRecalculated = true;
@@ -674,33 +682,53 @@ public class SimulationManager : MonoBehaviour
         }
         averageFitness /= indexFitness.Count;
 
-        // Leave only good genes. Требуется чётность
+        float averageGoodFitness = 0;
+        for (int i = 0; i < indexFitness.Count / 2; i++)
+        {
+            averageGoodFitness += indexFitness[i].Value;
+
+        }
+        averageGoodFitness /= (indexFitness.Count / 2f);
+
+        // Добавляем отрицательное влияние плохих генов на опорные биты
+        if (averageGoodFitness > pivotBitFitnessThreshold)
+        {
+            for (int i = indexFitness.Count / 2; i < indexFitness.Count; i++)
+            {
+                var rule = allRules[indexFitness[i].Key];
+                UpdateBitValue(rule, -1);
+            }
+        }
+
+        // Оставим только хорошие гены. Требуется чётность
         indexFitness.RemoveRange(indexFitness.Count / 2, indexFitness.Count / 2);
 
-        float averageGoodFitness = 0;
-        foreach (var fitness in indexFitness)
+        // Добавляем положительное влияние хороших генов на опорные биты
+        if (averageGoodFitness > pivotBitFitnessThreshold)
         {
-            averageGoodFitness += fitness.Value;
+            for (int i = 0; i < indexFitness.Count; i++)
+            {
+                var rule = allRules[indexFitness[i].Key];
+                UpdateBitValue(rule);
+            }
         }
-        averageGoodFitness /= indexFitness.Count;
 
         var newFitnessRecord = new FitnessRecord(evolutionStep, indexFitness[0].Value, averageGoodFitness, averageFitness);
         fitnessHistory.Add(newFitnessRecord);
         newFitnessRecord.PrintRecord();
 
+        // >>>Скрещивание<<<
         List<float[]> newRules = new List<float[]>();
-        
-        // >>>Crossbreeding<<<
 
         // Требуется кратность четырём
         for (int i = 0; i < virtualScreensInSimulation / 4; i++)
         {
-            var parent1i = Random.Range(0, indexFitness.Count);
+            var parent1i = UnityEngine.Random.Range(0, indexFitness.Count);
             var parent1Rule = allRules[indexFitness[parent1i].Key];
             newRules.Add(parent1Rule);
             indexFitness.RemoveAt(parent1i);
 
-            var parent2i = Random.Range(0, indexFitness.Count);
+            var parent2i = UnityEngine.Random.Range(0, indexFitness.Count);
             var parent2Rule = allRules[indexFitness[parent2i].Key];
             newRules.Add(parent2Rule);
             indexFitness.RemoveAt(parent2i);
@@ -710,7 +738,7 @@ public class SimulationManager : MonoBehaviour
             var daughterRule = new float[RULE_SIZE];
             if (crossSeparation)
             {
-                var crossSeparator = Random.Range(0, RULE_SIZE);
+                var crossSeparator = UnityEngine.Random.Range(0, RULE_SIZE);
                 for (int j = 0; j < RULE_SIZE; j++)
                 {
                     sonRule[j] = j < crossSeparator ? parent1Rule[j] : parent2Rule[j];
@@ -721,7 +749,7 @@ public class SimulationManager : MonoBehaviour
             {
                 for (int j = 0; j < RULE_SIZE; j++)
                 {
-                    if (Random.Range(0, 2) == 0)
+                    if (UnityEngine.Random.Range(0, 2) == 0)
                     {
                         sonRule[j] = parent1Rule[j];
                         daughterRule[j] = parent2Rule[j];
@@ -740,9 +768,9 @@ public class SimulationManager : MonoBehaviour
         // >>>Mutations<<<
         foreach (var rule in newRules)
         {
-            if (Random.Range(0, 1f) <= mutationPercent / 100f)
+            if (UnityEngine.Random.Range(0, 1f) <= mutationPercent / 100f)
             {
-                var gene = Random.Range(0, RULE_SIZE);
+                var gene = UnityEngine.Random.Range(0, RULE_SIZE);
                 rule[gene] = Mathf.Abs(1 - rule[gene]);
             }
         }
@@ -762,6 +790,29 @@ public class SimulationManager : MonoBehaviour
         UpdateGenofond();
         UpdateFitnessFigure();
         maxScreenFitness = new float[virtualScreensInSimulation];
+
+        // Для мультисимуляции проверяем количество паттернов, которые прошли черту. 
+        // Если число достигнуто, перезагружаем симуляцию для нового эксперимента
+        if (averageGoodFitness > msFitnessThreshold)
+        {
+            msCalculationsAfterThresholdPassed++;
+            if (msCalculationsAfterThresholdPassed > msCalculationsAfterThreshold)
+            {
+                RestartSimulation();
+            }
+        }
+        else if (evolutionStep > evolutionStepLimit)
+        {
+            RestartSimulation(true);
+        }
+    }
+
+    private float CalculateMaxTheoreticalFitness()
+    {
+        byte[] texture = new byte[screenSizeInPixels * screenSizeInPixels];
+        var pW = patterns[0].patternSizeX;
+        var pH = patterns[0].patternSizeY;
+        return 1;
     }
     
     private void UpdateGenofond()
@@ -773,14 +824,20 @@ public class SimulationManager : MonoBehaviour
 
         genofond = new Color32[virtualScreensInSimulation * RULE_SIZE];
 
+        RecalculateGlobalPivotBits();
+
         for (int i = 0; i < allRules.Length; i++)
         {
             for (int j = 0; j < RULE_SIZE; j++)
             {
-                byte ruleByte = 0;
-                if (allRules[i][j] == 1) ruleByte = 255;
-                else ruleByte = 0;
-                genofond[j + i * RULE_SIZE] = new Color32(255, 255, 255, ruleByte);
+                byte ruleByte = 155;                        // ноль
+                if (allRules[i][j] == 1) ruleByte = 255;    // один
+                if (globalPivotBits.Contains(j)) 
+                    genofond[j + i * RULE_SIZE] = new Color32(28, 255, 236, ruleByte);
+                else if (Mathf.Abs(bitValue[j]) > averageBitValue)
+                    genofond[j + i * RULE_SIZE] = new Color32(255, 195, 0, ruleByte);
+                else
+                    genofond[j + i * RULE_SIZE] = new Color32(255, 255, 255, ruleByte);
             }
         }
 
@@ -793,7 +850,7 @@ public class SimulationManager : MonoBehaviour
     {
         float sizeMultX = 1f / (1 + fitnessHistory.Count / 10);
         var lastRecord = fitnessHistory[fitnessHistory.Count - 1];
-        float sizeMultY = 4f / (1 + (lastRecord.averageGoodFitness + lastRecord.maxFitness) / 5f);
+        float sizeMultY = 4f / (1 + (lastRecord.averageGoodFitness + lastRecord.maxFitness) / 4f);
         foreach (var lineRend in fitnessLineRenderers) {
             lineRend.positionCount = fitnessHistory.Count;
             lineRend.transform.localScale = new Vector3(sizeMultX, 1, sizeMultY);
@@ -807,6 +864,181 @@ public class SimulationManager : MonoBehaviour
         fitnessLineRenderers[0].SetPositions(fitnessBestPoints.ToArray());
         fitnessLineRenderers[1].SetPositions(fitnessAverageGoodPoints.ToArray());
         fitnessLineRenderers[2].SetPositions(fitnessAveragePoints.ToArray());
+    }
+
+    private void UpdateBitValue(float[] rule, float multiply = 1)
+    {
+        float goodScreens = virtualScreensInSimulation / 2f;
+        for (int i = 0; i < rule.Length; i++)
+        {
+            bitValue[i] += multiply * (rule[i] == 1 ? 1 / goodScreens : -1 / goodScreens);
+        }
+        averageBitValue = 0;
+        for (int i = 0; i < rule.Length; i++)
+        {
+            averageBitValue += Mathf.Abs(bitValue[i]) / RULE_SIZE;
+        }
+    }
+
+    public void WritePivotBits(bool toFile = false)
+    {
+        string output = "";
+        for (int i = 0; i < bitValue.Length; i++)
+        {
+            if (bitValue[i] > averageBitValue) output += $"{i} ";
+        }
+        
+        if (output == "") return;
+        Debug.Log(output);
+        if (!toFile) return;
+
+        string path = $"Assets/SimulationData/PatternPivotBits/PB-{patternFile.name}.txt";
+
+        //Write some text to the test.txt file
+        StreamWriter writer = new StreamWriter(path, true);
+        writer.WriteLine(output);
+        writer.Close();
+    }
+
+    private void OnDestroy()
+    {
+        if (writeToGlobalPivotBits) WritePivotBits(true);
+        WriteSimulationStatistics(true);
+        WriteFitnessHistory();
+        WriteGenes();
+    }
+
+    int[] tempPivotBits;
+    private void RecalculateGlobalPivotBits()
+    {
+        string path = $"Assets/SimulationData/PatternPivotBits/PB-{patternFile.name}.txt";
+        try
+        {
+            StreamReader reader = new StreamReader(path);
+
+            globalPivotBits = new SortedSet<int>();
+
+            tempPivotBits = new int[RULE_SIZE];
+            var lines = reader.ReadToEnd().Split('\n');
+
+            for (int i = 0; i < lines.Length; i++)
+            {
+                var line = lines[i];
+                foreach (var index in line.Split(' '))
+                {
+                    if (int.TryParse(index, out int intIndex))
+                    {
+                        tempPivotBits[intIndex]++;
+                    }
+                }
+            }
+
+            float fraction = (lines.Length - 1) * 0.75f; // в 3/4 правилах содержатся нужные биты
+            for (int i = 0; i < RULE_SIZE; i++)
+            {
+                if (tempPivotBits[i] > fraction)
+                {
+                    globalPivotBits.Add(i);
+                }
+            }
+
+            // Учтем и текущие опорные биты если они существуют
+            //for (int i = 0; i < bitValue.Length; i++)
+            //{
+            //    if (bitValue[i] > averageBitValue)
+            //    {
+            //        tempPivotBits[i]++;
+            //    }
+            //}
+
+            reader.Close();
+        }
+        catch
+        {
+            Debug.LogWarning("Файл не существует. Если вы впервые ищете опорные биты в этом паттерне, игнорируйте ошибку");
+        }
+    }
+
+    private void RestartSimulation(bool isAbort = false)
+    {
+        Debug.Log("Simulation restarted");
+
+        if (writeToGlobalPivotBits) WritePivotBits(true);
+        WriteSimulationStatistics(isAbort);
+        WriteFitnessHistory();
+        WriteGenes();
+
+        for (int i = 0; i < virtualScreensInSimulation; i++)
+        {
+            allRules[i] = InititalizeRandomRule();
+            virtualScreens[i] = InitializeVirtualScreen(virtualScreens[i]);
+        }
+        fitnessHistory = new List<FitnessRecord>();
+        fitnessBestPoints = new List<Vector3>();
+        fitnessAveragePoints = new List<Vector3>();
+        fitnessAverageGoodPoints = new List<Vector3>();
+        bitValue = new float[RULE_SIZE];
+        averageBitValue = 1000;
+        msCalculationsAfterThresholdPassed = 0;
+        evolutionStep = 0;
+        simulationStartTime = Time.time;
+        GenerateSimulationID();
+    }
+
+    private void WriteSimulationStatistics(bool abort = false)
+    {
+        float timePassed = Time.time - simulationStartTime;
+        string output = $"Simulation [{simulationID}] -- {DateTime.Now}\n";
+        if (!abort) output += "OK|Simulation finished successfully";
+        else output += $"ABORT|Simulation aborted";
+
+        output += $" for {patternFile.name} after {evolutionStep} evolutions.\n" +
+                $"Time spent: {timePassed}. Average good fitness: {fitnessHistory[fitnessHistory.Count - 1].averageGoodFitness}.\n" +
+                $"Virtual screens: {virtualScreensInSimulation}. Update period: {updatePeriod}. Time to evolution: {timeToEvolution}.\n" +
+                $"Fitness calculations between evolution: {fitnessCalculationsNeeded}.\n" +
+                $"Fitness threshold: {msFitnessThreshold}. Additional steps after threshold: {msCalculationsAfterThreshold}.\n" +
+                $"Simple cross separation: {crossSeparation}\n" +
+                $"Mutation percent: {mutationPercent}\n" +
+                $"\n";
+
+
+        string path = $"Assets/SimulationData/Statistics/Stats-{patternFile.name}.txt";
+        StreamWriter writer = new StreamWriter(path, true);
+        writer.WriteLine(output);
+        writer.Close();
+    }
+
+    private void WriteFitnessHistory()
+    {
+        string path = $"Assets/SimulationData/FitnessRecord/FH-{patternFile.name}-{simulationID}.txt";
+        StreamWriter writer = new StreamWriter(path, true);
+        foreach (var record in fitnessHistory)
+        {
+            writer.WriteLine($"{record.maxFitness} {record.averageGoodFitness} {record.averageFitness}");
+        }
+        writer.Close();
+    }
+
+    private void GenerateSimulationID()
+    {
+        simulationID = UnityEngine.Random.Range(0, 10000f);
+    }
+
+    private void WriteGenes()
+    {
+        string path = $"Assets/SimulationData/Genes/G-{patternFile.name}-{simulationID}.txt";
+        StreamWriter writer = new StreamWriter(path, true);
+        for (int i = 0; i < virtualScreensInSimulation; i++)
+        {
+            var gene = allRules[i];
+            string output = "";
+            foreach (var bit in gene)
+            {
+                output += bit;
+            }
+            writer.WriteLine(output);
+        }
+        writer.Close();
     }
 
     #endregion
@@ -911,6 +1143,10 @@ public class SimulationManager : MonoBehaviour
     private float[] maxScreenFitness;
     private int[] screenLines = null; // Для оптимизации
     private List<FitnessRecord> fitnessHistory = new List<FitnessRecord>();
+    private float maxTheoreticalFitness = 1;
+    private float[] bitValue = new float[RULE_SIZE];
+    private SortedSet<int> globalPivotBits = new SortedSet<int>();
+    private float averageBitValue = 1000;
 
     List<Vector3> fitnessBestPoints = new List<Vector3>();
     List<Vector3> fitnessAverageGoodPoints = new List<Vector3>();
@@ -918,4 +1154,9 @@ public class SimulationManager : MonoBehaviour
     private Color32[] genofond = null;
     private Texture2D genofondScreenTex = null;
     private LineRenderer[] fitnessLineRenderers = new LineRenderer[3];
+
+    private float simulationStartTime = 0f;
+    private int msCalculationsAfterThresholdPassed = 0;
+
+    private float simulationID = 0;
 }

@@ -122,7 +122,8 @@ public class InterfaceManager : MonoBehaviour
     private void ShowGenofond()
     {
         cameraSavedPositionG = mainCamera.transform.position;
-        mainCamera.transform.position = simulationManager.genofondScreen.transform.position - new Vector3(0, 0, 10);
+        mainCamera.transform.position = simulationManager.genofondScreen.transform.position - new Vector3(0, 0, 12);
+        simulationManager.WritePivotBits();
     }
 
     private void HideGenofond()
