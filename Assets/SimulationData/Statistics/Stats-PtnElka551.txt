@@ -28,3 +28,53 @@ Simple cross separation: False
 Mutation percent: 15
 
 
+Simulation [173,1527] -- 23.05.2020 23:13:44
+ABORT|Simulation aborted for PtnElka551 after 2001 evolutions.
+Time spent: 12865,75. Average good fitness: 14,59837.
+Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 150.
+Simple cross separation: False
+Mutation percent: 15
+
+
+Simulation [9680,865] -- 24.05.2020 6:18:44
+ABORT|Simulation aborted for PtnElka551 after 4001 evolutions.
+Time spent: 25499,71. Average good fitness: 20,85686.
+Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 150.
+Simple cross separation: False
+Mutation percent: 15
+
+
+Simulation [5018,059] -- 24.05.2020 7:26:39
+OK|Simulation finished successfully for PtnElka551 after 650 evolutions.
+Time spent: 4074,648. Average good fitness: 54,33083.
+Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 150.
+Simple cross separation: False
+Mutation percent: 15
+
+
+Simulation [4445,164] -- 24.05.2020 14:23:28
+ABORT|Simulation aborted for PtnElka551 after 4001 evolutions.
+Time spent: 25006,82. Average good fitness: 13,39436.
+Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 150.
+Simple cross separation: False
+Mutation percent: 15
+
+
+Simulation [4418,589] -- 24.05.2020 14:33:03
+ABORT|Simulation aborted for PtnElka551 after 87 evolutions.
+Time spent: -93197,32. Average good fitness: 0,1096725.
+Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 150.
+Simple cross separation: False
+Mutation percent: 15
+
+

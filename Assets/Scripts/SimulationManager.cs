@@ -85,7 +85,7 @@ public class SimulationManager : MonoBehaviour
         }
     }
 
-    private const short RULE_SIZE = 512;
+    public const short RULE_SIZE = 512;
 
     void Start()
     {
@@ -174,7 +174,7 @@ public class SimulationManager : MonoBehaviour
             Debug.LogWarning("Optimisation impassible");
         }
         var cycleLength = screenSize / ruleInitBitOptimizationBy;
-        for (short i = 0; i < cycleLength; i++)
+        for (int i = 0; i < cycleLength; i++)
         {
             var generatedRandom = UnityEngine.Random.Range(0, 1 << ruleInitBitOptimizationBy);
             for (byte j = 0; j < ruleInitBitOptimizationBy; j++)
@@ -266,7 +266,7 @@ public class SimulationManager : MonoBehaviour
         // Предположительно работает только в случае 2 состояний автоматов
         if (optimizedUpdateCAV2)
         {
-            var size2D = screenSizeInPixels * screenSizeInPixels;
+            long size2D = screenSizeInPixels * screenSizeInPixels;
             int signal = 0;
             // первичная инициализация нулями
             for (int i = screenSizeInPixels - 2; i < screenSizeInPixels; i++)
@@ -317,7 +317,7 @@ public class SimulationManager : MonoBehaviour
                 screenSignals[iPix + screenSizeInPixels - 1] = signal;       // строка i,   последний символ, именно присваивание
             }
 
-            for (short i = 0; i < size2D; i++)
+            for (int i = 0; i < size2D; i++)
             {
                 CAField[i] = (byte)allRules[ind][screenSignals[(i - screenSizeInPixels + size2D) % size2D]];
             }
@@ -902,6 +902,7 @@ public class SimulationManager : MonoBehaviour
 
     private void OnDestroy()
     {
+        if (evolutionStep < 25) return;
         if (writeToGlobalPivotBits) WritePivotBits(true);
         WriteSimulationStatistics(true);
         WriteFitnessHistory();
@@ -987,6 +988,8 @@ public class SimulationManager : MonoBehaviour
 
     private void WriteSimulationStatistics(bool abort = false)
     {
+        if (evolutionStep < 10) return;
+
         float timePassed = Time.time - simulationStartTime;
         string output = $"Simulation [{simulationID}] -- {DateTime.Now}\n";
         if (!abort) output += "OK|Simulation finished successfully";
@@ -1116,6 +1119,8 @@ public class SimulationManager : MonoBehaviour
             updatePeriod = updatePeriodSaved;
         }
     }
+
+    public MeshRenderer firstScreen() => screens[0];
 
     Texture2D checkTexture = null;
     Color32[] checkPixels = null;

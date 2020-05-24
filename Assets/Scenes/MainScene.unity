@@ -1544,7 +1544,7 @@ MonoBehaviour:
   genofondScreen: {fileID: 2004998649}
   patterns: []
   fitnessScreen: {fileID: 40919615}
-  fitnessCalculationsNeeded: 35
+  fitnessCalculationsNeeded: 25
   fitnessCalcScreensPerFrame: 128
   simulationPaused: 0
   msFitnessThreshold: 25
