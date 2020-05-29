@@ -208,23 +208,3 @@ Simple cross separation: False
 Mutation percent: 15
 
 
-Simulation [813,9968] -- 23.05.2020 2:03:02
-ABORT|Simulation aborted for PtnSquare552 after 12 evolutions.
-Time spent: -23362,86. Average good fitness: 0,5181636.
-Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
-Fitness calculations between evolution: 25.
-Fitness threshold: 12. Additional steps after threshold: 100.
-Simple cross separation: False
-Mutation percent: 15
-
-
-Simulation [5862,833] -- 23.05.2020 2:07:49
-ABORT|Simulation aborted for PtnSquare552 after 3 evolutions.
-Time spent: 19,23571. Average good fitness: 0,4450485.
-Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
-Fitness calculations between evolution: 25.
-Fitness threshold: 12. Additional steps after threshold: 100.
-Simple cross separation: False
-Mutation percent: 15
-
-

@@ -23,6 +23,7 @@ public class SimulationManager : MonoBehaviour
     [Header("Evolution"),
      SerializeField] private float timeToEvolution = 3f;
     [SerializeField] private float mutationPercent = 7;
+    [SerializeField] private int mutateBitsUpTo = 1;
     private int evolutionStep = 0;
     [SerializeField] private TextAsset patternFile = null;
     [SerializeField] private float pivotBitFitnessThreshold = 25;
@@ -445,7 +446,6 @@ public class SimulationManager : MonoBehaviour
         var patternHeight = patterns[0].patternSizeY;
         var patternWidth = patterns[0].patternSizeX;
         var patternErrors = patterns[0].patternErrors;
-        //var patternRule = patterns[0].pattern;
         var patternsCount = patterns.Length;
         int[] currentErrors = new int[patternsCount];
 
@@ -464,20 +464,13 @@ public class SimulationManager : MonoBehaviour
                 {
                     for (byte jr = 0; jr < patternWidth; jr++)
                     {
-                        // Color32 = (255, 255, 255, 255/0)
-                        // I convert it to (1, 1, 1, 1/0)
-                        // And compare with corresponding cell in fitness rule
                         int pixelIndex = (cornerPixel + ir * textureWidth + jr) % (textureWidth * textureHeight);
                         //jr or ir ?
                         for (int p = 0; p < patternsCount; p++)
                         {
                             currentErrors[p] += texturePixels[pixelIndex] == patterns[p].pattern[ir * patternWidth + jr] ? 0 : 1;
                         }
-                        //currentErrors += texturePixels[pixelIndex] == patternRule[ir * patternWidth + jr] ? 0 : 1;
                     }
-                    
-                    
-                    //if (minErrors > patternErrors) break;
                 }
                 int minErrors = patternErrors + 1;
                 for (int p = 0; p < patternsCount; p++)
@@ -485,15 +478,9 @@ public class SimulationManager : MonoBehaviour
                     minErrors = currentErrors[p] < minErrors ? currentErrors[p] : minErrors;
                 }
 
-                //for (int p = 0; p < patternsCount; p++)
-                //{
-                //    if (currentErrors[p] < minErrors) minErrors = currentErrors[p];
-                //}
-
                 fitness += minErrors <= patternErrors ? (1 + patternErrors - minErrors) * 1f / (patternErrors + 1) : 0;
             }
         }
-        
         return fitness * 100 / (textureWidth * textureHeight);
     }
 
@@ -770,8 +757,12 @@ public class SimulationManager : MonoBehaviour
         {
             if (UnityEngine.Random.Range(0, 1f) <= mutationPercent / 100f)
             {
-                var gene = UnityEngine.Random.Range(0, RULE_SIZE);
-                rule[gene] = Mathf.Abs(1 - rule[gene]);
+                int mutateBitsCount = UnityEngine.Random.Range(1, mutateBitsUpTo + 1);
+                for (int i = 0; i < mutateBitsCount; i++)
+                {
+                    var gene = UnityEngine.Random.Range(0, RULE_SIZE);
+                    rule[gene] = Mathf.Abs(1 - rule[gene]);
+                }
             }
         }
 
@@ -1000,8 +991,8 @@ public class SimulationManager : MonoBehaviour
                 $"Virtual screens: {virtualScreensInSimulation}. Update period: {updatePeriod}. Time to evolution: {timeToEvolution}.\n" +
                 $"Fitness calculations between evolution: {fitnessCalculationsNeeded}.\n" +
                 $"Fitness threshold: {msFitnessThreshold}. Additional steps after threshold: {msCalculationsAfterThreshold}.\n" +
-                $"Simple cross separation: {crossSeparation}\n" +
-                $"Mutation percent: {mutationPercent}\n" +
+                $"Simple cross separation: {crossSeparation}.\n" +
+                $"Mutation percent: {mutationPercent}. Mutate up to {mutateBitsUpTo} bits.\n" +
                 $"\n";
 
 

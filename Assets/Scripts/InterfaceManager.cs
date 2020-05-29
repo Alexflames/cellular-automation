@@ -26,10 +26,10 @@ public class InterfaceManager : MonoBehaviour
     
     void Update()
     {
-        mainCamera.transform.Translate(
-            new Vector3(Input.GetAxis("Horizontal") * 6, 
-            Input.GetAxis("Vertical") * 6, 
-            Input.GetAxis("Mouse ScrollWheel") * 750) * Time.deltaTime);
+        //mainCamera.transform.Translate(
+        //    new Vector3(Input.GetAxis("Horizontal") * 6, 
+        //    Input.GetAxis("Vertical") * 6, 
+        //    Input.GetAxis("Mouse ScrollWheel") * 750) * Time.deltaTime);
 
         if (Input.GetKeyDown(KeyCode.R) && Input.GetKey(KeyCode.LeftShift))
         {
