@@ -1005,6 +1005,7 @@ MonoBehaviour:
   datapath: C:\Users\Public\Documents\Unity Projects\CellularAutomations\Assets
   timeToEvolution: 1e+11
   mutationPercent: 15
+  mutateBitsUpTo: 1
   patternFile: {fileID: 4900000, guid: 8402fd5657bc695408aa3cf0e060e539, type: 3}
   pivotBitFitnessThreshold: 999
   writeToGlobalPivotBits: 0
@@ -1044,7 +1045,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 643baa38c7ded8b4997fbd3fc9e02487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  genesFiles: {fileID: 4900000, guid: 53192db2b2520624b98907b989a3884f, type: 3}
+  genesFiles: {fileID: 4900000, guid: a34e70893f44e15498803ccd3c4e6103, type: 3}
 --- !u!1 &55259400
 GameObject:
   m_ObjectHideFlags: 0

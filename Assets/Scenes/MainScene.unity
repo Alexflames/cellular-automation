@@ -1537,10 +1537,10 @@ MonoBehaviour:
   updateCheckScreen: 1
   datapath: C:\Users\Public\Documents\Unity Projects\CellularAutomations\Assets
   timeToEvolution: 1.5
-  mutationPercent: 25
-  mutateBitsUpTo: 4
-  patternFile: {fileID: 4900000, guid: 86ebaddc4182b2344b3cf966cc4c76e6, type: 3}
-  pivotBitFitnessThreshold: 5
+  mutationPercent: 5
+  mutateBitsUpTo: 8
+  patternFile: {fileID: 4900000, guid: 075b181fbd4e0fd469003045c6fe8575, type: 3}
+  pivotBitFitnessThreshold: 25
   writeToGlobalPivotBits: 1
   genofondScreen: {fileID: 2004998649}
   patterns: []
@@ -1548,8 +1548,8 @@ MonoBehaviour:
   fitnessCalculationsNeeded: 25
   fitnessCalcScreensPerFrame: 128
   simulationPaused: 0
-  msFitnessThreshold: 10
-  msCalculationsAfterThreshold: 200
+  msFitnessThreshold: 35
+  msCalculationsAfterThreshold: 250
   evolutionStepLimit: 1000
   crossSeparation: 0
 --- !u!114 &46086333

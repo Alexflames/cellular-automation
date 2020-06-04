@@ -1,0 +1,10 @@
+Simulation [9798,769] -- 02.06.2020 15:45:28
+ABORT|Simulation aborted for PtnTriangle777-sym after 170 evolutions.
+Time spent: 942,0638. Average good fitness: 159,1742.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 1000.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 4 bits.
+
+

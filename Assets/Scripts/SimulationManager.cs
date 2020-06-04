@@ -506,17 +506,22 @@ public class SimulationManager : MonoBehaviour
         int patternCycle = (1 << patternHeight);
 
         // Подсчет линий в паттерне OK
-        int[] patternLines = new int[patterns[0].patternSizeX];
+        int[][] patternLines = new int[patterns.Length][];
         int newPatternLine = 0;
-        for (int i = 0; i < patternHeight; i++)
+        for (int p = 0; p < patterns.Length; p++)
         {
-            newPatternLine = 0;
-            for (int j = 0; j < patternWidth; j++)
+            patternLines[p] = new int[patterns[0].patternSizeX];
+            for (int i = 0; i < patternHeight; i++)
             {
-                newPatternLine = (newPatternLine << 1) + patterns[0].pattern[i * patternWidth + j];
+                newPatternLine = 0;
+                for (int j = 0; j < patternWidth; j++)
+                {
+                    newPatternLine = (newPatternLine << 1) + patterns[p].pattern[i * patternWidth + j];
+                }
+                patternLines[p][i] = newPatternLine;
             }
-            patternLines[i] = newPatternLine;
         }
+
 
         int qOffset = 0;
 
@@ -562,15 +567,16 @@ public class SimulationManager : MonoBehaviour
                 
                 for (byte k = 0; k < patternHeight; k++)
                 {
-                    int ind = (qOffset + k) % patternHeight; // qOffset + 1 + k ????
-                    screenLine = screenLines[ind];
-                    newErrors = patternLines[k] ^ screenLine;
-                    ///print($"Screen:{screenLine}, Pattern:{patternLines[k]}, Diff:{newErrors}");
-                    // тут можно добавить и другие оптимизации? таблица битов?
-                    // https://stackoverflow.com/questions/109023/how-to-count-the-number-of-set-bits-in-a-32-bit-integer
-                    //////////////
                     for (byte p = 0; p < patterns.Length; p++)
                     {
+                        int ind = (qOffset + k) % patternHeight; // qOffset + 1 + k ????
+                        screenLine = screenLines[ind];
+                        newErrors = patternLines[p][k] ^ screenLine;
+                        ///print($"Screen:{screenLine}, Pattern:{patternLines[k]}, Diff:{newErrors}");
+                        // тут можно добавить и другие оптимизации? таблица битов?
+                        // https://stackoverflow.com/questions/109023/how-to-count-the-number-of-set-bits-in-a-32-bit-integer
+                        //////////////
+                        ///
                         newErrors = newErrors - ((newErrors >> 1) & 0x55555555);
                         newErrors = (newErrors & 0x33333333) + ((newErrors >> 2) & 0x33333333);
                         currentErrors[p] += (((newErrors + (newErrors >> 4)) & 0x0F0F0F0F) * 0x01010101) >> 24;
