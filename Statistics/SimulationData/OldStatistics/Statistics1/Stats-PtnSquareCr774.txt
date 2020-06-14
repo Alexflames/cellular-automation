@@ -1,0 +1,50 @@
+Simulation [8658,818] -- 29.05.2020 3:38:42
+ABORT|Simulation aborted for PtnSquareCr774 after 1001 evolutions.
+Time spent: 6965,305. Average good fitness: 0.
+Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 10. Additional steps after threshold: 200.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 4 bits.
+
+
+Simulation [8737,024] -- 29.05.2020 5:34:43
+ABORT|Simulation aborted for PtnSquareCr774 after 1001 evolutions.
+Time spent: 6961,511. Average good fitness: 0,001869202.
+Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 10. Additional steps after threshold: 200.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 4 bits.
+
+
+Simulation [1231,78] -- 29.05.2020 7:30:49
+ABORT|Simulation aborted for PtnSquareCr774 after 1001 evolutions.
+Time spent: 6966,105. Average good fitness: 0.
+Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 10. Additional steps after threshold: 200.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 4 bits.
+
+
+Simulation [2071,981] -- 29.05.2020 9:26:49
+ABORT|Simulation aborted for PtnSquareCr774 after 1001 evolutions.
+Time spent: 6959,523. Average good fitness: 0.
+Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 10. Additional steps after threshold: 200.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 4 bits.
+
+
+Simulation [11,5478] -- 29.05.2020 9:56:11
+ABORT|Simulation aborted for PtnSquareCr774 after 253 evolutions.
+Time spent: 1760,889. Average good fitness: 0,001869202.
+Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 10. Additional steps after threshold: 200.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 4 bits.
+
+

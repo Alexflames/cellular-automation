@@ -47,6 +47,8 @@ public static class PatternReadWrite
                 patterns[patternsCount] = patternToAdd;
                 patternRow = 0;
                 patternsCount++;
+                patternToAdd =
+                    new SimulationManager.Pattern(patternWidth, patternHeight, patternErrors, new byte[patternHeight * patternWidth]);
             }
             stringInd++;
         }

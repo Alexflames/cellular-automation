@@ -1,160 +1,1180 @@
-OK|Simulation finished successfully for PtnCross551 after 36 evolutions.
-Time spent: 145,3995. Fitness: 1,366932
-Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.Fitness calculations between evolution: 25Simple cross separation: False
-Mutation percent: 15
-
-
-OK|Simulation finished successfully for PtnCross551 after 48 evolutions.
-Time spent: 337,7476. Fitness: 1,176198
-Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.Fitness calculations between evolution: 25Simple cross separation: False
-Mutation percent: 15
-
-
-ABORT|Simulation aborted for PtnCross551 after 9 evolutions.
-Time spent: 0. Fitness: 0,4545845
-Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.Fitness calculations between evolution: 25Simple cross separation: False
-Mutation percent: 15
-
-
-OK|Simulation finished successfully for PtnCross551 after 72 evolutions.
-Time spent: 288,3981. Average good fitness: 112,8005.
+Simulation [5525,886] -- 13.06.2020 15:34:09
+OK|Simulation finished successfully for PtnCross551 after 219 evolutions.
+Time spent: 951,3828. Average good fitness: 154,3737.
 Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
-Fitness calculations between evolution: 25.
-Fitness threshold: 20. Additional steps after threshold: 25.
-Simple cross separation: False
-Mutation percent: 15
-
-
-OK|Simulation finished successfully for PtnCross551 after 125 evolutions.
-Time spent: 788,1539. Average good fitness: 144,3893.
-Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
-Fitness calculations between evolution: 25.
-Fitness threshold: 20. Additional steps after threshold: 25.
-Simple cross separation: False
-Mutation percent: 15
-
-
-OK|Simulation finished successfully for PtnCross551 after 69 evolutions.
-Time spent: 1063,789. Average good fitness: 137,1314.
-Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
-Fitness calculations between evolution: 25.
-Fitness threshold: 20. Additional steps after threshold: 25.
-Simple cross separation: False
-Mutation percent: 15
-
-
-OK|Simulation finished successfully for PtnCross551 after 71 evolutions.
-Time spent: 1347,821. Average good fitness: 81,30396.
-Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
-Fitness calculations between evolution: 25.
-Fitness threshold: 20. Additional steps after threshold: 25.
-Simple cross separation: False
-Mutation percent: 15
-
-
-OK|Simulation finished successfully for PtnCross551 after 84 evolutions.
-Time spent: 1682,475. Average good fitness: 73,61097.
-Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
-Fitness calculations between evolution: 25.
-Fitness threshold: 20. Additional steps after threshold: 25.
-Simple cross separation: False
-Mutation percent: 15
-
-
-ABORT|Simulation aborted for PtnCross551 after 25 evolutions.
-Time spent: 0. Average good fitness: 0,5753837.
-Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
-Fitness calculations between evolution: 25.
-Fitness threshold: 20. Additional steps after threshold: 25.
-Simple cross separation: False
-Mutation percent: 15
-
-
-ABORT|Simulation aborted for PtnCross551 after 1 evolutions.
-Time spent: 0. Average good fitness: 0,3941855.
-Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
-Fitness calculations between evolution: 25.
-Fitness threshold: 20. Additional steps after threshold: 50.
-Simple cross separation: False
-Mutation percent: 15
-
-
-Simulation [0] -- 22.05.2020 0:47:44
-OK|Simulation finished successfully for PtnCross551 after 103 evolutions.
-Time spent: 408,8299. Average good fitness: 82,84573.
-Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
-Fitness calculations between evolution: 25.
-Fitness threshold: 20. Additional steps after threshold: 50.
-Simple cross separation: False
-Mutation percent: 15
-
-
-ABORT|Simulation aborted for PtnCross551 after 9 evolutions.
-Time spent: -408,8299. Average good fitness: 0,4736579.
-Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
-Fitness calculations between evolution: 25.
-Fitness threshold: 20. Additional steps after threshold: 50.
-Simple cross separation: False
-Mutation percent: 15
-
-
-Simulation [7618,785] -- 22.05.2020 0:51:16
-ABORT|Simulation aborted for PtnCross551 after 2 evolutions.
-Time spent: 0. Average good fitness: 0,4450479.
-Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
-Fitness calculations between evolution: 25.
-Fitness threshold: 20. Additional steps after threshold: 50.
-Simple cross separation: False
-Mutation percent: 15
-
-
-Simulation [4132,266] -- 22.05.2020 1:00:15
-OK|Simulation finished successfully for PtnCross551 after 109 evolutions.
-Time spent: 434,7783. Average good fitness: 137,0265.
-Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
-Fitness calculations between evolution: 25.
-Fitness threshold: 20. Additional steps after threshold: 50.
-Simple cross separation: False
-Mutation percent: 15
-
-
-Simulation [7272,339] -- 22.05.2020 1:06:23
-OK|Simulation finished successfully for PtnCross551 after 92 evolutions.
-Time spent: 367,2959. Average good fitness: 206,3402.
-Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
-Fitness calculations between evolution: 25.
-Fitness threshold: 20. Additional steps after threshold: 50.
-Simple cross separation: False
-Mutation percent: 15
-
-
-Simulation [8648,548] -- 22.05.2020 1:07:55
-ABORT|Simulation aborted for PtnCross551 after 22 evolutions.
-Time spent: -802,0742. Average good fitness: 0,5690258.
-Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
-Fitness calculations between evolution: 25.
-Fitness threshold: 20. Additional steps after threshold: 50.
-Simple cross separation: False
-Mutation percent: 15
-
-
-Simulation [3336,253] -- 22.05.2020 15:46:16
-ABORT|Simulation aborted for PtnCross551 after 101 evolutions.
-Time spent: 0. Average good fitness: 192,0288.
-Virtual screens: 256. Update period: 0,001. Time to evolution: 999.
-Fitness calculations between evolution: 25.
-Fitness threshold: 12. Additional steps after threshold: 999.
-Simple cross separation: False
-Mutation percent: 15
-
-
-Simulation [4921,662] -- 23.05.2020 2:30:55
-ABORT|Simulation aborted for PtnCross551 after 5 evolutions.
-Time spent: 0. Average good fitness: 0,4545852.
-Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
 Fitness calculations between evolution: 25.
 Fitness threshold: 25. Additional steps after threshold: 100.
-Simple cross separation: False
-Mutation percent: 15
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 1 bits.
+
+
+Simulation [1345,168] -- 13.06.2020 15:50:30
+OK|Simulation finished successfully for PtnCross551 after 225 evolutions.
+Time spent: 980,0547. Average good fitness: 93,4251.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 1 bits.
+
+
+Simulation [619,3245] -- 13.06.2020 16:12:18
+OK|Simulation finished successfully for PtnCross551 after 297 evolutions.
+Time spent: 1308,142. Average good fitness: 113,5762.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 1 bits.
+
+
+Simulation [6403,147] -- 13.06.2020 16:30:02
+OK|Simulation finished successfully for PtnCross551 after 245 evolutions.
+Time spent: 1063,957. Average good fitness: 90,84383.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 1 bits.
+
+
+Simulation [7661,397] -- 13.06.2020 16:44:11
+OK|Simulation finished successfully for PtnCross551 after 196 evolutions.
+Time spent: 848,8901. Average good fitness: 102,8156.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 1 bits.
+
+
+Simulation [4798,785] -- 13.06.2020 17:03:15
+OK|Simulation finished successfully for PtnCross551 after 262 evolutions.
+Time spent: 1144,439. Average good fitness: 149,6029.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 1 bits.
+
+
+Simulation [2604,169] -- 13.06.2020 17:31:26
+OK|Simulation finished successfully for PtnCross551 after 386 evolutions.
+Time spent: 1691,469. Average good fitness: 107,727.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 1 bits.
+
+
+Simulation [4089,797] -- 13.06.2020 17:52:38
+OK|Simulation finished successfully for PtnCross551 after 295 evolutions.
+Time spent: 1271,277. Average good fitness: 134,2519.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 1 bits.
+
+
+Simulation [5874,758] -- 13.06.2020 18:11:20
+OK|Simulation finished successfully for PtnCross551 after 259 evolutions.
+Time spent: 1122,298. Average good fitness: 62,72002.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 1 bits.
+
+
+Simulation [8499,712] -- 13.06.2020 18:23:18
+OK|Simulation finished successfully for PtnCross551 after 166 evolutions.
+Time spent: 718,3213. Average good fitness: 101,989.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 1 bits.
+
+
+Simulation [5914,504] -- 13.06.2020 18:37:41
+OK|Simulation finished successfully for PtnCross551 after 198 evolutions.
+Time spent: 862,7734. Average good fitness: 134,4134.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 1 bits.
+
+
+Simulation [1701,273] -- 13.06.2020 19:07:34
+OK|Simulation finished successfully for PtnCross551 after 408 evolutions.
+Time spent: 1793,344. Average good fitness: 100,7271.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 1 bits.
+
+
+Simulation [6543,168] -- 13.06.2020 19:19:35
+OK|Simulation finished successfully for PtnCross551 after 167 evolutions.
+Time spent: 720,9434. Average good fitness: 158,8942.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 1 bits.
+
+
+Simulation [8476,289] -- 13.06.2020 19:50:32
+OK|Simulation finished successfully for PtnCross551 after 422 evolutions.
+Time spent: 1856,755. Average good fitness: 88,41833.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 1 bits.
+
+
+Simulation [5576,559] -- 13.06.2020 20:05:00
+OK|Simulation finished successfully for PtnCross551 after 197 evolutions.
+Time spent: 867,4238. Average good fitness: 100,8828.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 1 bits.
+
+
+Simulation [9407,446] -- 13.06.2020 20:17:59
+OK|Simulation finished successfully for PtnCross551 after 178 evolutions.
+Time spent: 779,3633. Average good fitness: 151,4689.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 1 bits.
+
+
+Simulation [9805,872] -- 13.06.2020 20:35:15
+OK|Simulation finished successfully for PtnCross551 after 236 evolutions.
+Time spent: 1036,063. Average good fitness: 126,311.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 1 bits.
+
+
+Simulation [3700,595] -- 13.06.2020 20:49:36
+OK|Simulation finished successfully for PtnCross551 after 189 evolutions.
+Time spent: 861,2363. Average good fitness: 159,2534.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 1 bits.
+
+
+Simulation [5481,717] -- 13.06.2020 21:04:45
+OK|Simulation finished successfully for PtnCross551 after 191 evolutions.
+Time spent: 908,7734. Average good fitness: 99,76065.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 1 bits.
+
+
+Simulation [4453,192] -- 13.06.2020 21:25:30
+OK|Simulation finished successfully for PtnCross551 after 258 evolutions.
+Time spent: 1244,746. Average good fitness: 138,9052.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 1 bits.
+
+
+Simulation [9806,288] -- 13.06.2020 21:45:02
+OK|Simulation finished successfully for PtnCross551 after 250 evolutions.
+Time spent: 1172,131. Average good fitness: 112,4286.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 1 bits.
+
+
+Simulation [2280,772] -- 13.06.2020 22:04:22
+OK|Simulation finished successfully for PtnCross551 after 248 evolutions.
+Time spent: 1159,807. Average good fitness: 30,87996.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 1 bits.
+
+
+Simulation [9960,727] -- 13.06.2020 22:35:00
+OK|Simulation finished successfully for PtnCross551 after 388 evolutions.
+Time spent: 1839,031. Average good fitness: 111,4144.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 1 bits.
+
+
+Simulation [1418,844] -- 13.06.2020 22:48:50
+OK|Simulation finished successfully for PtnCross551 after 183 evolutions.
+Time spent: 830,0293. Average good fitness: 99,78297.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 1 bits.
+
+
+Simulation [2497,593] -- 13.06.2020 23:03:10
+OK|Simulation finished successfully for PtnCross551 after 189 evolutions.
+Time spent: 859,8457. Average good fitness: 160,1373.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 1 bits.
+
+
+Simulation [4267,659] -- 13.06.2020 23:18:16
+OK|Simulation finished successfully for PtnCross551 after 190 evolutions.
+Time spent: 905,2578. Average good fitness: 84,62592.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 1 bits.
+
+
+Simulation [2788,419] -- 13.06.2020 23:34:43
+OK|Simulation finished successfully for PtnCross551 after 207 evolutions.
+Time spent: 987,1543. Average good fitness: 119,6734.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 1 bits.
+
+
+Simulation [640,6629] -- 13.06.2020 23:50:00
+OK|Simulation finished successfully for PtnCross551 after 193 evolutions.
+Time spent: 916,8906. Average good fitness: 108,2259.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 1 bits.
+
+
+Simulation [6981,087] -- 14.06.2020 0:06:03
+OK|Simulation finished successfully for PtnCross551 after 202 evolutions.
+Time spent: 963,7441. Average good fitness: 87,41381.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 1 bits.
+
+
+Simulation [3569,161] -- 14.06.2020 0:21:59
+OK|Simulation finished successfully for PtnCross551 after 204 evolutions.
+Time spent: 955,2773. Average good fitness: 64,16638.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 1 bits.
+
+
+Simulation [3,880262] -- 14.06.2020 0:47:16
+OK|Simulation finished successfully for PtnCross551 after 328 evolutions.
+Time spent: 1517,563. Average good fitness: 158,2203.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 1 bits.
+
+
+Simulation [4714,975] -- 14.06.2020 1:06:42
+OK|Simulation finished successfully for PtnCross551 after 264 evolutions.
+Time spent: 1165,551. Average good fitness: 107,1898.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 1 bits.
+
+
+Simulation [1771,194] -- 14.06.2020 1:31:13
+OK|Simulation finished successfully for PtnCross551 after 329 evolutions.
+Time spent: 1471,305. Average good fitness: 62,15099.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 1 bits.
+
+
+Simulation [3328,991] -- 14.06.2020 1:47:03
+OK|Simulation finished successfully for PtnCross551 after 214 evolutions.
+Time spent: 949,8789. Average good fitness: 73,65228.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 1 bits.
+
+
+Simulation [1785,754] -- 14.06.2020 2:04:10
+OK|Simulation finished successfully for PtnCross551 after 233 evolutions.
+Time spent: 1027,449. Average good fitness: 90,45287.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 1 bits.
+
+
+Simulation [1276,444] -- 14.06.2020 2:18:44
+OK|Simulation finished successfully for PtnCross551 after 198 evolutions.
+Time spent: 873,5195. Average good fitness: 95,55497.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 1 bits.
+
+
+Simulation [4002,286] -- 14.06.2020 2:35:32
+OK|Simulation finished successfully for PtnCross551 after 229 evolutions.
+Time spent: 1008,41. Average good fitness: 85,41113.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 1 bits.
+
+
+Simulation [2935,799] -- 14.06.2020 2:54:50
+OK|Simulation finished successfully for PtnCross551 after 265 evolutions.
+Time spent: 1157,41. Average good fitness: 34,07157.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 1 bits.
+
+
+Simulation [5666,862] -- 14.06.2020 3:07:58
+OK|Simulation finished successfully for PtnCross551 after 180 evolutions.
+Time spent: 788,2578. Average good fitness: 75,93164.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 1 bits.
+
+
+Simulation [9325,832] -- 14.06.2020 3:19:29
+ABORT|Simulation aborted for PtnCross551 after 155 evolutions.
+Time spent: -42580,16. Average good fitness: 19,84279.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 1 bits.
+
+
+Simulation [2678,114] -- 14.06.2020 3:31:58
+OK|Simulation finished successfully for PtnCross551 after 175 evolutions.
+Time spent: 644,7769. Average good fitness: 171,7059.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [6031,602] -- 14.06.2020 3:38:07
+OK|Simulation finished successfully for PtnCross551 after 273 evolutions.
+Time spent: 1008,745. Average good fitness: 170,8057.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [9280,979] -- 14.06.2020 3:41:25
+OK|Simulation finished successfully for PtnCross551 after 155 evolutions.
+Time spent: 567,5244. Average good fitness: 149,6149.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [3178,691] -- 14.06.2020 3:55:54
+OK|Simulation finished successfully for PtnCross551 after 234 evolutions.
+Time spent: 868,9248. Average good fitness: 172,0301.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [1996,115] -- 14.06.2020 3:57:50
+OK|Simulation finished successfully for PtnCross551 after 318 evolutions.
+Time spent: 1182,861. Average good fitness: 107,1485.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [8492,973] -- 14.06.2020 4:06:12
+OK|Simulation finished successfully for PtnCross551 after 168 evolutions.
+Time spent: 617,7803. Average good fitness: 142,6282.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [4872,736] -- 14.06.2020 4:11:29
+OK|Simulation finished successfully for PtnCross551 after 222 evolutions.
+Time spent: 818,7756. Average good fitness: 134,7192.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [7624,818] -- 14.06.2020 4:18:10
+OK|Simulation finished successfully for PtnCross551 after 195 evolutions.
+Time spent: 717,8079. Average good fitness: 206,3942.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [3660,462] -- 14.06.2020 4:22:53
+OK|Simulation finished successfully for PtnCross551 after 185 evolutions.
+Time spent: 683,9402. Average good fitness: 141,299.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [1910,253] -- 14.06.2020 4:33:05
+OK|Simulation finished successfully for PtnCross551 after 167 evolutions.
+Time spent: 612,0828. Average good fitness: 162,2929.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [989,2809] -- 14.06.2020 4:35:30
+OK|Simulation finished successfully for PtnCross551 after 283 evolutions.
+Time spent: 1040,295. Average good fitness: 40,06703.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [3181,239] -- 14.06.2020 4:42:48
+OK|Simulation finished successfully for PtnCross551 after 159 evolutions.
+Time spent: 582,7412. Average good fitness: 174,7958.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [564,0853] -- 14.06.2020 4:49:28
+OK|Simulation finished successfully for PtnCross551 after 229 evolutions.
+Time spent: 837,9937. Average good fitness: 75,79487.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [2194,268] -- 14.06.2020 4:56:37
+OK|Simulation finished successfully for PtnCross551 after 224 evolutions.
+Time spent: 829,1978. Average good fitness: 141,2836.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [408,6447] -- 14.06.2020 5:03:20
+OK|Simulation finished successfully for PtnCross551 after 224 evolutions.
+Time spent: 832,2744. Average good fitness: 146,7507.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [2050,094] -- 14.06.2020 5:06:58
+OK|Simulation finished successfully for PtnCross551 after 169 evolutions.
+Time spent: 620,8389. Average good fitness: 175,0469.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [9517,472] -- 14.06.2020 5:16:33
+OK|Simulation finished successfully for PtnCross551 after 215 evolutions.
+Time spent: 792,9878. Average good fitness: 159,1326.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [2371,165] -- 14.06.2020 5:26:07
+OK|Simulation finished successfully for PtnCross551 after 157 evolutions.
+Time spent: 573,4761. Average good fitness: 148,4324.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [7212,826] -- 14.06.2020 5:28:12
+OK|Simulation finished successfully for PtnCross551 after 344 evolutions.
+Time spent: 1274,017. Average good fitness: 83,53233.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [3448,829] -- 14.06.2020 5:39:40
+OK|Simulation finished successfully for PtnCross551 after 220 evolutions.
+Time spent: 813,3174. Average good fitness: 170,3893.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [6424,577] -- 14.06.2020 5:40:42
+OK|Simulation finished successfully for PtnCross551 after 203 evolutions.
+Time spent: 750,541. Average good fitness: 190,897.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [3517,11] -- 14.06.2020 5:51:21
+OK|Simulation finished successfully for PtnCross551 after 174 evolutions.
+Time spent: 638,4688. Average good fitness: 156,6022.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [2227,429] -- 14.06.2020 5:51:59
+OK|Simulation finished successfully for PtnCross551 after 199 evolutions.
+Time spent: 738,8115. Average good fitness: 128,9462.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [1406,2] -- 14.06.2020 6:03:55
+OK|Simulation finished successfully for PtnCross551 after 205 evolutions.
+Time spent: 753,6875. Average good fitness: 85,18221.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [8162,83] -- 14.06.2020 6:06:19
+OK|Simulation finished successfully for PtnCross551 after 233 evolutions.
+Time spent: 860,6006. Average good fitness: 128,5484.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [1025,306] -- 14.06.2020 6:21:19
+OK|Simulation finished successfully for PtnCross551 after 281 evolutions.
+Time spent: 1044,666. Average good fitness: 162,1938.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [3561,927] -- 14.06.2020 6:24:01
+OK|Simulation finished successfully for PtnCross551 after 285 evolutions.
+Time spent: 1061,094. Average good fitness: 154,5931.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [3377,234] -- 14.06.2020 6:32:48
+OK|Simulation finished successfully for PtnCross551 after 187 evolutions.
+Time spent: 688,7529. Average good fitness: 131,3681.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [7938,278] -- 14.06.2020 6:42:55
+OK|Simulation finished successfully for PtnCross551 after 306 evolutions.
+Time spent: 1134,725. Average good fitness: 42,93441.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [407,7971] -- 14.06.2020 6:48:19
+OK|Simulation finished successfully for PtnCross551 after 252 evolutions.
+Time spent: 931,5371. Average good fitness: 83,41153.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [7991,953] -- 14.06.2020 6:55:48
+OK|Simulation finished successfully for PtnCross551 after 209 evolutions.
+Time spent: 772,9609. Average good fitness: 118,7738.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [2997,8] -- 14.06.2020 7:01:27
+OK|Simulation finished successfully for PtnCross551 after 213 evolutions.
+Time spent: 787,2783. Average good fitness: 101,9541.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [8369,605] -- 14.06.2020 7:08:30
+OK|Simulation finished successfully for PtnCross551 after 206 evolutions.
+Time spent: 761,2871. Average good fitness: 100,5522.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [3041,86] -- 14.06.2020 7:12:27
+OK|Simulation finished successfully for PtnCross551 after 180 evolutions.
+Time spent: 660,0674. Average good fitness: 107,2566.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [6351,389] -- 14.06.2020 7:22:19
+OK|Simulation finished successfully for PtnCross551 after 226 evolutions.
+Time spent: 829,0996. Average good fitness: 138,5529.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [6009,302] -- 14.06.2020 7:26:13
+OK|Simulation finished successfully for PtnCross551 after 223 evolutions.
+Time spent: 826,5811. Average good fitness: 111,5195.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [4330,972] -- 14.06.2020 7:41:47
+OK|Simulation finished successfully for PtnCross551 after 314 evolutions.
+Time spent: 1168,62. Average good fitness: 59,67458.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [8788,408] -- 14.06.2020 7:43:34
+OK|Simulation finished successfully for PtnCross551 after 280 evolutions.
+Time spent: 1040,755. Average good fitness: 199,3624.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [6968,38] -- 14.06.2020 7:55:59
+OK|Simulation finished successfully for PtnCross551 after 230 evolutions.
+Time spent: 851,5654. Average good fitness: 168,4915.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [2509,578] -- 14.06.2020 7:56:41
+OK|Simulation finished successfully for PtnCross551 after 213 evolutions.
+Time spent: 786,583. Average good fitness: 128,3486.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [3161,921] -- 14.06.2020 8:08:45
+OK|Simulation finished successfully for PtnCross551 after 208 evolutions.
+Time spent: 766,459. Average good fitness: 126,8196.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [743,3259] -- 14.06.2020 8:12:51
+OK|Simulation finished successfully for PtnCross551 after 261 evolutions.
+Time spent: 969,7773. Average good fitness: 153,099.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [1499,598] -- 14.06.2020 8:20:54
+OK|Simulation finished successfully for PtnCross551 after 197 evolutions.
+Time spent: 728,3105. Average good fitness: 158,0206.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [4740,663] -- 14.06.2020 8:27:15
+OK|Simulation finished successfully for PtnCross551 after 235 evolutions.
+Time spent: 864,4805. Average good fitness: 66,58875.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [2905,18] -- 14.06.2020 8:33:32
+OK|Simulation finished successfully for PtnCross551 after 205 evolutions.
+Time spent: 758,3672. Average good fitness: 151,9616.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [8992,189] -- 14.06.2020 8:39:24
+OK|Simulation finished successfully for PtnCross551 after 198 evolutions.
+Time spent: 728,9688. Average good fitness: 145,0469.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [4055,621] -- 14.06.2020 8:46:03
+OK|Simulation finished successfully for PtnCross551 after 204 evolutions.
+Time spent: 751,2148. Average good fitness: 168,4502.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [2245,035] -- 14.06.2020 8:54:25
+OK|Simulation finished successfully for PtnCross551 after 244 evolutions.
+Time spent: 900,8789. Average good fitness: 172,2012.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [2617,468] -- 14.06.2020 8:59:49
+OK|Simulation finished successfully for PtnCross551 after 223 evolutions.
+Time spent: 825,6328. Average good fitness: 153,5352.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [2720,87] -- 14.06.2020 9:09:19
+OK|Simulation finished successfully for PtnCross551 after 241 evolutions.
+Time spent: 893,7012. Average good fitness: 73,35987.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [3782,532] -- 14.06.2020 9:12:00
+OK|Simulation finished successfully for PtnCross551 after 198 evolutions.
+Time spent: 730,877. Average good fitness: 141,5379.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [3895,407] -- 14.06.2020 9:23:44
+OK|Simulation finished successfully for PtnCross551 after 191 evolutions.
+Time spent: 704,6504. Average good fitness: 82,06686.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [2486,77] -- 14.06.2020 9:26:53
+OK|Simulation finished successfully for PtnCross551 after 285 evolutions.
+Time spent: 1053,982. Average good fitness: 73,31538.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [9191,155] -- 14.06.2020 9:36:48
+OK|Simulation finished successfully for PtnCross551 after 212 evolutions.
+Time spent: 783,2266. Average good fitness: 115,0004.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [8378,253] -- 14.06.2020 9:40:34
+OK|Simulation finished successfully for PtnCross551 after 222 evolutions.
+Time spent: 821,0801. Average good fitness: 72,39661.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [9155,516] -- 14.06.2020 9:50:21
+OK|Simulation finished successfully for PtnCross551 after 220 evolutions.
+Time spent: 813,8477. Average good fitness: 157,8452.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [8373,365] -- 14.06.2020 9:54:34
+OK|Simulation finished successfully for PtnCross551 after 227 evolutions.
+Time spent: 840,4883. Average good fitness: 169,7381.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [6031,443] -- 14.06.2020 10:04:25
+OK|Simulation finished successfully for PtnCross551 after 162 evolutions.
+Time spent: 591,0684. Average good fitness: 196,8924.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [5842,252] -- 14.06.2020 10:15:19
+OK|Simulation finished successfully for PtnCross551 after 404 evolutions.
+Time spent: 1497,559. Average good fitness: 138,8035.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [4515,379] -- 14.06.2020 10:20:32
+OK|Simulation finished successfully for PtnCross551 after 262 evolutions.
+Time spent: 966,7871. Average good fitness: 140,8736.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [7631,757] -- 14.06.2020 10:31:53
+OK|Simulation finished successfully for PtnCross551 after 267 evolutions.
+Time spent: 994,5332. Average good fitness: 103,0191.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [6859,088] -- 14.06.2020 10:44:30
+OK|Simulation finished successfully for PtnCross551 after 204 evolutions.
+Time spent: 756,9727. Average good fitness: 78,51925.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [8019,147] -- 14.06.2020 10:45:20
+OK|Simulation finished successfully for PtnCross551 after 399 evolutions.
+Time spent: 1488,799. Average good fitness: 63,731.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [3512,472] -- 14.06.2020 10:56:32
+OK|Simulation finished successfully for PtnCross551 after 195 evolutions.
+Time spent: 721,4355. Average good fitness: 152,654.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [9922,076] -- 14.06.2020 11:02:23
+OK|Simulation finished successfully for PtnCross551 after 274 evolutions.
+Time spent: 1022,195. Average good fitness: 138,9815.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [7117,533] -- 14.06.2020 11:12:01
+OK|Simulation finished successfully for PtnCross551 after 248 evolutions.
+Time spent: 929,7207. Average good fitness: 171,7562.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [9382,625] -- 14.06.2020 11:16:22
+OK|Simulation finished successfully for PtnCross551 after 225 evolutions.
+Time spent: 839,2227. Average good fitness: 112,7497.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [2100,989] -- 14.06.2020 11:28:28
+OK|Simulation finished successfully for PtnCross551 after 261 evolutions.
+Time spent: 986,3496. Average good fitness: 124,4354.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [4852,29] -- 14.06.2020 11:35:30
+OK|Simulation finished successfully for PtnCross551 after 307 evolutions.
+Time spent: 1147,92. Average good fitness: 170,917.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [2614,698] -- 14.06.2020 11:40:31
+OK|Simulation finished successfully for PtnCross551 after 194 evolutions.
+Time spent: 722,8047. Average good fitness: 124,5657.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [6874,636] -- 14.06.2020 11:46:17
+OK|Simulation finished successfully for PtnCross551 after 175 evolutions.
+Time spent: 646,6973. Average good fitness: 161,295.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [6828,5] -- 14.06.2020 11:52:42
+OK|Simulation finished successfully for PtnCross551 after 196 evolutions.
+Time spent: 731,7266. Average good fitness: 187,2953.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [659,8902] -- 14.06.2020 12:01:05
+OK|Simulation finished successfully for PtnCross551 after 238 evolutions.
+Time spent: 888,0703. Average good fitness: 109,3482.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [5498,284] -- 14.06.2020 12:03:49
+OK|Simulation finished successfully for PtnCross551 after 178 evolutions.
+Time spent: 666,7129. Average good fitness: 139,9549.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [3819,223] -- 14.06.2020 12:16:35
+OK|Simulation finished successfully for PtnCross551 after 204 evolutions.
+Time spent: 766,0957. Average good fitness: 174,4171.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [7904,68] -- 14.06.2020 12:16:46
+OK|Simulation finished successfully for PtnCross551 after 251 evolutions.
+Time spent: 940,9355. Average good fitness: 163,7516.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [2605,695] -- 14.06.2020 12:19:23
+ABORT|Simulation aborted for PtnCross551 after 43 evolutions.
+Time spent: 166,6543. Average good fitness: 0,378291.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [9634,493] -- 14.06.2020 12:19:25
+ABORT|Simulation aborted for PtnCross551 after 41 evolutions.
+Time spent: 158,8711. Average good fitness: 0,3115338.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
 
 

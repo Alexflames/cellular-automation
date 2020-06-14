@@ -17,7 +17,7 @@ public class SimulationManager : MonoBehaviour
     [SerializeField] private int virtualScreensInSimulation = 128;
     [SerializeField] private int screensInSimulation = 32;
     [SerializeField] private bool updateCheckScreen = false;
-    [SerializeField] private string datapath = @"C:\Users\Public\Documents\Unity Projects\CellularAutomations\Assets";
+    [SerializeField] private string datapath = @"C:\Users\Public\Documents\Unity Projects\CellularAutomations\Statistics";
 
     private float timeToEvolutionPassed = 0f;
     [Header("Evolution"),
@@ -510,7 +510,7 @@ public class SimulationManager : MonoBehaviour
         int newPatternLine = 0;
         for (int p = 0; p < patterns.Length; p++)
         {
-            patternLines[p] = new int[patterns[0].patternSizeX];
+            patternLines[p] = new int[patterns[0].patternSizeY];
             for (int i = 0; i < patternHeight; i++)
             {
                 newPatternLine = 0;
@@ -889,7 +889,7 @@ public class SimulationManager : MonoBehaviour
         Debug.Log(output);
         if (!toFile) return;
 
-        string path = $"Assets/SimulationData/PatternPivotBits/PB-{patternFile.name}.txt";
+        string path = $"{datapath}/PatternPivotBits/PB-{patternFile.name}.txt";
 
         //Write some text to the test.txt file
         StreamWriter writer = new StreamWriter(path, true);
@@ -909,7 +909,7 @@ public class SimulationManager : MonoBehaviour
     int[] tempPivotBits;
     private void RecalculateGlobalPivotBits()
     {
-        string path = $"Assets/SimulationData/PatternPivotBits/PB-{patternFile.name}.txt";
+        string path = $"{datapath}/PatternPivotBits/PB-{patternFile.name}.txt";
         try
         {
             StreamReader reader = new StreamReader(path);
@@ -1002,7 +1002,7 @@ public class SimulationManager : MonoBehaviour
                 $"\n";
 
 
-        string path = $"Assets/SimulationData/Statistics/Stats-{patternFile.name}.txt";
+        string path = $"{datapath}/Statistics/Stats-{patternFile.name}.txt";
         StreamWriter writer = new StreamWriter(path, true);
         writer.WriteLine(output);
         writer.Close();
@@ -1010,7 +1010,7 @@ public class SimulationManager : MonoBehaviour
 
     private void WriteFitnessHistory()
     {
-        string path = $"Assets/SimulationData/FitnessRecord/FH-{patternFile.name}-{simulationID}.txt";
+        string path = $"{datapath}/FitnessRecord/FH-{patternFile.name}-{simulationID}.txt";
         StreamWriter writer = new StreamWriter(path, true);
         foreach (var record in fitnessHistory)
         {
@@ -1026,7 +1026,7 @@ public class SimulationManager : MonoBehaviour
 
     private void WriteGenes()
     {
-        string path = $"Assets/SimulationData/Genes/G-{patternFile.name}-{simulationID}.txt";
+        string path = $"{datapath}/Genes/G-{patternFile.name}-{simulationID}.txt";
         StreamWriter writer = new StreamWriter(path, true);
         for (int i = 0; i < virtualScreensInSimulation; i++)
         {

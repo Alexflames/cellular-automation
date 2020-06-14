@@ -1,0 +1,20 @@
+Simulation [6558,647] -- 25.05.2020 9:27:36
+ABORT|Simulation aborted for PtnTriangle774-sym after 4001 evolutions.
+Time spent: 39239,25. Average good fitness: 0.
+Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 150.
+Simple cross separation: False
+Mutation percent: 15
+
+
+Simulation [5987,088] -- 25.05.2020 10:43:52
+ABORT|Simulation aborted for PtnTriangle774-sym after 466 evolutions.
+Time spent: 4562,277. Average good fitness: 0,005607605.
+Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 150.
+Simple cross separation: False
+Mutation percent: 15
+
+

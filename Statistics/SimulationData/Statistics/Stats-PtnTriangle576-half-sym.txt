@@ -1,0 +1,840 @@
+Simulation [6590,676] -- 11.06.2020 14:43:20
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 301 evolutions.
+Time spent: 0. Average good fitness: 3,343582.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [8603,018] -- 11.06.2020 15:24:18
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2388,883. Average good fitness: 0,01907349.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [9100,433] -- 11.06.2020 15:24:23
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2386,875. Average good fitness: 0,005722046.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [6835,46] -- 11.06.2020 16:03:59
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2381,458. Average good fitness: 0,03623962.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [8047,41] -- 11.06.2020 16:04:02
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2379,398. Average good fitness: 0,01525879.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [9211,556] -- 11.06.2020 16:42:46
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2323,757. Average good fitness: 22,39799.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [6139,812] -- 11.06.2020 16:43:49
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2389,751. Average good fitness: 0,01335144.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [7790,071] -- 11.06.2020 17:21:45
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2339,712. Average good fitness: 23,96966.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [6211,311] -- 11.06.2020 17:23:28
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2379,315. Average good fitness: 0,001907349.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [9861,225] -- 11.06.2020 18:01:21
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2375,549. Average good fitness: 0,005722046.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [7631,172] -- 11.06.2020 18:03:05
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2376,545. Average good fitness: 0,003814697.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [6107,923] -- 11.06.2020 18:41:13
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2391,734. Average good fitness: 0,009536744.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [8899,891] -- 11.06.2020 18:42:58
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2393,533. Average good fitness: 0,02098084.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [3150,198] -- 11.06.2020 19:21:09
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2395,809. Average good fitness: 0,001907349.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [8391,546] -- 11.06.2020 19:21:48
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2329,905. Average good fitness: 4,114151.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [5179,724] -- 11.06.2020 20:00:47
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2378,852. Average good fitness: 5,376816.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [1935,646] -- 11.06.2020 20:01:51
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2403,371. Average good fitness: 0,01335144.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [6998,847] -- 11.06.2020 20:41:06
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2418,346. Average good fitness: 0,01335144.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [2605,868] -- 11.06.2020 20:42:12
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2420,391. Average good fitness: 0,01335144.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [7664,809] -- 11.06.2020 21:20:42
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2376,779. Average good fitness: 11,71303.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [2791,02] -- 11.06.2020 21:22:34
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2422,145. Average good fitness: 0,007629395.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [4139,463] -- 11.06.2020 21:34:44
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 149 evolutions.
+Time spent: 729,5039. Average good fitness: 0,01144409.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [9632,984] -- 11.06.2020 21:34:46
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 173 evolutions.
+Time spent: 842,6016. Average good fitness: 0,007629395.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [9429,693] -- 13.06.2020 1:56:26
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2292,051. Average good fitness: 16,35361.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [9030,83] -- 13.06.2020 1:57:24
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2332,746. Average good fitness: 18,13317.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [645,5624] -- 13.06.2020 1:57:45
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2363,199. Average good fitness: 0,01525879.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [157,5959] -- 13.06.2020 2:34:50
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2303,54. Average good fitness: 15,59639.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [5908,737] -- 13.06.2020 2:36:43
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2337,995. Average good fitness: 0,8010864.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [9840,808] -- 13.06.2020 2:36:50
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2365,789. Average good fitness: 0,003814697.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [5915,337] -- 13.06.2020 3:14:16
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2366,788. Average good fitness: 0,02098083.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [7503,976] -- 13.06.2020 3:16:05
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2361,859. Average good fitness: 0,02098084.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [209,4948] -- 13.06.2020 3:19:12
+OK|Simulation finished successfully for PtnTriangle576-half-sym after 553 evolutions.
+Time spent: 2541,939. Average good fitness: 27,65846.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [2305,524] -- 13.06.2020 3:53:43
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2366,333. Average good fitness: 0,01525879.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [3105,351] -- 13.06.2020 3:55:25
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2360,92. Average good fitness: 0,005722046.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [7982,213] -- 13.06.2020 3:58:39
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2366,539. Average good fitness: 0,009536744.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [911,442] -- 13.06.2020 4:33:09
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2366,742. Average good fitness: 0,003814697.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [3418,732] -- 13.06.2020 4:34:46
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2360,363. Average good fitness: 0,01525879.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [998,8582] -- 13.06.2020 4:38:05
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2366,259. Average good fitness: 0,03051758.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [3025,115] -- 13.06.2020 5:12:36
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2366,675. Average good fitness: 0,01144409.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [1629,729] -- 13.06.2020 5:14:07
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2361,192. Average good fitness: 0,007629395.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [165,7772] -- 13.06.2020 5:17:32
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2366,801. Average good fitness: 0,01144409.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [5093,446] -- 13.06.2020 5:52:02
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2366,079. Average good fitness: 0,03814697.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [3414,361] -- 13.06.2020 5:53:15
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2348,258. Average good fitness: 6,673813.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [2396,901] -- 13.06.2020 5:56:58
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2366,442. Average good fitness: 0,01907349.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [1573,292] -- 13.06.2020 6:31:10
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2274,666. Average good fitness: 6,315231.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [1296,271] -- 13.06.2020 6:31:29
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2367,359. Average good fitness: 0,01144409.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [466,3515] -- 13.06.2020 6:36:25
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2367,076. Average good fitness: 0,009536744.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [6987,797] -- 13.06.2020 7:10:19
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2349,488. Average good fitness: 15,82337.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [6864,698] -- 13.06.2020 7:10:56
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2366,84. Average good fitness: 0,009536744.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [5795,312] -- 13.06.2020 7:15:52
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2367,195. Average good fitness: 0,01525879.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [2091,572] -- 13.06.2020 7:48:21
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2281,834. Average good fitness: 8,066177.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [5812,512] -- 13.06.2020 7:50:22
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2365,295. Average good fitness: 0,04005433.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [2142,807] -- 13.06.2020 7:55:19
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2366,193. Average good fitness: 0,01716614.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [2220,848] -- 13.06.2020 8:27:42
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2360,607. Average good fitness: 0,01335144.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [2369,554] -- 13.06.2020 8:29:37
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2355,191. Average good fitness: 1,764297.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [9924,542] -- 13.06.2020 8:34:43
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2363,967. Average good fitness: 0,01525879.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [9866,738] -- 13.06.2020 9:07:03
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2361,305. Average good fitness: 0,005722046.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [8603,358] -- 13.06.2020 9:09:03
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2366,418. Average good fitness: 0,009536744.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [3724,661] -- 13.06.2020 9:13:46
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2343,713. Average good fitness: 0,6504059.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [1694,319] -- 13.06.2020 9:46:26
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2362,418. Average good fitness: 0,01335144.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [7106,636] -- 13.06.2020 9:48:00
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2336,59. Average good fitness: 24,59718.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [9432,944] -- 13.06.2020 9:53:11
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2364,406. Average good fitness: 0,003814697.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [9342,247] -- 13.06.2020 10:25:49
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2363,77. Average good fitness: 0,02098084.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [9555,227] -- 13.06.2020 10:27:28
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2369,006. Average good fitness: 0,02098084.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [3465,107] -- 13.06.2020 10:32:05
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2334,484. Average good fitness: 4,480362.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [7712,394] -- 13.06.2020 11:07:16
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2387,758. Average good fitness: 0,01525879.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [9917,855] -- 13.06.2020 11:11:48
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2382,719. Average good fitness: 0,007629395.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [5601,714] -- 13.06.2020 11:46:49
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2372,406. Average good fitness: 22,27212.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [774,8711] -- 13.06.2020 11:51:55
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2405,98. Average good fitness: 18,75687.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [9562,644] -- 13.06.2020 11:54:37
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 96 evolutions.
+Time spent: 466,8828. Average good fitness: 0,03242493.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [9005,83] -- 13.06.2020 12:32:26
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2431,023. Average good fitness: 0,09727478.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [670,9373] -- 13.06.2020 13:13:21
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2455,145. Average good fitness: 0,01716614.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [223,5663] -- 13.06.2020 13:55:04
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2502,891. Average good fitness: 0,009536744.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [8986,737] -- 13.06.2020 14:35:37
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2433,477. Average good fitness: 0,003814697.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [2104,992] -- 13.06.2020 15:09:51
+OK|Simulation finished successfully for PtnTriangle576-half-sym after 433 evolutions.
+Time spent: 2054,035. Average good fitness: 32,5737.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [9066,826] -- 13.06.2020 15:50:32
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2440,473. Average good fitness: 0,01144409.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [8466,159] -- 13.06.2020 16:30:50
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2418,473. Average good fitness: 23,13232.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [4550,384] -- 13.06.2020 17:11:36
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2446,336. Average good fitness: 0,009536744.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [3264,35] -- 13.06.2020 17:51:58
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2421,52. Average good fitness: 0,01525879.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [5596,11] -- 13.06.2020 18:32:31
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2432,77. Average good fitness: 0,01907349.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [4836,663] -- 13.06.2020 19:12:36
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2405,059. Average good fitness: 8,478165.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [4845,937] -- 13.06.2020 19:53:06
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2430,051. Average good fitness: 0,7915497.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [6346,43] -- 13.06.2020 20:34:05
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 501 evolutions.
+Time spent: 2459,172. Average good fitness: 0,02479553.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [2168,827] -- 13.06.2020 20:39:36
+ABORT|Simulation aborted for PtnTriangle576-half-sym after 66 evolutions.
+Time spent: 330,3516. Average good fitness: 0,01144409.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+

@@ -1,0 +1,230 @@
+Simulation [7813,261] -- 22.05.2020 17:45:05
+OK|Simulation finished successfully for PtnSquare552 after 376 evolutions.
+Time spent: 2323,756. Average good fitness: 23,70345.
+Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 50. Additional steps after threshold: 100.
+Simple cross separation: False
+Mutation percent: 15
+
+
+Simulation [414,6218] -- 22.05.2020 19:31:53
+ABORT|Simulation aborted for PtnSquare552 after 1012 evolutions.
+Time spent: -2323,756. Average good fitness: 1,13187.
+Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False
+Mutation percent: 15
+
+
+Simulation [614,1484] -- 22.05.2020 19:49:05
+OK|Simulation finished successfully for PtnSquare552 after 262 evolutions.
+Time spent: 1009,755. Average good fitness: 28,31615.
+Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 12. Additional steps after threshold: 100.
+Simple cross separation: False
+Mutation percent: 15
+
+
+Simulation [65,02509] -- 22.05.2020 20:15:08
+OK|Simulation finished successfully for PtnSquare552 after 246 evolutions.
+Time spent: 1563,019. Average good fitness: 12,90004.
+Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 12. Additional steps after threshold: 100.
+Simple cross separation: False
+Mutation percent: 15
+
+
+Simulation [4425,875] -- 22.05.2020 20:32:26
+OK|Simulation finished successfully for PtnSquare552 after 262 evolutions.
+Time spent: 1038,269. Average good fitness: 19,70171.
+Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 12. Additional steps after threshold: 100.
+Simple cross separation: False
+Mutation percent: 15
+
+
+Simulation [4158,87] -- 22.05.2020 20:48:49
+OK|Simulation finished successfully for PtnSquare552 after 153 evolutions.
+Time spent: 982,8342. Average good fitness: 35,65469.
+Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 12. Additional steps after threshold: 100.
+Simple cross separation: False
+Mutation percent: 15
+
+
+Simulation [5126,391] -- 22.05.2020 21:06:29
+OK|Simulation finished successfully for PtnSquare552 after 164 evolutions.
+Time spent: 1059,818. Average good fitness: 27,67404.
+Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 12. Additional steps after threshold: 100.
+Simple cross separation: False
+Mutation percent: 15
+
+
+Simulation [4471,964] -- 22.05.2020 21:25:19
+OK|Simulation finished successfully for PtnSquare552 after 175 evolutions.
+Time spent: 1129,651. Average good fitness: 25,3093.
+Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 12. Additional steps after threshold: 100.
+Simple cross separation: False
+Mutation percent: 15
+
+
+Simulation [8972,213] -- 22.05.2020 21:42:32
+OK|Simulation finished successfully for PtnSquare552 after 471 evolutions.
+Time spent: 1033,269. Average good fitness: 28,78189.
+Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 12. Additional steps after threshold: 100.
+Simple cross separation: False
+Mutation percent: 15
+
+
+Simulation [6158,864] -- 22.05.2020 22:22:05
+OK|Simulation finished successfully for PtnSquare552 after 372 evolutions.
+Time spent: 2372,351. Average good fitness: 13,71543.
+Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 12. Additional steps after threshold: 100.
+Simple cross separation: False
+Mutation percent: 15
+
+
+Simulation [4991,117] -- 22.05.2020 22:40:24
+OK|Simulation finished successfully for PtnSquare552 after 264 evolutions.
+Time spent: 1098,245. Average good fitness: 30,28711.
+Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 12. Additional steps after threshold: 100.
+Simple cross separation: False
+Mutation percent: 15
+
+
+Simulation [7871,685] -- 22.05.2020 22:58:00
+OK|Simulation finished successfully for PtnSquare552 after 357 evolutions.
+Time spent: 1055,918. Average good fitness: 16,51615.
+Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 12. Additional steps after threshold: 100.
+Simple cross separation: False
+Mutation percent: 15
+
+
+Simulation [464,8256] -- 22.05.2020 23:15:55
+OK|Simulation finished successfully for PtnSquare552 after 259 evolutions.
+Time spent: 1074,899. Average good fitness: 26,18312.
+Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 12. Additional steps after threshold: 100.
+Simple cross separation: False
+Mutation percent: 15
+
+
+Simulation [1232,249] -- 22.05.2020 23:35:48
+OK|Simulation finished successfully for PtnSquare552 after 277 evolutions.
+Time spent: 1192,473. Average good fitness: 21,83756.
+Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 12. Additional steps after threshold: 100.
+Simple cross separation: False
+Mutation percent: 15
+
+
+Simulation [5127,388] -- 22.05.2020 23:57:03
+OK|Simulation finished successfully for PtnSquare552 after 289 evolutions.
+Time spent: 1274,773. Average good fitness: 17,48086.
+Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 12. Additional steps after threshold: 100.
+Simple cross separation: False
+Mutation percent: 15
+
+
+Simulation [718,8058] -- 23.05.2020 0:16:14
+OK|Simulation finished successfully for PtnSquare552 after 275 evolutions.
+Time spent: 1151,065. Average good fitness: 24,09472.
+Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 12. Additional steps after threshold: 100.
+Simple cross separation: False
+Mutation percent: 15
+
+
+Simulation [2449,107] -- 23.05.2020 0:37:23
+OK|Simulation finished successfully for PtnSquare552 after 293 evolutions.
+Time spent: 1268,842. Average good fitness: 20,99832.
+Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 12. Additional steps after threshold: 100.
+Simple cross separation: False
+Mutation percent: 15
+
+
+Simulation [7591,247] -- 23.05.2020 1:08:54
+OK|Simulation finished successfully for PtnSquare552 after 279 evolutions.
+Time spent: 1891,051. Average good fitness: 12,80308.
+Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 12. Additional steps after threshold: 100.
+Simple cross separation: False
+Mutation percent: 15
+
+
+Simulation [9192,504] -- 23.05.2020 1:26:27
+OK|Simulation finished successfully for PtnSquare552 after 160 evolutions.
+Time spent: 1052,828. Average good fitness: 44,71143.
+Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 12. Additional steps after threshold: 100.
+Simple cross separation: False
+Mutation percent: 15
+
+
+Simulation [8535,108] -- 23.05.2020 1:44:39
+OK|Simulation finished successfully for PtnSquare552 after 166 evolutions.
+Time spent: 1092,783. Average good fitness: 25,32814.
+Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 12. Additional steps after threshold: 100.
+Simple cross separation: False
+Mutation percent: 15
+
+
+Simulation [7782,017] -- 23.05.2020 2:01:40
+OK|Simulation finished successfully for PtnSquare552 after 452 evolutions.
+Time spent: 1021,014. Average good fitness: 15,76827.
+Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 12. Additional steps after threshold: 100.
+Simple cross separation: False
+Mutation percent: 15
+
+
+Simulation [801,6944] -- 04.06.2020 0:36:17
+OK|Simulation finished successfully for PtnSquare552 after 398 evolutions.
+Time spent: 1434,855. Average good fitness: 36,475.
+Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 35. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 5. Mutate up to 4 bits.
+
+
+Simulation [604,7321] -- 04.06.2020 1:04:39
+ABORT|Simulation aborted for PtnSquare552 after 235 evolutions.
+Time spent: 1702,188. Average good fitness: 19,07521.
+Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 35. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 5. Mutate up to 4 bits.
+
+

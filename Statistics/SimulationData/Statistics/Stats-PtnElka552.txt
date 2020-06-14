@@ -1,210 +1,2140 @@
-Simulation [3064,621] -- 22.05.2020 11:57:49
-OK|Simulation finished successfully for PtnElka552 after 201 evolutions.
-Time spent: 800,7214. Average good fitness: 62,83127.
-Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
-Fitness calculations between evolution: 25.
-Fitness threshold: 12. Additional steps after threshold: 50.
-Simple cross separation: False
-Mutation percent: 15
-
-
-Simulation [1680,323] -- 22.05.2020 13:18:53
-OK|Simulation finished successfully for PtnElka552 after 1229 evolutions.
-Time spent: 4863,075. Average good fitness: 35,11107.
-Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
-Fitness calculations between evolution: 25.
-Fitness threshold: 12. Additional steps after threshold: 50.
-Simple cross separation: False
-Mutation percent: 15
-
-
-Simulation [3426,183] -- 22.05.2020 13:46:40
-OK|Simulation finished successfully for PtnElka552 after 422 evolutions.
-Time spent: 1664,665. Average good fitness: 13,97451.
-Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
-Fitness calculations between evolution: 25.
-Fitness threshold: 12. Additional steps after threshold: 50.
-Simple cross separation: False
-Mutation percent: 15
-
-
-Simulation [8936,568] -- 22.05.2020 14:01:55
-ABORT|Simulation aborted for PtnElka552 after 226 evolutions.
-Time spent: -7328,461. Average good fitness: 11,45045.
-Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
-Fitness calculations between evolution: 25.
-Fitness threshold: 12. Additional steps after threshold: 50.
-Simple cross separation: False
-Mutation percent: 15
-
-
-Simulation [9595,672] -- 23.05.2020 2:25:14
-ABORT|Simulation aborted for PtnElka552 after 125 evolutions.
-Time spent: 0. Average good fitness: 19,45972.
-Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
-Fitness calculations between evolution: 25.
-Fitness threshold: 25. Additional steps after threshold: 100.
-Simple cross separation: False
-Mutation percent: 15
-
-
-Simulation [3801,657] -- 23.05.2020 2:54:20
-OK|Simulation finished successfully for PtnElka552 after 333 evolutions.
-Time spent: 1683,766. Average good fitness: 48,58813.
-Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
-Fitness calculations between evolution: 25.
-Fitness threshold: 25. Additional steps after threshold: 100.
-Simple cross separation: False
-Mutation percent: 15
-
-
-Simulation [6074,979] -- 23.05.2020 3:16:18
-OK|Simulation finished successfully for PtnElka552 after 264 evolutions.
-Time spent: 1318,387. Average good fitness: 64,99306.
-Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
-Fitness calculations between evolution: 25.
-Fitness threshold: 25. Additional steps after threshold: 100.
-Simple cross separation: False
-Mutation percent: 15
-
-
-Simulation [7393,027] -- 23.05.2020 3:35:39
-OK|Simulation finished successfully for PtnElka552 after 233 evolutions.
-Time spent: 1161,08. Average good fitness: 63,59111.
-Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
-Fitness calculations between evolution: 25.
-Fitness threshold: 25. Additional steps after threshold: 100.
-Simple cross separation: False
-Mutation percent: 15
-
-
-Simulation [6182,414] -- 23.05.2020 3:59:00
-OK|Simulation finished successfully for PtnElka552 after 281 evolutions.
-Time spent: 1400,582. Average good fitness: 58,44441.
-Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
-Fitness calculations between evolution: 25.
-Fitness threshold: 25. Additional steps after threshold: 100.
-Simple cross separation: False
-Mutation percent: 15
-
-
-Simulation [8179,319] -- 23.05.2020 4:19:48
-OK|Simulation finished successfully for PtnElka552 after 248 evolutions.
-Time spent: 1247,959. Average good fitness: 63,50372.
-Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
-Fitness calculations between evolution: 25.
-Fitness threshold: 25. Additional steps after threshold: 100.
-Simple cross separation: False
-Mutation percent: 15
-
-
-Simulation [4573,761] -- 23.05.2020 4:44:29
-OK|Simulation finished successfully for PtnElka552 after 292 evolutions.
-Time spent: 1480,815. Average good fitness: 128,1829.
-Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
-Fitness calculations between evolution: 25.
-Fitness threshold: 25. Additional steps after threshold: 100.
-Simple cross separation: False
-Mutation percent: 15
-
-
-Simulation [8226,401] -- 23.05.2020 7:26:57
-ABORT|Simulation aborted for PtnElka552 after 2001 evolutions.
-Time spent: 9748,324. Average good fitness: 23,8657.
-Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
-Fitness calculations between evolution: 25.
-Fitness threshold: 25. Additional steps after threshold: 100.
-Simple cross separation: False
-Mutation percent: 15
-
-
-Simulation [525,3065] -- 23.05.2020 7:46:28
-OK|Simulation finished successfully for PtnElka552 after 232 evolutions.
-Time spent: 1170,383. Average good fitness: 46,48526.
-Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
-Fitness calculations between evolution: 25.
-Fitness threshold: 25. Additional steps after threshold: 100.
-Simple cross separation: False
-Mutation percent: 15
-
-
-Simulation [7550,038] -- 23.05.2020 8:06:34
-OK|Simulation finished successfully for PtnElka552 after 239 evolutions.
-Time spent: 1206,854. Average good fitness: 129,2351.
-Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
-Fitness calculations between evolution: 25.
-Fitness threshold: 25. Additional steps after threshold: 100.
-Simple cross separation: False
-Mutation percent: 15
-
-
-Simulation [2798,724] -- 23.05.2020 8:26:16
-OK|Simulation finished successfully for PtnElka552 after 234 evolutions.
-Time spent: 1181,848. Average good fitness: 48,07949.
-Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
-Fitness calculations between evolution: 25.
-Fitness threshold: 25. Additional steps after threshold: 100.
-Simple cross separation: False
-Mutation percent: 15
-
-
-Simulation [6760,319] -- 23.05.2020 8:43:04
-OK|Simulation finished successfully for PtnElka552 after 200 evolutions.
-Time spent: 1007,959. Average good fitness: 73,52998.
-Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
-Fitness calculations between evolution: 25.
-Fitness threshold: 25. Additional steps after threshold: 100.
-Simple cross separation: False
-Mutation percent: 15
-
-
-Simulation [5404,816] -- 23.05.2020 9:05:39
-OK|Simulation finished successfully for PtnElka552 after 267 evolutions.
-Time spent: 1354,559. Average good fitness: 47,17351.
-Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
-Fitness calculations between evolution: 25.
-Fitness threshold: 25. Additional steps after threshold: 100.
-Simple cross separation: False
-Mutation percent: 15
-
-
-Simulation [2769,315] -- 23.05.2020 9:25:13
-OK|Simulation finished successfully for PtnElka552 after 232 evolutions.
-Time spent: 1174,479. Average good fitness: 61,76003.
-Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
-Fitness calculations between evolution: 25.
-Fitness threshold: 25. Additional steps after threshold: 100.
-Simple cross separation: False
-Mutation percent: 15
-
-
-Simulation [3468,446] -- 23.05.2020 9:49:15
+Simulation [3123,335] -- 10.06.2020 2:33:32
 OK|Simulation finished successfully for PtnElka552 after 284 evolutions.
-Time spent: 1441,51. Average good fitness: 83,16685.
-Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
+Time spent: 1065,419. Average good fitness: 147,0432.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
 Fitness calculations between evolution: 25.
 Fitness threshold: 25. Additional steps after threshold: 100.
-Simple cross separation: False
-Mutation percent: 15
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
 
 
-Simulation [5495,233] -- 23.05.2020 10:10:02
-OK|Simulation finished successfully for PtnElka552 after 246 evolutions.
-Time spent: 1247,205. Average good fitness: 82,80766.
-Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
+Simulation [6551,359] -- 10.06.2020 2:36:47
+OK|Simulation finished successfully for PtnElka552 after 321 evolutions.
+Time spent: 1196,388. Average good fitness: 99,0358.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
 Fitness calculations between evolution: 25.
 Fitness threshold: 25. Additional steps after threshold: 100.
-Simple cross separation: False
-Mutation percent: 15
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 8 bits.
 
 
-Simulation [3473,83] -- 23.05.2020 10:32:28
-ABORT|Simulation aborted for PtnElka552 after 264 evolutions.
-Time spent: 1344,461. Average good fitness: 54,44215.
-Virtual screens: 256. Update period: 0,001. Time to evolution: 1,5.
+Simulation [6651,245] -- 10.06.2020 2:49:15
+ABORT|Simulation aborted for PtnElka552 after 501 evolutions.
+Time spent: 1906,136. Average good fitness: 0,3496809.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
 Fitness calculations between evolution: 25.
 Fitness threshold: 25. Additional steps after threshold: 100.
-Simple cross separation: False
-Mutation percent: 15
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [6077,776] -- 10.06.2020 2:53:42
+OK|Simulation finished successfully for PtnElka552 after 274 evolutions.
+Time spent: 1015,396. Average good fitness: 121,7266.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 8 bits.
+
+
+Simulation [6549,701] -- 10.06.2020 3:06:22
+OK|Simulation finished successfully for PtnElka552 after 521 evolutions.
+Time spent: 1970,068. Average good fitness: 101,6552.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [1998,079] -- 10.06.2020 3:09:41
+OK|Simulation finished successfully for PtnElka552 after 330 evolutions.
+Time spent: 1225,758. Average good fitness: 92,92286.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [2153,418] -- 10.06.2020 3:24:26
+OK|Simulation finished successfully for PtnElka552 after 492 evolutions.
+Time spent: 1844,131. Average good fitness: 89,92518.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 8 bits.
+
+
+Simulation [6560,839] -- 10.06.2020 3:33:52
+OK|Simulation finished successfully for PtnElka552 after 438 evolutions.
+Time spent: 1649,55. Average good fitness: 129,8836.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [2823,746] -- 10.06.2020 3:41:26
+OK|Simulation finished successfully for PtnElka552 after 276 evolutions.
+Time spent: 1019,278. Average good fitness: 123,0903.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 8 bits.
+
+
+Simulation [1229,775] -- 10.06.2020 3:43:29
+OK|Simulation finished successfully for PtnElka552 after 540 evolutions.
+Time spent: 2027,921. Average good fitness: 127,4516.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [7899,965] -- 10.06.2020 3:59:01
+OK|Simulation finished successfully for PtnElka552 after 284 evolutions.
+Time spent: 1055,804. Average good fitness: 121,3419.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 8 bits.
+
+
+Simulation [5518,693] -- 10.06.2020 4:03:21
+OK|Simulation finished successfully for PtnElka552 after 468 evolutions.
+Time spent: 1769,276. Average good fitness: 139,56.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [6745,487] -- 10.06.2020 4:14:58
+ABORT|Simulation aborted for PtnElka552 after 501 evolutions.
+Time spent: 1889,611. Average good fitness: 23,05666.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [507,2439] -- 10.06.2020 4:20:27
+OK|Simulation finished successfully for PtnElka552 after 274 evolutions.
+Time spent: 1026,479. Average good fitness: 120,6966.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [9841,513] -- 10.06.2020 4:30:48
+ABORT|Simulation aborted for PtnElka552 after 501 evolutions.
+Time spent: 1906,507. Average good fitness: 0,3782909.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 8 bits.
+
+
+Simulation [9554,488] -- 10.06.2020 4:44:43
+OK|Simulation finished successfully for PtnElka552 after 387 evolutions.
+Time spent: 1455,675. Average good fitness: 124,7338.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [7920,655] -- 10.06.2020 4:47:30
+OK|Simulation finished successfully for PtnElka552 after 528 evolutions.
+Time spent: 1952,129. Average good fitness: 76,37677.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [2054,284] -- 10.06.2020 5:04:28
+OK|Simulation finished successfully for PtnElka552 after 317 evolutions.
+Time spent: 1184,949. Average good fitness: 57,61151.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [6250,718] -- 10.06.2020 5:05:33
+OK|Simulation finished successfully for PtnElka552 after 292 evolutions.
+Time spent: 1082,96. Average good fitness: 126,8541.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [7201,957] -- 10.06.2020 5:05:47
+OK|Simulation finished successfully for PtnElka552 after 564 evolutions.
+Time spent: 2099,644. Average good fitness: 38,02615.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 8 bits.
+
+
+Simulation [1512,61] -- 10.06.2020 5:31:34
+OK|Simulation finished successfully for PtnElka552 after 416 evolutions.
+Time spent: 1560,198. Average good fitness: 141,2068.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [716,2547] -- 10.06.2020 5:37:12
+OK|Simulation finished successfully for PtnElka552 after 526 evolutions.
+Time spent: 1964,501. Average good fitness: 28,67061.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [6652,827] -- 10.06.2020 5:37:34
+ABORT|Simulation aborted for PtnElka552 after 501 evolutions.
+Time spent: 1907,035. Average good fitness: 0,3528597.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 8 bits.
+
+
+Simulation [6637,451] -- 10.06.2020 5:55:14
+OK|Simulation finished successfully for PtnElka552 after 380 evolutions.
+Time spent: 1419,985. Average good fitness: 126,1959.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [6762,339] -- 10.06.2020 5:56:17
+OK|Simulation finished successfully for PtnElka552 after 303 evolutions.
+Time spent: 1122,067. Average good fitness: 125,0262.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 8 bits.
+
+
+Simulation [1149,914] -- 10.06.2020 6:07:38
+OK|Simulation finished successfully for PtnElka552 after 484 evolutions.
+Time spent: 1825,466. Average good fitness: 65,37447.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [6364,312] -- 10.06.2020 6:21:50
+OK|Simulation finished successfully for PtnElka552 after 416 evolutions.
+Time spent: 1533,353. Average good fitness: 116,4623.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 8 bits.
+
+
+Simulation [8063,455] -- 10.06.2020 6:23:45
+OK|Simulation finished successfully for PtnElka552 after 259 evolutions.
+Time spent: 967,4844. Average good fitness: 54,83311.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [7928,081] -- 10.06.2020 6:26:58
+ABORT|Simulation aborted for PtnElka552 after 501 evolutions.
+Time spent: 1904,069. Average good fitness: 3,236135.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [240,3057] -- 10.06.2020 6:43:37
+OK|Simulation finished successfully for PtnElka552 after 357 evolutions.
+Time spent: 1306,984. Average good fitness: 28,19378.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 8 bits.
+
+
+Simulation [9204,488] -- 10.06.2020 6:53:38
+OK|Simulation finished successfully for PtnElka552 after 475 evolutions.
+Time spent: 1792,785. Average good fitness: 109,9393.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [5013,83] -- 10.06.2020 7:03:01
+OK|Simulation finished successfully for PtnElka552 after 575 evolutions.
+Time spent: 2163,737. Average good fitness: 95,5136.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [7760,398] -- 10.06.2020 7:10:35
+OK|Simulation finished successfully for PtnElka552 after 273 evolutions.
+Time spent: 1017,209. Average good fitness: 101,1148.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [3780,586] -- 10.06.2020 7:13:37
+OK|Simulation finished successfully for PtnElka552 after 480 evolutions.
+Time spent: 1800,518. Average good fitness: 129,8899.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 8 bits.
+
+
+Simulation [7239,63] -- 10.06.2020 7:31:07
+OK|Simulation finished successfully for PtnElka552 after 450 evolutions.
+Time spent: 1685,672. Average good fitness: 125,2709.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [8895,857] -- 10.06.2020 7:44:02
+OK|Simulation finished successfully for PtnElka552 after 487 evolutions.
+Time spent: 1824,451. Average good fitness: 47,191.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 8 bits.
+
+
+Simulation [8406,162] -- 10.06.2020 7:44:41
+OK|Simulation finished successfully for PtnElka552 after 540 evolutions.
+Time spent: 2046,047. Average good fitness: 93,39014.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [3498,627] -- 10.06.2020 8:04:19
+OK|Simulation finished successfully for PtnElka552 after 529 evolutions.
+Time spent: 1991,926. Average good fitness: 139,7381.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [7257,528] -- 10.06.2020 8:07:35
+OK|Simulation finished successfully for PtnElka552 after 366 evolutions.
+Time spent: 1373,514. Average good fitness: 96,14622.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [6828,6] -- 10.06.2020 8:16:26
+OK|Simulation finished successfully for PtnElka552 after 520 evolutions.
+Time spent: 1943,813. Average good fitness: 72,7846.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 8 bits.
+
+
+Simulation [5826,823] -- 10.06.2020 8:29:28
+OK|Simulation finished successfully for PtnElka552 after 403 evolutions.
+Time spent: 1509,244. Average good fitness: 101,0353.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [6700,648] -- 10.06.2020 8:32:32
+OK|Simulation finished successfully for PtnElka552 after 398 evolutions.
+Time spent: 1497,363. Average good fitness: 53,19281.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [8366,668] -- 10.06.2020 8:48:13
+ABORT|Simulation aborted for PtnElka552 after 501 evolutions.
+Time spent: 1907,533. Average good fitness: 0,5467733.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 8 bits.
+
+
+Simulation [2425,86] -- 10.06.2020 8:49:20
+OK|Simulation finished successfully for PtnElka552 after 270 evolutions.
+Time spent: 1007,254. Average good fitness: 96,97272.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [8278,438] -- 10.06.2020 9:00:29
+ABORT|Simulation aborted for PtnElka552 after 501 evolutions.
+Time spent: 1860,955. Average good fitness: 18,06895.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [808,4738] -- 10.06.2020 9:05:17
+OK|Simulation finished successfully for PtnElka552 after 276 evolutions.
+Time spent: 1024,082. Average good fitness: 98,87054.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 8 bits.
+
+
+Simulation [9514,284] -- 10.06.2020 9:18:54
+OK|Simulation finished successfully for PtnElka552 after 478 evolutions.
+Time spent: 1774,738. Average good fitness: 32,04342.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [6417,871] -- 10.06.2020 9:27:00
+OK|Simulation finished successfully for PtnElka552 after 425 evolutions.
+Time spent: 1591,02. Average good fitness: 106,2614.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [1745,511] -- 10.06.2020 9:37:04
+ABORT|Simulation aborted for PtnElka552 after 501 evolutions.
+Time spent: 1906,801. Average good fitness: 0,4990892.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 8 bits.
+
+
+Simulation [8405,999] -- 10.06.2020 9:47:04
+OK|Simulation finished successfully for PtnElka552 after 447 evolutions.
+Time spent: 1689,658. Average good fitness: 96,39101.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [6784,632] -- 10.06.2020 10:03:51
+OK|Simulation finished successfully for PtnElka552 after 601 evolutions.
+Time spent: 2210,875. Average good fitness: 105,6638.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [6661,229] -- 10.06.2020 10:04:31
+OK|Simulation finished successfully for PtnElka552 after 281 evolutions.
+Time spent: 1047,188. Average good fitness: 122,2829.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [7499,194] -- 10.06.2020 10:08:57
+ABORT|Simulation aborted for PtnElka552 after 501 evolutions.
+Time spent: 1912,391. Average good fitness: 0,6008151.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 8 bits.
+
+
+Simulation [4363,311] -- 10.06.2020 10:22:56
+OK|Simulation finished successfully for PtnElka552 after 307 evolutions.
+Time spent: 1144,875. Average good fitness: 82,19416.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [3974,282] -- 10.06.2020 10:41:41
+OK|Simulation finished successfully for PtnElka552 after 582 evolutions.
+Time spent: 2229,5. Average good fitness: 100,0944.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [4683,061] -- 10.06.2020 10:42:51
+OK|Simulation finished successfully for PtnElka552 after 317 evolutions.
+Time spent: 1195,26. Average good fitness: 50,02023.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [487,2751] -- 10.06.2020 10:45:46
+OK|Simulation finished successfully for PtnElka552 after 586 evolutions.
+Time spent: 2209,846. Average good fitness: 64,71636.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 8 bits.
+
+
+Simulation [5410,281] -- 10.06.2020 11:10:35
+OK|Simulation finished successfully for PtnElka552 after 391 evolutions.
+Time spent: 1488,93. Average good fitness: 74,40581.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 8 bits.
+
+
+Simulation [2774,264] -- 10.06.2020 11:14:21
+OK|Simulation finished successfully for PtnElka552 after 512 evolutions.
+Time spent: 1960,838. Average good fitness: 108,8776.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [3661,153] -- 10.06.2020 11:20:30
+OK|Simulation finished successfully for PtnElka552 after 592 evolutions.
+Time spent: 2259,029. Average good fitness: 125,5253.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [5592,906] -- 10.06.2020 11:30:14
+OK|Simulation finished successfully for PtnElka552 after 313 evolutions.
+Time spent: 1178,979. Average good fitness: 119,9464.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 8 bits.
+
+
+Simulation [4944,292] -- 10.06.2020 11:41:44
+OK|Simulation finished successfully for PtnElka552 after 338 evolutions.
+Time spent: 1273,471. Average good fitness: 122,766.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [6148,544] -- 10.06.2020 11:46:44
+ABORT|Simulation aborted for PtnElka552 after 501 evolutions.
+Time spent: 1942,578. Average good fitness: 6,011328.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [2596,464] -- 10.06.2020 11:55:28
+OK|Simulation finished successfully for PtnElka552 after 401 evolutions.
+Time spent: 1513,293. Average good fitness: 66,53799.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 8 bits.
+
+
+Simulation [7385,046] -- 10.06.2020 12:02:53
+OK|Simulation finished successfully for PtnElka552 after 336 evolutions.
+Time spent: 1269,137. Average good fitness: 77,48617.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [3965,841] -- 10.06.2020 12:03:05
+OK|Simulation finished successfully for PtnElka552 after 260 evolutions.
+Time spent: 980,7305. Average good fitness: 124,7147.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [3782,163] -- 10.06.2020 12:20:56
+OK|Simulation finished successfully for PtnElka552 after 403 evolutions.
+Time spent: 1528,129. Average good fitness: 109,2209.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 8 bits.
+
+
+Simulation [5556,279] -- 10.06.2020 12:21:26
+OK|Simulation finished successfully for PtnElka552 after 294 evolutions.
+Time spent: 1112,902. Average good fitness: 105,082.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [1004,931] -- 10.06.2020 12:37:28
+OK|Simulation finished successfully for PtnElka552 after 536 evolutions.
+Time spent: 2063,422. Average good fitness: 123,4495.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [9905,077] -- 10.06.2020 12:43:11
+OK|Simulation finished successfully for PtnElka552 after 343 evolutions.
+Time spent: 1305,219. Average good fitness: 101,0003.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [7678,029] -- 10.06.2020 12:58:38
+OK|Simulation finished successfully for PtnElka552 after 586 evolutions.
+Time spent: 2262,523. Average good fitness: 48,0493.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 8 bits.
+
+
+Simulation [9710,396] -- 10.06.2020 13:06:49
+OK|Simulation finished successfully for PtnElka552 after 375 evolutions.
+Time spent: 1418,844. Average good fitness: 121,4659.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [3175,578] -- 10.06.2020 13:30:49
+ABORT|Simulation aborted for PtnElka552 after 501 evolutions.
+Time spent: 1931,563. Average good fitness: 0,5944572.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 8 bits.
+
+
+Simulation [6215,078] -- 10.06.2020 13:38:07
+ABORT|Simulation aborted for PtnElka552 after 501 evolutions.
+Time spent: 1877,75. Average good fitness: 18,42181.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [5374,269] -- 10.06.2020 13:51:42
+OK|Simulation finished successfully for PtnElka552 after 216 evolutions.
+Time spent: 815,0781. Average good fitness: 122,3147.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [9760,387] -- 10.06.2020 13:55:18
+OK|Simulation finished successfully for PtnElka552 after 386 evolutions.
+Time spent: 1469,023. Average good fitness: 69,46574.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 8 bits.
+
+
+Simulation [7381,522] -- 10.06.2020 14:07:26
+OK|Simulation finished successfully for PtnElka552 after 251 evolutions.
+Time spent: 943,7109. Average good fitness: 122,0699.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [4309,897] -- 10.06.2020 14:27:28
+ABORT|Simulation aborted for PtnElka552 after 501 evolutions.
+Time spent: 1929,742. Average good fitness: 1,964568.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 8 bits.
+
+
+Simulation [4868,493] -- 10.06.2020 14:39:45
+ABORT|Simulation aborted for PtnElka552 after 501 evolutions.
+Time spent: 1939,23. Average good fitness: 0,3592176.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [4240,014] -- 10.06.2020 14:49:18
+OK|Simulation finished successfully for PtnElka552 after 344 evolutions.
+Time spent: 1310,121. Average good fitness: 68,46761.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 8 bits.
+
+
+Simulation [3835,687] -- 10.06.2020 15:12:07
+ABORT|Simulation aborted for PtnElka552 after 501 evolutions.
+Time spent: 1941,598. Average good fitness: 14,61983.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [7232,17] -- 10.06.2020 15:15:11
+OK|Simulation finished successfully for PtnElka552 after 405 evolutions.
+Time spent: 1552,289. Average good fitness: 122,0286.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 8 bits.
+
+
+Simulation [6484,855] -- 10.06.2020 15:31:09
+OK|Simulation finished successfully for PtnElka552 after 298 evolutions.
+Time spent: 1141,98. Average good fitness: 51,48574.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [5131,352] -- 10.06.2020 15:37:37
+OK|Simulation finished successfully for PtnElka552 after 349 evolutions.
+Time spent: 1346,254. Average good fitness: 80,12151.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 8 bits.
+
+
+Simulation [3735,246] -- 10.06.2020 15:52:40
+OK|Simulation finished successfully for PtnElka552 after 234 evolutions.
+Time spent: 902,6602. Average good fitness: 56,14921.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 8 bits.
+
+
+Simulation [5886,406] -- 10.06.2020 16:04:20
+ABORT|Simulation aborted for PtnElka552 after 501 evolutions.
+Time spent: 1991,219. Average good fitness: 0,4259744.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [5944,888] -- 10.06.2020 16:22:20
+OK|Simulation finished successfully for PtnElka552 after 281 evolutions.
+Time spent: 1080,426. Average good fitness: 112,5333.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [4592,121] -- 10.06.2020 16:25:17
+ABORT|Simulation aborted for PtnElka552 after 501 evolutions.
+Time spent: 1957,324. Average good fitness: 6,675722.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 8 bits.
+
+
+Simulation [650,2151] -- 10.06.2020 16:35:52
+OK|Simulation finished successfully for PtnElka552 after 212 evolutions.
+Time spent: 811,375. Average good fitness: 119,7843.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [8893,161] -- 10.06.2020 16:49:03
+OK|Simulation finished successfully for PtnElka552 after 370 evolutions.
+Time spent: 1425,828. Average good fitness: 116,5037.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 8 bits.
+
+
+Simulation [3449,305] -- 10.06.2020 17:08:47
+ABORT|Simulation aborted for PtnElka552 after 501 evolutions.
+Time spent: 1975,652. Average good fitness: 0,3465019.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [1991,078] -- 10.06.2020 17:20:39
+ABORT|Simulation aborted for PtnElka552 after 501 evolutions.
+Time spent: 1896,738. Average good fitness: 20,0367.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 8 bits.
+
+
+Simulation [2986,335] -- 10.06.2020 17:31:10
+OK|Simulation finished successfully for PtnElka552 after 346 evolutions.
+Time spent: 1342,207. Average good fitness: 92,58909.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [2445,356] -- 10.06.2020 17:43:43
+OK|Simulation finished successfully for PtnElka552 after 200 evolutions.
+Time spent: 752,9961. Average good fitness: 122,9918.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [6884,146] -- 10.06.2020 17:55:02
+OK|Simulation finished successfully for PtnElka552 after 539 evolutions.
+Time spent: 2062,773. Average good fitness: 82,25772.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 8 bits.
+
+
+Simulation [3668,869] -- 10.06.2020 18:06:00
+OK|Simulation finished successfully for PtnElka552 after 352 evolutions.
+Time spent: 1337,508. Average good fitness: 147,3229.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [5930,487] -- 10.06.2020 18:15:38
+OK|Simulation finished successfully for PtnElka552 after 326 evolutions.
+Time spent: 1235,547. Average good fitness: 121,7901.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 8 bits.
+
+
+Simulation [9244,384] -- 10.06.2020 18:40:37
+OK|Simulation finished successfully for PtnElka552 after 542 evolutions.
+Time spent: 2076,563. Average good fitness: 121,806.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [6513,926] -- 10.06.2020 18:48:13
+OK|Simulation finished successfully for PtnElka552 after 515 evolutions.
+Time spent: 1955,637. Average good fitness: 79,31408.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 8 bits.
+
+
+Simulation [8371,337] -- 10.06.2020 19:03:41
+OK|Simulation finished successfully for PtnElka552 after 367 evolutions.
+Time spent: 1384,012. Average good fitness: 98,95951.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [5754,267] -- 10.06.2020 19:15:20
+OK|Simulation finished successfully for PtnElka552 after 433 evolutions.
+Time spent: 1626,863. Average good fitness: 111,3253.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 8 bits.
+
+
+Simulation [7929,349] -- 10.06.2020 19:17:44
+OK|Simulation finished successfully for PtnElka552 after 228 evolutions.
+Time spent: 843,457. Average good fitness: 125,6556.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [3563,25] -- 10.06.2020 19:36:19
+OK|Simulation finished successfully for PtnElka552 after 336 evolutions.
+Time spent: 1259,043. Average good fitness: 44,61606.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 8 bits.
+
+
+Simulation [9428,772] -- 10.06.2020 19:37:37
+OK|Simulation finished successfully for PtnElka552 after 317 evolutions.
+Time spent: 1192,934. Average good fitness: 126,5362.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [3420,171] -- 10.06.2020 19:54:58
+OK|Simulation finished successfully for PtnElka552 after 277 evolutions.
+Time spent: 1041,086. Average good fitness: 104,8532.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [2814,562] -- 10.06.2020 20:03:52
+ABORT|Simulation aborted for PtnElka552 after 423 evolutions.
+Time spent: 1652,117. Average good fitness: 0,3782909.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 8 bits.
+
+
+Simulation [4990,729] -- 11.06.2020 1:05:10
+OK|Simulation finished successfully for PtnElka552 after 247 evolutions.
+Time spent: 911,6724. Average good fitness: 123,1539.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [7156,662] -- 11.06.2020 1:15:56
+OK|Simulation finished successfully for PtnElka552 after 440 evolutions.
+Time spent: 1655,747. Average good fitness: 113,897.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 2 bits.
+
+
+Simulation [3025,845] -- 11.06.2020 1:18:20
+OK|Simulation finished successfully for PtnElka552 after 458 evolutions.
+Time spent: 1707,715. Average good fitness: 41,51023.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 4 bits.
+
+
+Simulation [7404,66] -- 11.06.2020 1:28:05
+OK|Simulation finished successfully for PtnElka552 after 369 evolutions.
+Time spent: 1374,446. Average good fitness: 91,31435.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [6951,008] -- 11.06.2020 1:39:46
+OK|Simulation finished successfully for PtnElka552 after 346 evolutions.
+Time spent: 1286,397. Average good fitness: 125,9957.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 4 bits.
+
+
+Simulation [1907,241] -- 11.06.2020 1:43:43
+OK|Simulation finished successfully for PtnElka552 after 254 evolutions.
+Time spent: 938,228. Average good fitness: 124,9372.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [5175,279] -- 11.06.2020 1:43:47
+OK|Simulation finished successfully for PtnElka552 after 443 evolutions.
+Time spent: 1671,092. Average good fitness: 152,0945.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 2 bits.
+
+
+Simulation [4586,496] -- 11.06.2020 1:54:55
+OK|Simulation finished successfully for PtnElka552 after 181 evolutions.
+Time spent: 668,1614. Average good fitness: 56,97571.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 2 bits.
+
+
+Simulation [9447,693] -- 11.06.2020 2:09:39
+OK|Simulation finished successfully for PtnElka552 after 480 evolutions.
+Time spent: 1792,854. Average good fitness: 109,7836.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 4 bits.
+
+
+Simulation [4589,245] -- 11.06.2020 2:11:03
+OK|Simulation finished successfully for PtnElka552 after 259 evolutions.
+Time spent: 968,0625. Average good fitness: 93,6031.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 2 bits.
+
+
+Simulation [3124,407] -- 11.06.2020 2:16:44
+OK|Simulation finished successfully for PtnElka552 after 530 evolutions.
+Time spent: 1980,663. Average good fitness: 80,87495.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [7475,241] -- 11.06.2020 2:32:37
+OK|Simulation finished successfully for PtnElka552 after 258 evolutions.
+Time spent: 952,7432. Average good fitness: 128,7678.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [9289,836] -- 11.06.2020 2:33:53
+OK|Simulation finished successfully for PtnElka552 after 366 evolutions.
+Time spent: 1369,333. Average good fitness: 125,4172.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 2 bits.
+
+
+Simulation [7919,314] -- 11.06.2020 2:38:42
+OK|Simulation finished successfully for PtnElka552 after 466 evolutions.
+Time spent: 1742,782. Average good fitness: 125,0643.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 4 bits.
+
+
+Simulation [8285,215] -- 11.06.2020 2:55:15
+OK|Simulation finished successfully for PtnElka552 after 269 evolutions.
+Time spent: 992,8643. Average good fitness: 124,9975.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 4 bits.
+
+
+Simulation [614,0709] -- 11.06.2020 2:59:46
+OK|Simulation finished successfully for PtnElka552 after 436 evolutions.
+Time spent: 1629,448. Average good fitness: 97,1412.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [3861,232] -- 11.06.2020 3:05:59
+ABORT|Simulation aborted for PtnElka552 after 501 evolutions.
+Time spent: 1926,635. Average good fitness: 0,378291.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 2 bits.
+
+
+Simulation [1635,051] -- 11.06.2020 3:26:27
+OK|Simulation finished successfully for PtnElka552 after 327 evolutions.
+Time spent: 1227,486. Average good fitness: 101,2451.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 2 bits.
+
+
+Simulation [9115,994] -- 11.06.2020 3:26:42
+OK|Simulation finished successfully for PtnElka552 after 503 evolutions.
+Time spent: 1887,183. Average good fitness: 113,4075.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 4 bits.
+
+
+Simulation [4298,014] -- 11.06.2020 3:31:29
+ABORT|Simulation aborted for PtnElka552 after 501 evolutions.
+Time spent: 1903,115. Average good fitness: 0,3210706.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [8516,487] -- 11.06.2020 3:48:16
+OK|Simulation finished successfully for PtnElka552 after 349 evolutions.
+Time spent: 1309,093. Average good fitness: 137,516.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 2 bits.
+
+
+Simulation [3120,428] -- 11.06.2020 3:58:22
+ABORT|Simulation aborted for PtnElka552 after 501 evolutions.
+Time spent: 1900,426. Average good fitness: 16,33962.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 4 bits.
+
+
+Simulation [8125,01] -- 11.06.2020 4:01:17
+OK|Simulation finished successfully for PtnElka552 after 478 evolutions.
+Time spent: 1787,759. Average good fitness: 124,5303.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [3974,472] -- 11.06.2020 4:20:17
+ABORT|Simulation aborted for PtnElka552 after 501 evolutions.
+Time spent: 1921,347. Average good fitness: 1,138052.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 2 bits.
+
+
+Simulation [1305,9] -- 11.06.2020 4:22:09
+OK|Simulation finished successfully for PtnElka552 after 336 evolutions.
+Time spent: 1252,059. Average good fitness: 129,6675.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [3759,344] -- 11.06.2020 4:26:26
+OK|Simulation finished successfully for PtnElka552 after 450 evolutions.
+Time spent: 1683,739. Average good fitness: 121,7362.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 4 bits.
+
+
+Simulation [3881,841] -- 11.06.2020 4:37:42
+OK|Simulation finished successfully for PtnElka552 after 283 evolutions.
+Time spent: 1045,21. Average good fitness: 126,2595.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 2 bits.
+
+
+Simulation [1719,495] -- 11.06.2020 4:43:12
+OK|Simulation finished successfully for PtnElka552 after 272 evolutions.
+Time spent: 1006,135. Average good fitness: 56,37491.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 4 bits.
+
+
+Simulation [9360,546] -- 11.06.2020 4:53:30
+ABORT|Simulation aborted for PtnElka552 after 504 evolutions.
+Time spent: 1881,44. Average good fitness: 24,92587.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [9292,019] -- 11.06.2020 4:58:32
+OK|Simulation finished successfully for PtnElka552 after 249 evolutions.
+Time spent: 919,7666. Average good fitness: 130,1061.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 4 bits.
+
+
+Simulation [8316,949] -- 11.06.2020 5:05:40
+OK|Simulation finished successfully for PtnElka552 after 443 evolutions.
+Time spent: 1678,086. Average good fitness: 78,68465.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 2 bits.
+
+
+Simulation [9909,841] -- 11.06.2020 5:25:14
+ABORT|Simulation aborted for PtnElka552 after 501 evolutions.
+Time spent: 1903,386. Average good fitness: 0,3528597.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [5073,12] -- 11.06.2020 5:28:43
+OK|Simulation finished successfully for PtnElka552 after 489 evolutions.
+Time spent: 1810,64. Average good fitness: 49,0284.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 4 bits.
+
+
+Simulation [4260,747] -- 11.06.2020 5:37:46
+ABORT|Simulation aborted for PtnElka552 after 501 evolutions.
+Time spent: 1925,482. Average good fitness: 0,4005432.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 2 bits.
+
+
+Simulation [4763,545] -- 11.06.2020 5:48:56
+OK|Simulation finished successfully for PtnElka552 after 327 evolutions.
+Time spent: 1213,256. Average good fitness: 147,52.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 4 bits.
+
+
+Simulation [7063,933] -- 11.06.2020 5:50:21
+OK|Simulation finished successfully for PtnElka552 after 405 evolutions.
+Time spent: 1506,783. Average good fitness: 44,51435.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [4056,5] -- 11.06.2020 6:03:08
+OK|Simulation finished successfully for PtnElka552 after 232 evolutions.
+Time spent: 852,5469. Average good fitness: 123,9772.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 4 bits.
+
+
+Simulation [9017,183] -- 11.06.2020 6:03:10
+OK|Simulation finished successfully for PtnElka552 after 405 evolutions.
+Time spent: 1523,84. Average good fitness: 152,1548.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 2 bits.
+
+
+Simulation [4848,116] -- 11.06.2020 6:11:52
+OK|Simulation finished successfully for PtnElka552 after 346 evolutions.
+Time spent: 1291,615. Average good fitness: 121,4787.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [1805,818] -- 11.06.2020 6:25:44
+OK|Simulation finished successfully for PtnElka552 after 366 evolutions.
+Time spent: 1355,84. Average good fitness: 34,11608.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 4 bits.
+
+
+Simulation [9988,035] -- 11.06.2020 6:32:56
+OK|Simulation finished successfully for PtnElka552 after 340 evolutions.
+Time spent: 1264,213. Average good fitness: 125,7033.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [3183,01] -- 11.06.2020 6:35:38
+OK|Simulation finished successfully for PtnElka552 after 516 evolutions.
+Time spent: 1947,904. Average good fitness: 116,6309.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 2 bits.
+
+
+Simulation [4017,839] -- 11.06.2020 6:49:54
+OK|Simulation finished successfully for PtnElka552 after 231 evolutions.
+Time spent: 856,3926. Average good fitness: 121,9872.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 2 bits.
+
+
+Simulation [3253,128] -- 11.06.2020 6:57:23
+ABORT|Simulation aborted for PtnElka552 after 501 evolutions.
+Time spent: 1899,105. Average good fitness: 2,75612.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 4 bits.
+
+
+Simulation [6600,726] -- 11.06.2020 6:59:25
+OK|Simulation finished successfully for PtnElka552 after 425 evolutions.
+Time spent: 1588,984. Average good fitness: 97,92638.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [4759,223] -- 11.06.2020 7:16:09
+OK|Simulation finished successfully for PtnElka552 after 271 evolutions.
+Time spent: 1004,084. Average good fitness: 118,6812.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [4207,824] -- 11.06.2020 7:22:01
+ABORT|Simulation aborted for PtnElka552 after 501 evolutions.
+Time spent: 1926,979. Average good fitness: 0,4418689.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 2 bits.
+
+
+Simulation [2481,524] -- 11.06.2020 7:29:07
+ABORT|Simulation aborted for PtnElka552 after 501 evolutions.
+Time spent: 1903,254. Average good fitness: 0,3623964.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 4 bits.
+
+
+Simulation [1865,106] -- 11.06.2020 7:43:34
+OK|Simulation finished successfully for PtnElka552 after 440 evolutions.
+Time spent: 1644,848. Average good fitness: 123,494.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [5998,79] -- 11.06.2020 7:45:53
+OK|Simulation finished successfully for PtnElka552 after 272 evolutions.
+Time spent: 1006,412. Average good fitness: 95,43736.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 4 bits.
+
+
+Simulation [554,3733] -- 11.06.2020 7:48:45
+OK|Simulation finished successfully for PtnElka552 after 426 evolutions.
+Time spent: 1603,553. Average good fitness: 105,721.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 2 bits.
+
+
+Simulation [4896,793] -- 11.06.2020 8:03:30
+OK|Simulation finished successfully for PtnElka552 after 322 evolutions.
+Time spent: 1195,607. Average good fitness: 125,9035.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [8754,655] -- 11.06.2020 8:11:34
+OK|Simulation finished successfully for PtnElka552 after 413 evolutions.
+Time spent: 1541,264. Average good fitness: 112,2853.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 4 bits.
+
+
+Simulation [4721,085] -- 11.06.2020 8:21:17
+OK|Simulation finished successfully for PtnElka552 after 519 evolutions.
+Time spent: 1952,92. Average good fitness: 91,61633.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 2 bits.
+
+
+Simulation [7801,733] -- 11.06.2020 8:23:32
+OK|Simulation finished successfully for PtnElka552 after 324 evolutions.
+Time spent: 1202,283. Average good fitness: 50,83405.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [7628,789] -- 11.06.2020 8:30:59
+OK|Simulation finished successfully for PtnElka552 after 313 evolutions.
+Time spent: 1164,668. Average good fitness: 139,2104.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 4 bits.
+
+
+Simulation [1839,253] -- 11.06.2020 8:44:40
+OK|Simulation finished successfully for PtnElka552 after 341 evolutions.
+Time spent: 1267,357. Average good fitness: 122,9981.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [9752,347] -- 11.06.2020 8:47:18
+OK|Simulation finished successfully for PtnElka552 after 414 evolutions.
+Time spent: 1560,451. Average good fitness: 123,8278.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 2 bits.
+
+
+Simulation [8355,379] -- 11.06.2020 8:53:23
+OK|Simulation finished successfully for PtnElka552 after 361 evolutions.
+Time spent: 1344,723. Average good fitness: 124,0344.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 4 bits.
+
+
+Simulation [1051,125] -- 11.06.2020 9:07:36
+OK|Simulation finished successfully for PtnElka552 after 370 evolutions.
+Time spent: 1376,396. Average good fitness: 122,054.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [4748,066] -- 11.06.2020 9:15:16
+OK|Simulation finished successfully for PtnElka552 after 356 evolutions.
+Time spent: 1312,332. Average good fitness: 36,4335.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 4 bits.
+
+
+Simulation [8220,826] -- 11.06.2020 9:21:37
+OK|Simulation finished successfully for PtnElka552 after 544 evolutions.
+Time spent: 2059. Average good fitness: 91,6068.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 2 bits.
+
+
+Simulation [6356,456] -- 11.06.2020 9:32:25
+OK|Simulation finished successfully for PtnElka552 after 278 evolutions.
+Time spent: 1029,736. Average good fitness: 142,2812.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 4 bits.
+
+
+Simulation [151,0739] -- 11.06.2020 9:35:18
+OK|Simulation finished successfully for PtnElka552 after 446 evolutions.
+Time spent: 1662,461. Average good fitness: 122,0444.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [4625,741] -- 11.06.2020 9:37:35
+OK|Simulation finished successfully for PtnElka552 after 258 evolutions.
+Time spent: 958,668. Average good fitness: 103,0793.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 2 bits.
+
+
+Simulation [7090,008] -- 11.06.2020 10:04:04
+ABORT|Simulation aborted for PtnElka552 after 501 evolutions.
+Time spent: 1898,131. Average good fitness: 3,150305.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 4 bits.
+
+
+Simulation [5378,64] -- 11.06.2020 10:07:11
+OK|Simulation finished successfully for PtnElka552 after 512 evolutions.
+Time spent: 1912,943. Average good fitness: 51,46028.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [8878,994] -- 11.06.2020 10:09:40
+ABORT|Simulation aborted for PtnElka552 after 501 evolutions.
+Time spent: 1924,645. Average good fitness: 0,4673001.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 2 bits.
+
+
+Simulation [2254,748] -- 11.06.2020 10:17:04
+OK|Simulation finished successfully for PtnElka552 after 213 evolutions.
+Time spent: 780,793. Average good fitness: 123,0871.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 4 bits.
+
+
+Simulation [1857,958] -- 11.06.2020 10:30:30
+OK|Simulation finished successfully for PtnElka552 after 375 evolutions.
+Time spent: 1399,355. Average good fitness: 160,649.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [4356,879] -- 11.06.2020 10:39:02
+OK|Simulation finished successfully for PtnElka552 after 353 evolutions.
+Time spent: 1317,316. Average good fitness: 115,7758.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 4 bits.
+
+
+Simulation [7853,76] -- 11.06.2020 10:41:32
+ABORT|Simulation aborted for PtnElka552 after 501 evolutions.
+Time spent: 1912,313. Average good fitness: 6,46909.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 2 bits.
+
+
+Simulation [1828,046] -- 11.06.2020 10:56:49
+OK|Simulation finished successfully for PtnElka552 after 423 evolutions.
+Time spent: 1579,063. Average good fitness: 127,2164.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [6851,444] -- 11.06.2020 11:10:24
+ABORT|Simulation aborted for PtnElka552 after 501 evolutions.
+Time spent: 1882,203. Average good fitness: 17,91319.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 4 bits.
+
+
+Simulation [8316,152] -- 11.06.2020 11:13:31
+ABORT|Simulation aborted for PtnElka552 after 501 evolutions.
+Time spent: 1918,594. Average good fitness: 0,9504946.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 2 bits.
+
+
+Simulation [3200,457] -- 11.06.2020 11:20:14
+OK|Simulation finished successfully for PtnElka552 after 377 evolutions.
+Time spent: 1404,691. Average good fitness: 101,9063.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [1463,026] -- 11.06.2020 11:22:25
+OK|Simulation finished successfully for PtnElka552 after 197 evolutions.
+Time spent: 721,3789. Average good fitness: 93,58408.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 4 bits.
+
+
+Simulation [6478,528] -- 11.06.2020 11:34:59
+OK|Simulation finished successfully for PtnElka552 after 343 evolutions.
+Time spent: 1288,324. Average good fitness: 125,1279.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 2 bits.
+
+
+Simulation [3363,289] -- 11.06.2020 11:49:21
+OK|Simulation finished successfully for PtnElka552 after 467 evolutions.
+Time spent: 1746,832. Average good fitness: 113,4329.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [2360,44] -- 11.06.2020 11:57:33
+OK|Simulation finished successfully for PtnElka552 after 562 evolutions.
+Time spent: 2107,906. Average good fitness: 92,78937.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 4 bits.
+
+
+Simulation [924,1235] -- 11.06.2020 12:06:27
+OK|Simulation finished successfully for PtnElka552 after 498 evolutions.
+Time spent: 1887,711. Average good fitness: 108,2482.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 2 bits.
+
+
+Simulation [8508,432] -- 11.06.2020 12:15:25
+OK|Simulation finished successfully for PtnElka552 after 414 evolutions.
+Time spent: 1562,977. Average good fitness: 124,2315.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [7119,72] -- 11.06.2020 12:22:53
+OK|Simulation finished successfully for PtnElka552 after 399 evolutions.
+Time spent: 1519,805. Average good fitness: 98,83871.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 4 bits.
+
+
+Simulation [9489,912] -- 11.06.2020 12:48:18
+OK|Simulation finished successfully for PtnElka552 after 401 evolutions.
+Time spent: 1524,793. Average good fitness: 131,0661.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 4 bits.
+
+
+Simulation [3294,807] -- 11.06.2020 13:21:25
+OK|Simulation finished successfully for PtnElka552 after 524 evolutions.
+Time spent: 1986,945. Average good fitness: 159,05.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 4 bits.
+
+
+Simulation [3130,764] -- 11.06.2020 13:33:10
+OK|Simulation finished successfully for PtnElka552 after 190 evolutions.
+Time spent: 704,6211. Average good fitness: 124,2347.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 4 bits.
+
+
+Simulation [2739,39] -- 14.06.2020 3:42:14
+OK|Simulation finished successfully for PtnElka552 after 335 evolutions.
+Time spent: 1248,58. Average good fitness: 124,543.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [4253,646] -- 14.06.2020 4:02:27
+OK|Simulation finished successfully for PtnElka552 after 326 evolutions.
+Time spent: 1213,477. Average good fitness: 50,67508.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [6599,101] -- 14.06.2020 4:34:36
+OK|Simulation finished successfully for PtnElka552 after 515 evolutions.
+Time spent: 1928,861. Average good fitness: 94,6013.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [86,61866] -- 14.06.2020 4:59:00
+OK|Simulation finished successfully for PtnElka552 after 392 evolutions.
+Time spent: 1463,433. Average good fitness: 111,5733.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [8386,17] -- 14.06.2020 5:30:48
+ABORT|Simulation aborted for PtnElka552 after 501 evolutions.
+Time spent: 1908,124. Average good fitness: 0,3147127.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [7339,912] -- 14.06.2020 5:44:59
+OK|Simulation finished successfully for PtnElka552 after 231 evolutions.
+Time spent: 851,2271. Average good fitness: 126,2405.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [2039,032] -- 14.06.2020 6:01:50
+OK|Simulation finished successfully for PtnElka552 after 272 evolutions.
+Time spent: 1011,499. Average good fitness: 141,07.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [246,2065] -- 14.06.2020 6:26:47
+OK|Simulation finished successfully for PtnElka552 after 400 evolutions.
+Time spent: 1496,686. Average good fitness: 91,56547.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [7736,136] -- 14.06.2020 6:51:08
+OK|Simulation finished successfully for PtnElka552 after 390 evolutions.
+Time spent: 1460,534. Average good fitness: 110,8962.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [6955,307] -- 14.06.2020 7:12:13
+OK|Simulation finished successfully for PtnElka552 after 340 evolutions.
+Time spent: 1265,686. Average good fitness: 124,6066.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [7070,814] -- 14.06.2020 7:36:20
+OK|Simulation finished successfully for PtnElka552 after 386 evolutions.
+Time spent: 1446,298. Average good fitness: 49,45438.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [7348,572] -- 14.06.2020 7:54:47
+OK|Simulation finished successfully for PtnElka552 after 298 evolutions.
+Time spent: 1107,188. Average good fitness: 95,69167.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [5748,764] -- 14.06.2020 8:28:02
+OK|Simulation finished successfully for PtnElka552 after 531 evolutions.
+Time spent: 1994,797. Average good fitness: 125,1057.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [1515,111] -- 14.06.2020 8:54:38
+OK|Simulation finished successfully for PtnElka552 after 427 evolutions.
+Time spent: 1596,328. Average good fitness: 55,41169.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [4924,514] -- 14.06.2020 9:26:25
+ABORT|Simulation aborted for PtnElka552 after 501 evolutions.
+Time spent: 1907,227. Average good fitness: 0,3306074.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [517,2992] -- 14.06.2020 9:47:10
+OK|Simulation finished successfully for PtnElka552 after 334 evolutions.
+Time spent: 1244,643. Average good fitness: 123,761.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [4675,201] -- 14.06.2020 10:10:13
+OK|Simulation finished successfully for PtnElka552 after 369 evolutions.
+Time spent: 1383,451. Average good fitness: 132,8463.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [2330,273] -- 14.06.2020 10:34:52
+OK|Simulation finished successfully for PtnElka552 after 396 evolutions.
+Time spent: 1479,447. Average good fitness: 123,9518.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [459,1632] -- 14.06.2020 11:07:34
+OK|Simulation finished successfully for PtnElka552 after 522 evolutions.
+Time spent: 1961,207. Average good fitness: 96,39419.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [7735,463] -- 14.06.2020 11:27:08
+OK|Simulation finished successfully for PtnElka552 after 311 evolutions.
+Time spent: 1174,1. Average good fitness: 104,3223.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [3344,241] -- 14.06.2020 11:52:28
+OK|Simulation finished successfully for PtnElka552 after 404 evolutions.
+Time spent: 1520,738. Average good fitness: 124,1488.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
+
+
+Simulation [3922,948] -- 14.06.2020 12:18:45
+OK|Simulation finished successfully for PtnElka552 after 415 evolutions.
+Time spent: 1576,502. Average good fitness: 122,8901.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 16 bits.
 
 

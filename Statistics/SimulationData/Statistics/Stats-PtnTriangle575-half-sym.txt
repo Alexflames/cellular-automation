@@ -1,0 +1,10 @@
+Simulation [4237,739] -- 11.06.2020 14:15:36
+ABORT|Simulation aborted for PtnTriangle575-half-sym after 62 evolutions.
+Time spent: 0. Average good fitness: 0.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 100.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+

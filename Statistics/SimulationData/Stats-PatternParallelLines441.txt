@@ -1,0 +1,10 @@
+Simulation [1592,02] -- 07.06.2020 12:12:12
+OK|Simulation finished successfully for PatternParallelLines441 after 56 evolutions.
+Time spent: 218,5328. Average good fitness: 754,364.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 35. Additional steps after threshold: 25.
+Simple cross separation: False.
+Mutation percent: 8. Mutate up to 25 bits.
+
+

@@ -1,0 +1,20 @@
+Simulation [6249,33] -- 05.06.2020 23:23:34
+ABORT|Simulation aborted for PtnTriangle675-half-sym after 3093 evolutions.
+Time spent: 0. Average good fitness: 0.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 35. Additional steps after threshold: 250.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [545,7997] -- 06.06.2020 1:38:16
+ABORT|Simulation aborted for PtnTriangle675-half-sym after 1221 evolutions.
+Time spent: 0. Average good fitness: 0.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 35. Additional steps after threshold: 250.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+

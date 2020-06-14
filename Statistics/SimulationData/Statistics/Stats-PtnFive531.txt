@@ -1,0 +1,70 @@
+Simulation [8471,725] -- 09.06.2020 14:07:02
+OK|Simulation finished successfully for PtnFive531 after 86 evolutions.
+Time spent: 318,4263. Average good fitness: 103,8609.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 50.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [1400,008] -- 09.06.2020 14:08:46
+OK|Simulation finished successfully for PtnFive531 after 115 evolutions.
+Time spent: 432,6173. Average good fitness: 72,91031.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 50.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [2182,118] -- 09.06.2020 14:12:47
+OK|Simulation finished successfully for PtnFive531 after 94 evolutions.
+Time spent: 345,4152. Average good fitness: 78,53508.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 50.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [5210,295] -- 09.06.2020 14:14:25
+OK|Simulation finished successfully for PtnFive531 after 91 evolutions.
+Time spent: 339,628. Average good fitness: 102,911.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 50.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [5769,004] -- 09.06.2020 14:18:23
+OK|Simulation finished successfully for PtnFive531 after 91 evolutions.
+Time spent: 335,793. Average good fitness: 99,26605.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 50.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+
+Simulation [296,8836] -- 09.06.2020 14:22:39
+OK|Simulation finished successfully for PtnFive531 after 94 evolutions.
+Time spent: 494,2541. Average good fitness: 86,09962.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 50.
+Simple cross separation: False.
+Mutation percent: 15. Mutate up to 8 bits.
+
+
+Simulation [5556,581] -- 09.06.2020 14:22:49
+ABORT|Simulation aborted for PtnFive531 after 68 evolutions.
+Time spent: 264,4044. Average good fitness: 102,2873.
+Virtual screens: 128. Update period: 0,001. Time to evolution: 1,5.
+Fitness calculations between evolution: 25.
+Fitness threshold: 25. Additional steps after threshold: 50.
+Simple cross separation: False.
+Mutation percent: 25. Mutate up to 8 bits.
+
+

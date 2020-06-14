@@ -1532,14 +1532,14 @@ MonoBehaviour:
   checkScreen: {fileID: 1960784633}
   updatePeriod: 0.001
   screenSizeInPixels: 64
-  virtualScreensInSimulation: 256
+  virtualScreensInSimulation: 128
   screensInSimulation: 32
   updateCheckScreen: 1
-  datapath: C:\Users\Public\Documents\Unity Projects\CellularAutomations\Assets
+  datapath: C:\Users\Public\Documents\Unity Projects\CellularAutomations\Statistics\SimulationData
   timeToEvolution: 1.5
-  mutationPercent: 5
-  mutateBitsUpTo: 8
-  patternFile: {fileID: 4900000, guid: 075b181fbd4e0fd469003045c6fe8575, type: 3}
+  mutationPercent: 25
+  mutateBitsUpTo: 16
+  patternFile: {fileID: 4900000, guid: 223989d8e2f2a3243b861aec867d9581, type: 3}
   pivotBitFitnessThreshold: 25
   writeToGlobalPivotBits: 1
   genofondScreen: {fileID: 2004998649}
@@ -1548,9 +1548,9 @@ MonoBehaviour:
   fitnessCalculationsNeeded: 25
   fitnessCalcScreensPerFrame: 128
   simulationPaused: 0
-  msFitnessThreshold: 35
-  msCalculationsAfterThreshold: 250
-  evolutionStepLimit: 1000
+  msFitnessThreshold: 25
+  msCalculationsAfterThreshold: 100
+  evolutionStepLimit: 500
   crossSeparation: 0
 --- !u!114 &46086333
 MonoBehaviour:
