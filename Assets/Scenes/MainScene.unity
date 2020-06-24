@@ -1538,7 +1538,7 @@ MonoBehaviour:
   datapath: C:\Users\Public\Documents\Unity Projects\CellularAutomations\Statistics\SimulationData
   timeToEvolution: 1.5
   mutationPercent: 25
-  mutateBitsUpTo: 16
+  mutateBitsUpTo: 4
   patternFile: {fileID: 4900000, guid: 223989d8e2f2a3243b861aec867d9581, type: 3}
   pivotBitFitnessThreshold: 25
   writeToGlobalPivotBits: 1
@@ -1551,7 +1551,7 @@ MonoBehaviour:
   msFitnessThreshold: 25
   msCalculationsAfterThreshold: 100
   evolutionStepLimit: 500
-  crossSeparation: 0
+  crossSeparation: 1
 --- !u!114 &46086333
 MonoBehaviour:
   m_ObjectHideFlags: 0
